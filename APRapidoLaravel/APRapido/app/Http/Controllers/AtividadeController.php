@@ -9,12 +9,21 @@ use App\Atividade;
 class AtividadeController extends Controller
 {
     /**
+     * AtividadeController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+        echo 'oi';
         //$atividade = Atividade::orderBy('id','desc');
         /*
         $apr = Apr::find(1);
