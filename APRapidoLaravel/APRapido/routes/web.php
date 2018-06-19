@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'pagesController@menu');
 
-Route::resource('atividade','AtividadeController');
+Route::get('/criarApr', 'menuController@criarApr'); 
