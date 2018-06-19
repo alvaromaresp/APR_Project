@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('atividade','AtividadeController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
