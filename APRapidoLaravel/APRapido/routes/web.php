@@ -14,3 +14,6 @@
 Route::get('/', 'pagesController@menu');
 
 Route::get('/criarApr', 'menuController@criarApr'); 
+
+Auth::routes();
+
