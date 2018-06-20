@@ -23,7 +23,7 @@ class AtividadeController extends Controller
      */
     public function index()
     {
-        echo 'oi';
+        //echo 'oi';
         //$atividade = Atividade::orderBy('id','desc');
         /*
         $apr = Apr::find(1);
