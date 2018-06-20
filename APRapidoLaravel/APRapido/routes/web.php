@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('atividade','AtividadeController');
+Route::resource('naturezaRiscos','NaturezaDeRiscosController');
 
 Auth::routes();
 
