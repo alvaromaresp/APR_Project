@@ -4,14 +4,14 @@
 
     {!! Form::open(['action' => ['naturezaRiscosController@update', $nr->id ], 'method' => 'post']) !!}
             
-        <div class="form-group">
-            {{Form::label('natureza_risco', 'Natureza Risco')}}
+        <div class="form-group mt-5 ml-5 mr-5 mb-5">
+            <h2> {{Form::label('natureza_risco', 'Editar Natureza de Risco')}} </h2>	
             {{Form::text('natureza_risco', $nr->natureza_risco, ['class' => 'form-control', 'placeholder' => 'Natureza Risco'])}}
-        </div>
 
-        {{Form::hidden('_method', 'PUT')}}
+		        {{Form::hidden('_method', 'PUT')}}
 
-    {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+		    {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
+		</div>
     {!! Form::close() !!}
 
 @endsection
