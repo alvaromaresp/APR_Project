@@ -9,7 +9,7 @@
 
         @foreach($nr as $n)
 
-            {{$n->natureza_risco}} <br>
+            <a href="/naturezaRiscos/{{$n->id}}"> {{$n->natureza_risco}} </a> <br>
 
         @endforeach
 
