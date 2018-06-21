@@ -55,7 +55,8 @@ class naturezaRiscosController extends Controller
      */
     public function show($id)
     {
-        //
+        $nr = Naturezariscos::find($id);
+        return view('naturezaRiscos.show')->with('nr', $nr);
     }
 
     /**
@@ -66,7 +67,9 @@ class naturezaRiscosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $nr = Naturezariscos::find($id);
+
+        return view('naturezaRiscos.edit')->with('nr', $nr);
     }
 
     /**
@@ -78,7 +81,13 @@ class naturezaRiscosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, ['natureza_risco' => 'required']);
+
+        $nr = Naturezariscos::find($id);
+        $nr->natureza_risco = $request->input('natureza_risco');
+        $nr->save();
+
+        return redirect('/naturezaRiscos')->with('success', 'Updated');
     }
 
     /**
@@ -89,6 +98,10 @@ class naturezaRiscosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $nr = Naturezariscos::find($id);
+
+        $nr->delete();
+
+        return redirect('/naturezaRiscos')->with('success', 'Removed');
     }
 }
