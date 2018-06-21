@@ -1,0 +1,11 @@
+laravelcollective -> formulários
+ckeditor -> editor de texto
+
+composer create-project laravel/laravel nome #cria projeto
+npm install
+php artisan make:model nomemodelo -m #cria modelo
+php artisan make:controller nomecontrole --resoure #cria controle de crud
+php artisan make:migration nome #cria arquivo de migration
+php artisan migrate #roda arquivos de migration
+php artisan make:auth #ativa autenticação
+php artisan storage:link #cria um diretorio para armazenar imagens
