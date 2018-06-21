@@ -19,7 +19,6 @@
             <h3><a href="/naturezaRiscos/{{$n->id}}"> {{$n->natureza_risco}} </a></h3> <br>
         @endforeach
     </div>
-    {{$nr->links()}}
     @endif
 
 @endsection
