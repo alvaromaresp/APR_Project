@@ -16,7 +16,7 @@ class naturezaRiscosController extends Controller
      */
     public function index()
     {
-        $nr = Naturezariscos::orderBy('natureza_risco', 'asc')->paginate(10);
+        $nr = Naturezariscos::orderBy('natureza_risco', 'asc')->paginate(5);
         return view('naturezaRiscos.index')->with('nr', $nr);
     }
 
