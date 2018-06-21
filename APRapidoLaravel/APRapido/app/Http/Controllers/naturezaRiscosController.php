@@ -27,7 +27,7 @@ class naturezaRiscosController extends Controller
      */
     public function create()
     {
-        
+        return view('naturezaRiscos.create');
     }
 
     /**
@@ -38,7 +38,13 @@ class naturezaRiscosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, ['natureza_risco' => 'required']);
+
+        $nr = new Naturezariscos;
+        $nr->natureza_risco = $request->input('natureza_risco');
+        $nr->save();
+
+        return redirect('/naturezaRiscos')->with('success', 'Sucesso');
     }
 
     /**

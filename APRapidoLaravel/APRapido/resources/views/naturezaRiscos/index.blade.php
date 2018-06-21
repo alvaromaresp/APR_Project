@@ -1,6 +1,9 @@
 @extends('layout.app')
 
 @section('content')
+    
+    @include('inc.messages')
+
 
     @if(count($nr) > 0)
 
