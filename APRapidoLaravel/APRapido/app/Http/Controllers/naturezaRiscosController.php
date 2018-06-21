@@ -87,7 +87,7 @@ class naturezaRiscosController extends Controller
         $nr->natureza_risco = $request->input('natureza_risco');
         $nr->save();
 
-        return redirect('/naturezaRiscos')->with('success', 'Updated');
+        return redirect('/naturezaRiscos')->with('success', 'Atualizado');
     }
 
     /**
@@ -102,6 +102,6 @@ class naturezaRiscosController extends Controller
 
         $nr->delete();
 
-        return redirect('/naturezaRiscos')->with('success', 'Removed');
+        return redirect('/naturezaRiscos')->with('danger', 'Removido');
     }
 }
