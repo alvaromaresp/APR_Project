@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('/', 'pagesController@menu');
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/criarApr', 'menuController@criarApr'); 
-
-Route::resource('naturezaRiscos', 'naturezaRiscosController');
+Route::resource('atividade','AtividadeController');
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
