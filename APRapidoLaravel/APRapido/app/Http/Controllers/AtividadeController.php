@@ -23,6 +23,12 @@ class AtividadeController extends Controller
      */
     public function index()
     {
+
+
+        $atividades = Atividade::ordeBy('atividade_apr', 'desc')->paginate(10);
+
+        return view('atividade.index', ['atividade' => $atividades]);
+
         //echo 'oi';
         //$atividade = Atividade::orderBy('id','desc');
         /*
@@ -49,7 +55,7 @@ class AtividadeController extends Controller
      */
     public function create()
     {
-        //
+        // return view('atividade.blade.php');
     }
 
     /**
