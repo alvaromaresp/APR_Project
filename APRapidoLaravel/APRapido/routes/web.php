@@ -19,6 +19,8 @@ Route::resource('atividade','AtividadeController');
 
 Route::resource('empresa', 'empresaController');
 
+Route::resource('medidaPreventiva','MedidaPreventivaController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
