@@ -1,21 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Naturezariscos;
 
 use Illuminate\Http\Request;
-use App\Apr;
-use App\Atividade;
+use Illuminate\View\View;
 
-class AtividadeController extends Controller
+class NaturezaDeRiscosController extends Controller
 {
-    /**
-     * AtividadeController constructor.
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -23,23 +15,8 @@ class AtividadeController extends Controller
      */
     public function index()
     {
-        //echo 'oi';
-        //$atividade = Atividade::orderBy('id','desc');
-        /*
-        $apr = Apr::find(1);
-
-        foreach ($apr->atividades as $atv){
-            echo 'aqui -> '.$atv->id;
-        }
-
-        $atividade = Atividade::find(1);
-        foreach($atividade->aprs as $atv){
-            echo ' 2 -> '.$atv->id;
-        }
-
-        return '';
-        */
-
+        $naturezaRiscos  = Naturezariscos::all();
+        return view('naturezaRiscos.index')->with('naturezaRiscos',$naturezaRiscos);
     }
 
     /**
@@ -49,7 +26,7 @@ class AtividadeController extends Controller
      */
     public function create()
     {
-        //
+        return view('naturezaRiscos.create');
     }
 
     /**
@@ -60,7 +37,11 @@ class AtividadeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $natureza_risco = $request->naturezaRisco;
+        $naturezaRiscos = new Naturezariscos;
+        $naturezaRiscos->natureza_risco = $natureza_risco;
+        $naturezaRiscos->save();
+
     }
 
     /**
@@ -71,7 +52,8 @@ class AtividadeController extends Controller
      */
     public function show($id)
     {
-        //
+        $naturezaRisco = Naturezariscos::find($id);
+        return view('naturezaRiscos.show')->with('naturezaRisco',$naturezaRisco);
     }
 
     /**
@@ -80,9 +62,11 @@ class AtividadeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function edit($id)
     {
-        //
+        $naturezaRisco = Naturezariscos::find($id);
+        return view('naturezaRiscos.edit')->with('naturezaRisco',$naturezaRisco);
     }
 
     /**
