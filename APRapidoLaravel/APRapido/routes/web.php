@@ -17,5 +17,7 @@ Route::get('/criarApr', 'menuController@criarApr');
 
 Route::resource('naturezaRiscos', 'naturezaRiscosController');
 
+Route::resource('empresa', 'empresaController');
+
 Auth::routes();
 
