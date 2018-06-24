@@ -17,14 +17,23 @@ Route::get('/', function () {
 
 Route::resource('atividade','AtividadeController');
 
-//Route::resource('empresa', 'empresaController');
-
 Route::resource('medidaPreventiva','MedidaPreventivaController');
 
 Route::resource('riscos', 'RiscosController');
-
 Route::post('riscos/associate/{id}', 'RiscosController@associate');
 Route::post('riscos/desassociate/{id}', 'RiscosController@desassociate');
+
+Route::resource('ferramenta', 'FerramentaController');
+Route::post('ferramenta/associate/{id}', 'FerramentaController@associate');
+Route::post('ferramenta/desassociate/{id}', 'FerramentaController@desassociate');
+
+Route::resource('disciplina', 'DisciplinaController');
+
+Route::resource('naturezaRiscos', 'naturezaRiscosController');
+
+Route::resource('checklist', 'CheckListController');
+
+Route::resource('area', 'AreaController');
 
 Auth::routes();
 
