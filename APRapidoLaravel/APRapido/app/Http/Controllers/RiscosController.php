@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Riscos;
+use App\Medidaspreventivas;
 
 
 class RiscosController extends Controller
@@ -38,11 +39,19 @@ class RiscosController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,['risco'=>'required']);
-        $risco = new Risco;
+        $risco = new Riscos;
         $risco->risco = $request->input('risco');
         $risco->save();
+        
+        
+        $mp = Medidaspreventivas::all();
 
-        return redirect('/associate');
+        $data = array(
+            'risco' => $risco,
+            'mp' => $mp
+        );
+
+        return view('Riscos.associate')->with('data', $data);
     }
 
     /**
@@ -53,8 +62,17 @@ class RiscosController extends Controller
      */
     public function show($id)
     {
-        $risco = Risco::find($id);
-        return view('riscos.show')->with('risco',$risco);
+        $riscos = Riscos::find($id);
+        $mp = $riscos->Medidaspreventivas;
+        
+        $data = array(
+            'riscos' => $riscos,
+            'mp' => $mp
+        );
+
+        
+        return view('riscos.show')->with('data',$data);
+        
     }
 
     /**
@@ -65,7 +83,7 @@ class RiscosController extends Controller
      */
     public function edit($id)
     {
-        $risco = Risco::find($id);
+        $risco = Riscos::find($id);
         return view('riscos.edit')->with('risco',$risco);
     }
 
@@ -78,14 +96,20 @@ class RiscosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,['risco'=>required]);
+        $this->validate($request,['risco'=>'required']);
 
-        $risco = Risco::find($id);
+        $risco = Riscos::find($id);
         $risco->risco = $request->input('risco');
         $risco->save();
 
-        // RETURN AQUI
-        return redirect('/riscos');
+        $mp = Medidaspreventivas::all();
+
+        $data = array(
+            'risco' => $risco,
+            'mp' => $mp
+        );
+
+        return view('Riscos.associate')->with('data', $data);   
     }
 
     /**
@@ -96,6 +120,54 @@ class RiscosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $risco = Riscos::find($id);
+        $risco->delete();
+
+        $riscos = Riscos::orderBy('risco','asc')->paginate(5);
+
+        return view('riscos.index')->with('riscos', $riscos);
+    }
+
+    /**
+     * Associate Riscos to NaturezaRiscos
+     * 
+     * @param  \Illuminate\Http\Request  $request
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function associate(Request $request, $id){
+        $risco = Riscos::find($id);
+        $risco->medidaspreventivas()->attach($request->input('medidaPreventiva'));
+
+        $mp = Medidaspreventivas::all();
+
+        $data = array(
+            'risco' => $risco,
+            'mp' => $mp
+        );
+
+        return view('Riscos.associate')->with('data', $data);
+    }
+
+    /**
+     * Desassociate Riscos to NaturezaRiscos
+     * 
+     * @param  \Illuminate\Http\Request  $request
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function desassociate(Request $request, $risco){
+
+        $risco = Riscos::find($risco);
+        $risco->medidaspreventivas()->detach($request->input('mp'));
+
+        $mp = Medidaspreventivas::all();
+
+        $data = array(
+            'risco' => $risco,
+            'mp' => $mp
+        );
+
+        return view('Riscos.associate')->with('data', $data);
     }
 }
