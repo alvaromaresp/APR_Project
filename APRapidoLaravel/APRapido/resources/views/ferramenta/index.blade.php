@@ -5,7 +5,6 @@
     @include('inc.messages')
 
 
-    @if(count($ferramenta) > 0)
     <div class="mt-5 ml-5 mr-5 mb-5">
     	<h1>Ferramenta
     	<a href="/ferramenta/create" class="btn btn-secondary float-right mt-2 mb-3">Criar Nova</a></h1>
@@ -20,7 +19,6 @@
         @endforeach
     </div>
 
-    <div class="float-right">{{$ferramenta->link()}}</div>
-    @endif
+    <div class="float-right">{{$ferramenta->links()}}</div>
 
 @endsection

@@ -3,11 +3,11 @@
 
 @section('content') 
 	<div class="mt-5 ml-5 mr-5 mb-5">
-	    <h1><p class="font-weight-bold">ID: {{$idchecklist->id}} <br>
-	    idchecklist: {{$idchecklist->idchecklist}} </p></h1><br>
+	    <h1><p class="font-weight-bold">ID: {{$checklist->id}} <br>
+	    ITEM: {{$checklist->item}} </p></h1><br>
 	    <div class="float-right">
-		    <a href="/checkList/{{$idchecklist->id}}/edit" class="btn btn-success mt-2">Editar</a>
-		    {!!Form::open(['action' => ['checkListController@destroy', $idchecklist->id], 'method', 'post', 'class' => 'mt-2'])!!}
+		    <a href="/checklist/{{$checklist->id}}/edit" class="btn btn-success mt-2">Editar</a>
+		    {!!Form::open(['action' => ['CheckListController@destroy', $checklist->id], 'method', 'post', 'class' => 'mt-2'])!!}
 		        {{Form::hidden('_method', 'DELETE')}}
 		        {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
 		    {!!Form::close()!!}
