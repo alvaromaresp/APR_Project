@@ -2,7 +2,7 @@
 
 @section('content')
 
-    {!! Form::open(['action' => ['medidaPreventivaController@update', $medidasPreventivas->id ], 'method' => 'post']) !!}
+    {!! Form::open(['action' => ['MedidaPreventivaController@update', $medidasPreventivas->id ], 'method' => 'post']) !!}
             
         <div class="form-group mt-5 ml-5 mr-5 mb-5">
             <h2> {{Form::label('medidapreventiva', 'Editar Medida Preventiva')}} </h2>	

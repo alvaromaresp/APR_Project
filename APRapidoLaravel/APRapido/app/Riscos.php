@@ -10,6 +10,6 @@ class Riscos extends Model
         return $this->belongsToMany('App\Ferramenta','ferramentas_riscos');
     }
     public function medidaspreventivas(){
-        return $this->belongsToMany('App\Medidaspreventivas','riscos_medidaspreventivas');
+        return $this->belongsToMany('App\Medidaspreventivas','riscos_medidaspreventivas','risco_id','medidapreventiva_id');
     }
 }

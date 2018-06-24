@@ -6,8 +6,8 @@
 	    <h1><p class="font-weight-bold">ID: {{$medidasPreventivas->id}} <br>
 	    ITEM: {{$medidasPreventivas->medidapreventiva}} </p></h1><br>
 	    <div class="float-right">
-		    <a href="/medidasPreventivas/{{$medidasPreventivas->id}}/edit" class="btn btn-success mt-2">Editar</a>
-		    {!!Form::open(['action' => ['medidasPreventivasController@destroy', $medidasPreventivas->id], 'method', 'post', 'class' => 'mt-2'])!!}
+		    <a href="/medidaPreventiva/{{$medidasPreventivas->id}}/edit" class="btn btn-success mt-2">Editar</a>
+		    {!!Form::open(['action' => ['MedidaPreventivaController@destroy', $medidasPreventivas->id], 'method', 'post', 'class' => 'mt-2'])!!}
 		        {{Form::hidden('_method', 'DELETE')}}
 		        {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
 		    {!!Form::close()!!}

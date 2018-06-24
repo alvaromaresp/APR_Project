@@ -5,7 +5,6 @@
     @include('inc.messages')
 
 
-    @if(count($riscos) > 0)
     <div class="mt-5 ml-5 mr-5 mb-5">
     	<h1>Riscos
     	<a href="/riscos/create" class="btn btn-secondary float-right mt-2 mb-3">Criar Novo</a></h1>
@@ -20,7 +19,6 @@
         @endforeach
     </div>
 
-    <div class="float-right">{{$riscos->link()}}</div>
-    @endif
+    <div class="float-right">{{$riscos->links()}}</div>
 
 @endsection

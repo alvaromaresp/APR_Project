@@ -15,7 +15,7 @@ class MedidaPreventivaController extends Controller
      */
     public function index()
     {
-        $medidasPreventivas = Medidaspreventivas::all();
+        $medidasPreventivas = Medidaspreventivas::orderBy('medidapreventiva', 'asc')->paginate(5);
         return view('medidasPreventivas.index')->with('medidasPreventivas',$medidasPreventivas);
     }
 

@@ -12,14 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('menu');
 });
 
 Route::resource('atividade','AtividadeController');
 
-Route::resource('empresa', 'empresaController');
+//Route::resource('empresa', 'empresaController');
 
 Route::resource('medidaPreventiva','MedidaPreventivaController');
+
+Route::resource('riscos', 'RiscosController');
+
+Route::post('riscos/associate/{id}', 'RiscosController@associate');
+Route::post('riscos/desassociate/{id}', 'RiscosController@desassociate');
 
 Auth::routes();
 
