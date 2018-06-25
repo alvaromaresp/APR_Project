@@ -2,11 +2,12 @@
 
 @section('content')
 
-    {!! Form::open(['action' => ['empresaController@update', $empresa->id ], 'method' => 'post']) !!}
+    {!! Form::open(['action' => ['SesmtController@update', $sesmt->id ], 'method' => 'post']) !!}
             
         <div class="form-group mt-5 ml-5 mr-5 mb-5">
-            <h2> {{Form::label('empresa', 'Editar Empresa')}} </h2>	
-            {{Form::text('empresa', $empresa->empresa, ['class' => 'form-control', 'placeholder' => 'Empresa'])}}
+            <h2> {{Form::label('nome', 'Editar Empresa')}} </h2>	
+            {{Form::text('nome', $sesmt->nome, ['class' => 'form-control', 'placeholder' => 'Nome'])}}
+            {{Form::text('telefone', $sesmt->telefone, ['class' => 'form-control', 'placeholder' => 'Telefone'])}}
 
 		        {{Form::hidden('_method', 'PUT')}}
 
