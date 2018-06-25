@@ -6,7 +6,7 @@
 
 
     <div class="mt-5 ml-5 mr-5 mb-5">
-    	<h1>Empresa
+    	<h1>Sesmt
     	<a href="/sesmt/create" class="btn btn-secondary float-right mt-2 mb-3">Criar Nova</a></h1>
     	<div class="input-group mb-4">
 		  <input type="text" class="form-control">

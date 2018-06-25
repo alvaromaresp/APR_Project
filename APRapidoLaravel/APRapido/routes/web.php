@@ -35,6 +35,8 @@ Route::resource('checklist', 'CheckListController');
 
 Route::resource('area', 'AreaController');
 
+Route::resource('sesmt', 'SesmtController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
