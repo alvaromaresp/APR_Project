@@ -37,6 +37,10 @@ Route::resource('area', 'AreaController');
 
 Route::resource('sesmt', 'SesmtController');
 
+Route::resource('coordena', 'CoordenaController');
+
+Route::resource('empresa', 'EmpresaController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
