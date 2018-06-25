@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Ferramenta extends Model
 {
 
-    protected $table = 'ferramenta';
-
     public function atividades(){
         return $this->belongsToMany('App\Atividades','atividade_ferramenta');
     }

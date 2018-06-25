@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Disciplina extends Model
 {
 
-    protected $table = 'disciplina';
-
     public function atividades(){
         return $this->hasMany('App\Atividade');
     }
