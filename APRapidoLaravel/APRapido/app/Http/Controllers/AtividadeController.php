@@ -93,7 +93,7 @@ class AtividadeController extends Controller
             'atividade' => $atividade,
             'ferramenta' => $ferramenta,
             'disciplina' => $disciplina,
-            'empresa' => $empresa
+            'empresa' => $empresa,
             'apr' => $apr
         );
 
@@ -152,7 +152,7 @@ class AtividadeController extends Controller
         );
 
         return view('atividade.associate')->with('data', $data);
-
+    }
      /**
      * @return \Illuminate\Http\Response
      */
@@ -193,7 +193,7 @@ class AtividadeController extends Controller
          * @param Request $request
          * @param $atividade
          */
-    public function desassociate(Request $request, $atividade){
+    public function desassociate(Request $request, $id){
 
         $atividade = Atividade::find($id);
         $atividade->ferramenta()->deattach($request->input('ferramenta'));
