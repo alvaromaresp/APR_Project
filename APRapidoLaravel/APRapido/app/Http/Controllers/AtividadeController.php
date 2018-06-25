@@ -28,9 +28,9 @@ class AtividadeController extends Controller
     {
 
 
-        $atividades = Atividade::ordeBy('atividade_apr', 'desc')->paginate(5);
+        $atividades = Atividade::orderBy('atividade_apr', 'desc')->paginate(5);
 
-        return view('atividade.index', ['atividade' => $atividades]);
+        return view('atividade.index')->with('atividades', $atividades);
 
 
     }

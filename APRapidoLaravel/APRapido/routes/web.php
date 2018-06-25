@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('menu');
 });
 
-Route::resource('atividade','AtividadeController');
+Route::resource('atividades','AtividadeController');
 
 Route::resource('medidaPreventiva','MedidaPreventivaController');
 
