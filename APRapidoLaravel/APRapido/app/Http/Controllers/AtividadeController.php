@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Disciplina;
+use App\Empresa;
+use App\Ferramenta;
 use Illuminate\Http\Request;
 use App\Apr;
 use App\Atividade;
@@ -25,26 +28,10 @@ class AtividadeController extends Controller
     {
 
 
-        $atividades = Atividade::ordeBy('atividade_apr', 'desc')->paginate(10);
+        $atividades = Atividade::ordeBy('atividade_apr', 'desc')->paginate(5);
 
         return view('atividade.index', ['atividade' => $atividades]);
 
-        //echo 'oi';
-        //$atividade = Atividade::orderBy('id','desc');
-        /*
-        $apr = Apr::find(1);
-
-        foreach ($apr->atividades as $atv){
-            echo 'aqui -> '.$atv->id;
-        }
-
-        $atividade = Atividade::find(1);
-        foreach($atividade->aprs as $atv){
-            echo ' 2 -> '.$atv->id;
-        }
-
-        return '';
-        */
 
     }
 
@@ -55,7 +42,7 @@ class AtividadeController extends Controller
      */
     public function create()
     {
-        // return view('atividade.blade.php');
+        return view('atividade.create');
     }
 
     /**
@@ -66,7 +53,26 @@ class AtividadeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,['atividades'=>'required']);
+        $atividade = new Atividade;
+        $atividade->atividade = $request->input('atividade');
+        $atividade->empresa_id = $request->input('empresa');
+        $atividade->disciplina_id = $request->input('disciplina');
+        $atividade->apr_id = $$request->input('apr_id');
+
+        $atividade->save();
+
+        $ferramentas = Ferramenta::all();
+
+
+
+        $data = array(
+
+            'atividade' => $atividade,
+            'ferramentas' => $ferramentas
+        );
+
+        return view('atividade.associate')->with('data', $data);
     }
 
     /**
@@ -77,7 +83,17 @@ class AtividadeController extends Controller
      */
     public function show($id)
     {
-        //
+        $atividade = Atividade::find($id);
+        $empresa = Empresa::find($atividade->empresa_id);
+        $disciplina = Disciplina::find($atividade->disciplina_id);
+        $ferramentas = $atividade->Ferramentas;
+
+        $data = array(
+            'atividade' => $atividade,
+            'ferramentas' => $ferramentas
+        );
+
+        return view('atividade.show')->with('data', $data);
     }
 
     /**
@@ -88,7 +104,17 @@ class AtividadeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $atividade = Atividade::find($id);
+        $empresa = Empresa::find($atividade->empresa_id);
+        $disciplina = Disciplina::find($atividade->disciplina_id);
+        $ferramentas = $atividade->Ferramentas;
+
+        $data = array(
+            'atividade' => $atividade,
+            'ferramentas' => $ferramentas
+        );
+
+        return view('atividade.show')->with('data', $data);
     }
 
     /**
