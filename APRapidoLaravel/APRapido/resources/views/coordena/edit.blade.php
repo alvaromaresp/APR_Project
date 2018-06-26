@@ -2,11 +2,11 @@
 
 @section('content')
 
-    {!! Form::open(['action' => ['coordenaController@update', $idcoordena->id ], 'method' => 'post']) !!}
+    {!! Form::open(['action' => ['CoordenaController@update', $coordena->id ], 'method' => 'post']) !!}
             
         <div class="form-group mt-5 ml-5 mr-5 mb-5">
             <h2> {{Form::label('nome', 'Editar Coordenador')}} </h2>	
-            {{Form::text('nome', $idcoordena->nome, ['class' => 'form-control', 'placeholder' => 'Coordenador'])}}
+            {{Form::text('nome', $coordena->nome, ['class' => 'form-control', 'placeholder' => 'Coordenador'])}}
             {{Form::text('telefone', $idcoordena->telefone, ['class' => 'form-control', 'placeholder' => 'Telefone'])}}
 		        {{Form::hidden('_method', 'PUT')}}
 
