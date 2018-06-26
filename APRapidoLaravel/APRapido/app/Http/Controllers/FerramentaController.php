@@ -164,7 +164,7 @@ class FerramentaController extends Controller
     public function desassociate(Request $request, $ferramenta){
 
         $ferramenta = Ferramenta::find($ferramenta);
-        $ferramenta->riscos()->detach($request->input('mp'));
+        $ferramenta->riscos()->dettach($request->input('risco'));
 
         $riscos = Riscos::all();
 
