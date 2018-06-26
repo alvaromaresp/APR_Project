@@ -18,6 +18,20 @@ class CheckListController extends Controller
         return view('checklist.index')->with('checklist',$checklist);
     }
 
+
+    public function search(Request $request){
+
+        $checklists = Checklist::where([
+            ['item', 'LIKE', '%' . $request->input('search') . '%']
+        ])->paginate(5);
+
+        return view('checklist.index')->with('checklist',$checklists);
+
+    }
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *
