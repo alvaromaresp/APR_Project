@@ -29,6 +29,7 @@ Route::post('ferramenta/desassociate/{id}', 'FerramentaController@desassociate')
 
 Route::resource('disciplina', 'DisciplinaController');
 
+
 Route::resource('naturezaRiscos', 'naturezaRiscosController');
 
 Route::resource('checklist', 'CheckListController');
