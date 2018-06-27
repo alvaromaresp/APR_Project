@@ -33,6 +33,7 @@ Route::resource('disciplina', 'DisciplinaController');
 Route::resource('naturezaRiscos', 'naturezaRiscosController');
 
 Route::resource('checklist', 'CheckListController');
+Route::post('/checklist/search','CheckListController@search');
 
 Route::resource('area', 'AreaController');
 
