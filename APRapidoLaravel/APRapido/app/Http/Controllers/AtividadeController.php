@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Disciplina;
+use App\Empresa;
+use App\Ferramenta;
 use Illuminate\Http\Request;
 use App\Apr;
 use App\Atividade;
@@ -13,7 +16,7 @@ class AtividadeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -25,26 +28,10 @@ class AtividadeController extends Controller
     {
 
 
-        $atividades = Atividade::ordeBy('atividade_apr', 'desc')->paginate(10);
+        $atividades = Atividade::orderBy('atividade_apr', 'desc')->paginate(5);
 
-        return view('atividade.index', ['atividade' => $atividades]);
+        return view('atividade.index')->with('atividades', $atividades);
 
-        //echo 'oi';
-        //$atividade = Atividade::orderBy('id','desc');
-        /*
-        $apr = Apr::find(1);
-
-        foreach ($apr->atividades as $atv){
-            echo 'aqui -> '.$atv->id;
-        }
-
-        $atividade = Atividade::find(1);
-        foreach($atividade->aprs as $atv){
-            echo ' 2 -> '.$atv->id;
-        }
-
-        return '';
-        */
 
     }
 
@@ -55,7 +42,7 @@ class AtividadeController extends Controller
      */
     public function create()
     {
-        // return view('atividade.blade.php');
+        return view('atividade.create');
     }
 
     /**
@@ -66,7 +53,26 @@ class AtividadeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,['atividades'=>'required']);
+        $atividade = new Atividade;
+        $atividade->atividade = $request->input('atividade');
+        $atividade->empresa_id = $request->input('empresa');
+        $atividade->disciplina_id = $request->input('disciplina');
+        $atividade->apr_id = $request->input('apr_id');
+
+        $atividade->save();
+
+        $ferramentas = Ferramenta::all();
+
+
+
+        $data = array(
+
+            'atividade' => $atividade,
+            'ferramentas' => $ferramentas
+        );
+
+        return view('atividade.associate')->with('data', $data);
     }
 
     /**
@@ -77,7 +83,21 @@ class AtividadeController extends Controller
      */
     public function show($id)
     {
-        //
+        $atividade = Atividade::find($id);
+        $empresa = Empresa::find($atividade->empresa_id);
+        $disciplina = Disciplina::find($atividade->disciplina_id);
+        $ferramenta = $atividade->Ferramentas;
+        $apr = $atividade->apr_id;
+
+        $data = array(
+            'atividade' => $atividade,
+            'ferramenta' => $ferramenta,
+            'disciplina' => $disciplina,
+            'empresa' => $empresa,
+            'apr' => $apr
+        );
+
+        return view('atividade.show')->with('data', $data);
     }
 
     /**
@@ -88,7 +108,21 @@ class AtividadeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $atividade = Atividade::find($id);
+        $empresa = $atividade->empresa_id;
+        $disciplina = $atividade->disciplina_id;
+        $ferramentas = Ferramenta::all();
+        $apr = $atividade->apr_id;
+
+        $data = array(
+            'atividade' => $atividade,
+            'ferramenta' => $ferramentas,
+            'empresa' => $empresa,
+            'disciplina' => $disciplina,
+            'apr' => $apr
+        );
+
+        return view('atividade.edit')->with('data', $data);
     }
 
     /**
@@ -100,17 +134,94 @@ class AtividadeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
+        $this->validate($request, ['atividade' => 'required']);
+
+        $atividade = Atividade::find($id);
+        $atividade->empresa_id = $request->input('empresa_id');
+        $atividade->disciplina_id = $request->input('disciplina_id');
+        $atividade->apr_id = $request->input('apr_id');
+
+        $atividade->save();
+
+        $ferramenta = Ferramenta::all();
+
+        $data = array(
+            'atividade' => $atividade,
+            'ferramenta' => $ferramenta
+        );
+
+        return view('atividade.associate')->with('data', $data);
+    }
+     /**
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $atividade = Atividade::find($id);
+        $atividade->destroy();
+
+        $atividades = Atividade::ordeBy('atividade_apr', 'desc')->paginate(5);
+
+        return view('atividade.index')->with('atividade', $atividade);
     }
+
+        /**
+         * Associate Atividades to Request
+         * @param Request $request
+         * @param $id
+         */
+    public function associate(Request $request, $id){
+
+        $atividade = Atividade::find($id);
+        $atividade->ferramenta()->attach($request->input('ferramenta'));
+
+        $ferramenta = Ferramenta::all();
+
+        $data = array(
+
+            'atividade' => $atividade,
+            'ferramenta' => $ferramenta
+        );
+
+        return view('atividade.associate')->with('data', $data);
+
+    }
+
+
+        /**
+         * @param Request $request
+         * @param $atividade
+         */
+    public function desassociate(Request $request, $id){
+
+        $atividade = Atividade::find($id);
+        $atividade->ferramenta()->deattach($request->input('ferramenta'));
+
+        $ferramenta = Ferramenta::all();
+
+        $data = array(
+
+            'atividade' => $atividade,
+            'ferramenta' => $ferramenta
+        );
+
+        return view('atividade.associate')->with('data', $data);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
