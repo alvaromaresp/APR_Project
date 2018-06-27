@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('menu');
 });
 
-Route::resource('atividade','AtividadeController');
+Route::resource('atividades','AtividadeController');
 
 Route::resource('medidaPreventiva','MedidaPreventivaController');
 
@@ -35,6 +35,12 @@ Route::resource('naturezaRiscos', 'naturezaRiscosController');
 Route::resource('checklist', 'CheckListController');
 
 Route::resource('area', 'AreaController');
+
+Route::resource('sesmt', 'SesmtController');
+
+Route::resource('coordena', 'CoordenaController');
+
+Route::resource('empresa', 'EmpresaController');
 
 Auth::routes();
 
