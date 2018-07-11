@@ -1,6 +1,7 @@
 <DOCTYPE html>
     <html>
         <head>
+
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
             <script
@@ -119,7 +120,7 @@
                     <div class="col-lg-3 col-md-12 col-sm-12">
                         <div class="row">
                             <div class="col">
-                                <img src="img/logo.png" width="250">
+                                <img src="/img/logo.png" width="250">
                             </div>
                         </div>
                         <div class="row">

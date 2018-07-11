@@ -12,9 +12,19 @@ class CoordenaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function search(Request $request){
+
+        $coordenas = Coordena::where([
+            ['nome', 'LIKE', '%' . $request->input('search') . '%']
+        ])->paginate(5);
+
+        return view('coordena.index')->with('coordena',$coordenas);
+
+    }
+
     public function index()
     {
-        $coordena = Coordena::orderBy('coordena', 'asc')->paginate(5);
+        $coordena = Coordena::orderBy('nome', 'asc')->paginate(5);
         return view('coordena.index')->with('coordena',$coordena);
     }
 
