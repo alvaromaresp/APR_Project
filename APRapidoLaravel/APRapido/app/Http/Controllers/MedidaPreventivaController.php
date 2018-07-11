@@ -19,6 +19,16 @@ class MedidaPreventivaController extends Controller
         return view('medidasPreventivas.index')->with('medidasPreventivas',$medidasPreventivas);
     }
 
+    public function search(Request $request){
+
+        $medidasPreventivas = Medidaspreventivas::where([
+            ['medidapreventiva', 'LIKE', '%' . $request->input('search') . '%']
+        ])->paginate(5);
+
+        return view('medidasPreventivas.index')->with('medidasPreventivas',$medidasPreventivas);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

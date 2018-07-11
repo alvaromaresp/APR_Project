@@ -8,12 +8,14 @@
     <div class="mt-5 ml-5 mr-5 mb-5">
     	<h1>Empresa
     	<a href="/empresa/create" class="btn btn-secondary float-right mt-2 mb-3">Criar Nova</a></h1>
-    	<div class="input-group mb-4">
-		  <input type="text" class="form-control">
+		{!! Form::open(['action' => 'EmpresaController@search', 'method' => 'post']) !!}
+		<div class="input-group mb-4">
+		  <input type="text" class="form-control" name="search" id="search">
 		  <div class="input-group-append">
-		    <button class="btn btn-secondary" type="button">Buscar</button>
+		    <button class="btn btn-secondary" type="submit">Buscar</button>
 		  </div>
 		</div>
+		{!! Form::close() !!}
         @foreach($empresa as $emp)
             <h3><a href="/empresa/{{$emp->id}}"> {{$emp->empresa}} </a></h3> <br>
         @endforeach

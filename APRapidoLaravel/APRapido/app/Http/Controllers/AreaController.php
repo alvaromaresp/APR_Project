@@ -98,4 +98,13 @@ class AreaController extends Controller
 
         return redirect('/area')->with('danger','Removido com sucesso!');
     }
+    public function search(Request $request){
+
+        $areas =  Area::where([
+            ['nome', 'LIKE', '%' . $request->input('search') . '%']
+        ])->paginate(5);
+
+        return view('area.index')->with('area',$areas);
+
+    }
 }

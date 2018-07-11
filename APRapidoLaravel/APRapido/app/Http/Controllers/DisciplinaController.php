@@ -18,6 +18,16 @@ class DisciplinaController extends Controller
         return view('disciplina.index')->with('disciplina',$disciplina);
     }
 
+    public function search(Request $request){
+
+        $disciplinas = Disciplina::where([
+            ['disciplina', 'LIKE', '%' . $request->input('search') . '%']
+        ])->paginate(5);
+
+        return view('disciplina.index')->with('disciplina',$disciplinas);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

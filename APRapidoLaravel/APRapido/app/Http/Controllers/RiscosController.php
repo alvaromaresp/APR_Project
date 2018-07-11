@@ -20,6 +20,16 @@ class RiscosController extends Controller
         return view('riscos.index')->with('riscos',$riscos);
     }
 
+    public function search(Request $request){
+
+        $riscos = Riscos::where([
+            ['risco', 'LIKE', '%' . $request->input('search') . '%']
+        ])->paginate(5);
+
+        return view('riscos.index')->with('riscos',$riscos);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

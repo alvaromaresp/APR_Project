@@ -18,6 +18,16 @@ class EmpresaController extends Controller
         return view('empresa.index')->with('empresa',$empresa);
     }
 
+    public function search(Request $request){
+
+        $coordenas = Empresa::where([
+            ['empresa', 'LIKE', '%' . $request->input('search') . '%']
+        ])->paginate(5);
+
+        return view('empresa.index')->with('empresa',$coordenas);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -14,9 +14,19 @@ class SesmtController extends Controller
      */
     public function index()
     {
-        $sesmt = Sesmt::orderBy('sesmt', 'asc')->paginate(5);
+        $sesmt = Sesmt::orderBy('nome', 'asc')->paginate(5);
         return view('sesmt.index')->with('sesmt',$sesmt);
     }
+    public function search(Request $request){
+
+        $sesmts = Sesmt::where([
+            ['nome', 'LIKE', '%' . $request->input('search') . '%']
+        ])->paginate(5);
+
+        return view('sesmt.index')->with('sesmt',$sesmts);
+
+    }
+
 
     /**
      * Show the form for creating a new resource.
