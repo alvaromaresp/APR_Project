@@ -28,7 +28,7 @@ class AtividadeController extends Controller
     {
 
 
-        $atividades = Atividade::orderBy('atividade_apr', 'desc')->paginate(5);
+        $atividades = Atividade::orderBy('atividade', 'desc')->paginate(5);
 
         return view('atividade.index')->with('atividades', $atividades);
 
@@ -42,7 +42,14 @@ class AtividadeController extends Controller
      */
     public function create()
     {
-        return view('atividade.create');
+        $emp = Empresa::all();
+        $dis = Disciplina::all();
+
+        $data = array(
+            'empresa' => $emp,
+            'disciplina' => $dis
+        );
+        return view('atividade.create')->with('data', $data);
     }
 
     /**
@@ -53,18 +60,15 @@ class AtividadeController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,['atividades'=>'required']);
+        $this->validate($request,['atividade'=>'required']);
         $atividade = new Atividade;
         $atividade->atividade = $request->input('atividade');
         $atividade->empresa_id = $request->input('empresa');
         $atividade->disciplina_id = $request->input('disciplina');
-        $atividade->apr_id = $request->input('apr_id');
-
+        $atividade->data = date("Y-m-d H:i:s");
         $atividade->save();
 
         $ferramentas = Ferramenta::all();
-
-
 
         $data = array(
 
@@ -87,14 +91,12 @@ class AtividadeController extends Controller
         $empresa = Empresa::find($atividade->empresa_id);
         $disciplina = Disciplina::find($atividade->disciplina_id);
         $ferramenta = $atividade->Ferramentas;
-        $apr = $atividade->apr_id;
 
         $data = array(
             'atividade' => $atividade,
             'ferramenta' => $ferramenta,
             'disciplina' => $disciplina,
-            'empresa' => $empresa,
-            'apr' => $apr
+            'empresa' => $empresa
         );
 
         return view('atividade.show')->with('data', $data);

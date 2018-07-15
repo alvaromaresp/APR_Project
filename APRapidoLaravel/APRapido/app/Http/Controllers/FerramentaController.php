@@ -65,7 +65,7 @@ class FerramentaController extends Controller
     public function show($id)
     {
         $ferramenta = Ferramenta::find($id);
-        $riscos = Riscos::all();
+        $riscos = $ferramenta->riscos;
 
         $data = array(
             'ferramenta' => $ferramenta,
