@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::resource('atividades','AtividadeController');
+Route::post('atividades/associate/{id}', 'AtividadeController@associate');
+Route::post('atividades/desassociate/{id}', 'AtividadeController@desassociate');
 
 Route::resource('medidaPreventiva','MedidaPreventivaController');
 

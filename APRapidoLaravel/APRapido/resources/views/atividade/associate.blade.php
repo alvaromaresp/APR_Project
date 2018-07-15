@@ -2,7 +2,7 @@
 
 @section('content')
 
-{!! Form::open(['action' => 'riscosController@associate', 'method' => 'post']) !!}
+{!! Form::open(['action' => 'AtividadeController@associate', 'method' => 'post']) !!}
         <div class="form-group mt-5 ml-5 mr-5 mb-5">
             <h2> {{Form::label('medidaPreventiva', 'Associar Medida Preventiva')}} </h2>
             {{Form::select('medidaPreventiva', ['l'->'large'], ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Medida Preventiva'])}}

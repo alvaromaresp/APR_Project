@@ -3,10 +3,11 @@
 
 @section('content')
 	<div class="mt-5 ml-5 mr-5 mb-5">
-	    <h1><p class="font-weight-bold">ID: {{$riscos->id}} <br>
-		ITEM: {{$riscos->risco}} 
-		MEDIDAS PREVENTIVAS 
-		@foreach($riscos->riscos_medidaspreventivas as $mp)
+	    <h1><p class="font-weight-bold">ID: {{$data['atividade']->id}} <br>
+		ITEM: {{$data['atividade']->atividade}} <br>
+		EMPRESA: {{$data['empresa']->empresa}} <br>
+		DISCIPLINA: {{$data['disciplina']->disciplina}} <br>
+		@foreach($data['ferramenta']->riscos_medidaspreventivas as $mp)
 			<li>{{$riscos->medidas_}}</li>
 		@endforeach
 		</p></h1><br>
