@@ -2,18 +2,20 @@
 
 @section('content')
     
-    @include('inc.messages') 
+    @include('inc.messages')
 
 
     <div class="mt-5 ml-5 mr-5">
     	<h1>Area
     	<a href="/area/create" class="btn btn-secondary float-right mt-2 mb-3">Criar Nova</a></h1>
-    	<div class="input-group mb-4">
-		  <input type="text" class="form-control">
+		{!! Form::open(['action' => 'AreaController@search', 'method' => 'post']) !!}
+		<div class="input-group mb-4">
+		  <input type="text" class="form-control" name="search" id="search"/>
 		  <div class="input-group-append">
-		    <button class="btn btn-secondary" type="button">Buscar</button>
+		    <button class="btn btn-secondary" type="submit">Buscar</button>
 		  </div>
 		</div>
+		{!! Form::close() !!}
         @foreach($area as $n)
             <h3><a href="/area/{{$n->id}}"> {{$n->nome}} </a></h3> <br>
         @endforeach

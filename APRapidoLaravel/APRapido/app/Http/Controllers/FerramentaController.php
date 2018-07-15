@@ -20,6 +20,16 @@ class FerramentaController extends Controller
         return view('ferramenta.index')->with('ferramenta',$ferramenta);
     }
 
+    public function search(Request $request){
+
+        $ferramentas = Ferramenta::where([
+            ['ferramenta', 'LIKE', '%' . $request->input('search') . '%']
+        ])->paginate(5);
+
+        return view('ferramenta.index')->with('ferramenta',$ferramentas);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
