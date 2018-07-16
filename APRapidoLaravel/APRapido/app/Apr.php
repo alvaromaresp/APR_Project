@@ -13,7 +13,7 @@ class Apr extends Model
         return $this->belongsToMany('App\Naturezariscos','apr_naturezariscos');
     }
     public function checklists(){
-        return $this->belongsToMany('App\Checklist','apr_checklist');
+        return $this->belongsToMany('App\Checklist','apr_checklists')->withPivot('checado');
     }
     public function empresa(){
         return $this->belongsTo('App\Empresa');
@@ -29,8 +29,5 @@ class Apr extends Model
     }
     public function area(){
         return $this->belongsTo('App\Area');
-    }
-    public function apr_checklists(){
-        return $this->hasMany('App\Apr_checklist');
     }
 }

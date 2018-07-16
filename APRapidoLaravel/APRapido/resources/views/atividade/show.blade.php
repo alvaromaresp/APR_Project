@@ -7,13 +7,13 @@
 		ITEM: {{$data['atividade']->atividade}} <br>
 		EMPRESA: {{$data['empresa']->empresa}} <br>
 		DISCIPLINA: {{$data['disciplina']->disciplina}} <br>
-		@foreach($data['ferramenta']->riscos_medidaspreventivas as $mp)
-			<li>{{$riscos->medidas_}}</li>
+		@foreach($data['ferramenta'] as $fer)
+			<li>{{$fer->ferramenta}}</li>
 		@endforeach
 		</p></h1><br>
 	    <div class="float-right">
-		    <a href="/riscos/{{$riscos->id}}/edit" class="btn btn-success mt-2">Editar</a>
-		    {!!Form::open(['action' => ['riscosController@destroy', $riscos->id], 'method', 'post', 'class' => 'mt-2'])!!}
+		    <a href="/atividades/{{$data['atividade']->id}}/edit" class="btn btn-success mt-2">Editar</a>
+		    {!!Form::open(['action' => ['AtividadeController@destroy', $data['atividade']->id], 'method', 'post', 'class' => 'mt-2'])!!}
 		        {{Form::hidden('_method', 'DELETE')}}
 		        {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
 		    {!!Form::close()!!}

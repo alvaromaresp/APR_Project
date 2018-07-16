@@ -35,7 +35,6 @@ Route::post('ferramenta/desassociate/{id}', 'FerramentaController@desassociate')
 Route::resource('disciplina', 'DisciplinaController');
 Route::post('/disciplina/search','DisciplinaController@search');
 
-
 Route::resource('naturezaRiscos', 'naturezaRiscosController');
 
 Route::resource('checklist', 'CheckListController');
@@ -52,6 +51,16 @@ Route::post('/coordena/search','CoordenaController@search');
 
 Route::resource('empresa', 'EmpresaController');
 Route::post('/empresa/search','EmpresaController@search');
+
+Route::resource('apr', 'AprController');
+Route::post('apr/associateAtividade/{id}', 'AprController@associateAtividade');
+Route::post('apr/desassociateAtividade/{id}', 'AprController@desassociateAtividade');
+Route::post('apr/associateChecklist/{id}', 'AprController@associateChecklist');
+Route::post('apr/desassociateChecklist/{id}', 'AprController@desassociateChecklist');
+Route::post('apr/associateNaturezariscos/{id}', 'AprController@associateNaturezariscos');
+Route::post('apr/desassociateNaturezariscos/{id}', 'AprController@desassociateNaturezariscos');
+Route::post('apr/associateNaturezariscosCall/{id}', 'AprController@associateNaturezariscosCall');
+Route::post('apr/associateChecklistCall/{id}', 'AprController@associateChecklistCall');
 
 Auth::routes();
 

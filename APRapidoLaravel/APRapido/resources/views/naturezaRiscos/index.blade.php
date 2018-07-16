@@ -5,7 +5,6 @@
     @include('inc.messages')
 
 
-    @if(count($nr) > 0)
     <div class="mt-5 ml-5 mr-5">
     	<h1>Naturezas de Risco
     	<a href="/naturezaRiscos/create" class="btn btn-secondary float-right mt-2 mb-3">Criar Nova</a></h1>
@@ -22,6 +21,5 @@
     <div class="float-right">
    		{{$nr->links()}}
    	</div>
-    @endif
 
 @endsection
