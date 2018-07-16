@@ -71,7 +71,6 @@ class AtividadeController extends Controller
         $ferramentas = Ferramenta::all();
 
         $data = array(
-
             'atividade' => $atividade,
             'ferramentas' => $ferramentas
         );
@@ -111,17 +110,13 @@ class AtividadeController extends Controller
     public function edit($id)
     {
         $atividade = Atividade::find($id);
-        $empresa = $atividade->empresa_id;
-        $disciplina = $atividade->disciplina_id;
-        $ferramentas = Ferramenta::all();
-        $apr = $atividade->apr_id;
+        $empresa = Empresa::all();
+        $disciplina = Disciplina::all();
 
         $data = array(
             'atividade' => $atividade,
-            'ferramenta' => $ferramentas,
             'empresa' => $empresa,
             'disciplina' => $disciplina,
-            'apr' => $apr
         );
 
         return view('atividade.edit')->with('data', $data);
@@ -140,9 +135,9 @@ class AtividadeController extends Controller
         $this->validate($request, ['atividade' => 'required']);
 
         $atividade = Atividade::find($id);
-        $atividade->empresa_id = $request->input('empresa_id');
-        $atividade->disciplina_id = $request->input('disciplina_id');
-        $atividade->apr_id = $request->input('apr_id');
+        $atividade->atividade = $request->input('atividade');
+        $atividade->empresa_id = $request->input('empresa');
+        $atividade->disciplina_id = $request->input('disciplina');
 
         $atividade->save();
 
@@ -150,7 +145,7 @@ class AtividadeController extends Controller
 
         $data = array(
             'atividade' => $atividade,
-            'ferramenta' => $ferramenta
+            'ferramentas' => $ferramenta
         );
 
         return view('atividade.associate')->with('data', $data);
@@ -161,11 +156,11 @@ class AtividadeController extends Controller
     public function destroy($id)
     {
         $atividade = Atividade::find($id);
-        $atividade->destroy();
+        $atividade->delete();
 
-        $atividades = Atividade::ordeBy('atividade_apr', 'desc')->paginate(5);
+        $atividades = Atividade::orderBy('atividade', 'desc')->paginate(5);
 
-        return view('atividade.index')->with('atividade', $atividade);
+        return view('atividade.index')->with('atividades', $atividades);
     }
 
         /**
@@ -176,14 +171,14 @@ class AtividadeController extends Controller
     public function associate(Request $request, $id){
 
         $atividade = Atividade::find($id);
-        $atividade->ferramenta()->attach($request->input('ferramenta'));
+        $atividade->ferramentas()->attach($request->input('ferramenta'));
 
         $ferramenta = Ferramenta::all();
 
         $data = array(
 
             'atividade' => $atividade,
-            'ferramenta' => $ferramenta
+            'ferramentas' => $ferramenta
         );
 
         return view('atividade.associate')->with('data', $data);
@@ -198,14 +193,14 @@ class AtividadeController extends Controller
     public function desassociate(Request $request, $id){
 
         $atividade = Atividade::find($id);
-        $atividade->ferramenta()->deattach($request->input('ferramenta'));
+        $atividade->ferramentas()->detach($request->input('ferramenta'));
 
         $ferramenta = Ferramenta::all();
 
         $data = array(
 
             'atividade' => $atividade,
-            'ferramenta' => $ferramenta
+            'ferramentas' => $ferramenta
         );
 
         return view('atividade.associate')->with('data', $data);

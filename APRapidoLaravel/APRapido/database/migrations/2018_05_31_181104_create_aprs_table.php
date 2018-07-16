@@ -17,7 +17,7 @@ class CreateAprsTable extends Migration
             $table->increments('id');
             $table->date('data');
             $table->string('nome',200);
-            $table->string('celular',200);
+            $table->string('celula',200);
             $table->string('telr',200);
             $table->timestamps();
 
