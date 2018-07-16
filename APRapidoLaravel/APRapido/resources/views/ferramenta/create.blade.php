@@ -18,7 +18,7 @@
                 ?>
             @endforeach
 
-            {{Form::select('disciplina', $dis)}}
+            {{Form::select('disciplina', $dis, ['class' => 'custom-select'])}} <br>
    			{{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
    		</div>
     {!! Form::close() !!}
