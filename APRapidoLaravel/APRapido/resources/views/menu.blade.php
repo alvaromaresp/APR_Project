@@ -3,51 +3,51 @@
 @section('content')
 
     <div class="row mb-2 mt-5">
-        <div class="col-lg-6 mb-2" align="center">
-            <div class="btn btn-primary">
+        <div class="col-lg-6 mb-5 mt-5" align="center">
+            <a href="/apr/create" class="btn btn-primary">
                 Criar APR
-            </div>
+            </a>
         </div>
-        <div class="col-lg-6" align="center">
-            <div class="btn btn-primary">
+        <div class="col-lg-6 mb-5 mt-5" align="center">
+            <a href="/ferramenta/create" class="btn btn-primary">
                 Cadastro Ferramentas
-            </div>
+            </a>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6 mb-2 mt-2" align="center">
+        <div class="col-lg-6 mb-5" align="center">
             <div class="btn btn-primary">
                 Visualizar APRs
             </div>
         </div>
-        <div class="col-lg-6 mb-2 mt-2" align="center">
-            <div class="btn btn-primary">
+        <div class="col-lg-6 mb-5" align="center">
+            <a href="/riscos/create" class="btn btn-primary">
                 Cadastro Riscos
-            </div>
+            </a>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6 mb-2 mt-2" align="center">
-            <div class="btn btn-primary">
-                Editar APR
-            </div>
+        <div class="col-lg-6 mb-5" align="center">
+            <a href="/menuEditar" class="btn btn-primary">
+                Editar Informações
+            </a>
         </div>
-        <div class="col-lg-6 mb-2 mt-2" align="center">
-            <div class="btn btn-primary">
+        <div class="col-lg-6 mb-5" align="center">
+            <a href="/medidaPreventiva/create" class="btn btn-primary">
                 Cadastro MP
-            </div>
+            </a>
         </div>
     </div>
     <div class="row">
-            <div class="col-lg-6 mb-2 mt-2" align="center">
+            <div class="col-lg-6 mb-5" align="center">
                 <div class="btn btn-primary">
                     Registro de Impressão
                 </div>
             </div>
-            <div class="col-lg-6 mb-2 mt-2" align="center">
-                <div class="btn btn-primary">
+            <div class="col-lg-6 mb-5" align="center">
+                <a href="/menuResponsavel" class="btn btn-primary">
                     Cadastro Responsável
-                </div>
+                </a>
             </div>
         </div>
 @endsection
