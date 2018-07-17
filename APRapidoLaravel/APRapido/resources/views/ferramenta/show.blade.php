@@ -12,7 +12,7 @@
 			<li>{{$ris->risco}}</li>
 
 		@endforeach
-		
+		 
 		</p></h1><br>
 	    <div class="float-right">
 		    <a href="/ferramenta/{{$data['ferramenta']->id}}/edit" class="btn btn-success mt-2">Editar</a>

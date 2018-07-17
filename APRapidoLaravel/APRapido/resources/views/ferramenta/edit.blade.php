@@ -7,7 +7,7 @@
         <div class="form-group mt-5 ml-5 mr-5 mb-5">
             <h2> {{Form::label('ferramenta', 'Editar Ferramenta')}} </h2>	
             {{Form::text('ferramenta', $data['ferramenta']->ferramenta, ['class' => 'form-control', 'placeholder' => 'Ferramenta'])}}
-
+ 
             
             <?php
                 $dis = array();
