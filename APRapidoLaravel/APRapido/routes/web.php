@@ -11,17 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('menu');
-});
-
-Route::get('/editar', function () {
-    return view('menuEditar');
-});
-
-Route::get('/responsavel', function () {
-    return view('menuResponsavel');
-});
+Route::get('/', 'pagesController@menu');
+Route::get('/responsavel', 'pagesController@menuResponsavel');
+Route::get('/editar', 'pagesController@menuEditar');
 
 Route::resource('atividades','AtividadeController');
 Route::post('atividades/associate/{id}', 'AtividadeController@associate');
