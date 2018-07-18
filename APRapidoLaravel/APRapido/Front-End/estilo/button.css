@@ -42,6 +42,7 @@
 }
 
 .btn-primary{
+    width: 10em !important;
     background-color: #00004c !important;
     border-color: #00004c !important;
 }
