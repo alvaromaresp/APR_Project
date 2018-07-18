@@ -28,7 +28,7 @@
     </div>
     <div class="row">
         <div class="col-lg-6 mb-5" align="center">
-            <a href="/menuEditar" class="btn btn-primary">
+            <a href="/editar" class="btn btn-primary">
                 Editar Informações
             </a>
         </div>
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="col-lg-6 mb-5" align="center">
-                <a href="/menuResponsavel" class="btn btn-primary">
+                <a href="/responsavel" class="btn btn-primary">
                     Cadastro Responsável
                 </a>
             </div>

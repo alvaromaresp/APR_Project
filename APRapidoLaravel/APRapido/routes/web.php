@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('menu');
 });
 
+Route::get('/editar', function () {
+    return view('menuEditar');
+});
+
+Route::get('/responsavel', function () {
+    return view('menuResponsavel');
+});
+
 Route::resource('atividades','AtividadeController');
 Route::post('atividades/associate/{id}', 'AtividadeController@associate');
 Route::post('atividades/desassociate/{id}', 'AtividadeController@desassociate');
@@ -49,7 +57,7 @@ Route::post('/sesmt/search','SesmtController@search');
 Route::resource('coordena', 'CoordenaController');
 Route::post('/coordena/search','CoordenaController@search');
 
-Route::resource('empresa', 'EmpresaController');
+Route::resource('empresa', 'EmpresaController'); 
 Route::post('/empresa/search','EmpresaController@search');
 
 Route::resource('apr', 'AprController');

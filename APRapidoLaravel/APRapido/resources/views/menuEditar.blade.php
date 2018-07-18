@@ -33,7 +33,7 @@
             </a>
         </div>
         <div class="col-lg-6 mb-5" align="center">
-            <<a href="/" class="btn btn-primary">
+            <a href="/" class="btn btn-primary">
                 Voltar
             </a>
         </div>
