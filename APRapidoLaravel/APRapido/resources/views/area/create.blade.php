@@ -17,5 +17,5 @@
 
 @extends('layout.flutuante')
 @section('conteudo')
-    Essa é a area bla
+    A função ao lado serve para cadastrar uma nova área, a fim de ser selecionada futuramente na montagem da APR.
 @endsection

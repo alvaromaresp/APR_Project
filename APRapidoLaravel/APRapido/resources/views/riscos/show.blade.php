@@ -20,3 +20,8 @@
         </div>
     </div>
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    As informações do risco específico podem ser observados ao lado. É possível editá-lo e deletá-lo.
+@endsection

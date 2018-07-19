@@ -36,3 +36,8 @@
     </div>
 
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    Para cadastrar um novo risco, ele deve ser associado a uma medida preventiva. A associação significa que as medidas preventivas, previamente cadastradas, selecionadas são necessárias para evirar o risco em questão, para isso basta procurá-la no campo "Medida Preventiva" e clicar em "Selecionar". Se selecionada uma medida preventiva que não é desejada, basta clicar em "Deletar". Quando terminar de selecionar todas as medidas preventivas, basta clicar em "Finalizar".
+@endsection

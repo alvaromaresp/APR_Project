@@ -25,3 +25,8 @@
    	</div>
  
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    Todas o(s) Coordenador(es) cadastrado(s) podem ser vistas ao lado, e também buscadas. A fim de cadastrar um novo, basta clicar em Criar Nova.
+@endsection

@@ -17,3 +17,8 @@
 		</div>
     </div>
 @endsection 
+
+@extends('layout.flutuante')
+@section('conteudo')
+    As informações da disciplina específica podem ser observadas ao lado. É possível editá-la e deletá-la.
+@endsection

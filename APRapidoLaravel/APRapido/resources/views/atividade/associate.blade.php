@@ -35,3 +35,8 @@
    		</div>
 
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    Para cadastrar uma nova atividade, ela deve ser associada a uma ferramenta. A associação significa que as ferramentas, previamente cadastrada, selecionadas serão utilizadas ao executar a atividade em questão, para isso basta procurá-la no campo "Ferramenta" e clicar em "Selecionar". Se selecionada uma ferramenta que não é desejada, basta clicar em "Deletar". Quando terminar de selecionar todas as ferramentas, basta clicar em "Finalizar".
+@endsection

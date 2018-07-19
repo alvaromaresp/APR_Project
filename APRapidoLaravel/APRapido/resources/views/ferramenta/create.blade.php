@@ -27,3 +27,8 @@
     {!! Form::close() !!}
 
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    A função ao lado serve para cadastrar uma nova ferramenta, a fim de ser selecionada futuramente no cadastro de uma atividade.
+@endsection

@@ -24,3 +24,8 @@
     <div class="float-right">{{$riscos->links()}}</div>
 
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    Todas os riscos cadastrados podem ser vistas ao lado, e também buscados. A fim de criar um novo, basta clicar em Criar Novo.
+@endsection

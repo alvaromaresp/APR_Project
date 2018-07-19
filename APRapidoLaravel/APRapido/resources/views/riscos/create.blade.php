@@ -16,3 +16,8 @@
     {!! Form::close() !!}
 
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    A função ao lado serve para cadastrar um novo risco, a fim de ser selecionado futuramente no cadastro de uma ferramenta.
+@endsection
