@@ -24,3 +24,8 @@
         </div>
     </div>
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    O menu de cadastro de responsáveis serve para o cadastro das informações que são necessárias para o preenchimento do documento.
+@endsection

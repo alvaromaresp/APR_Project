@@ -14,3 +14,8 @@
     {!! Form::close() !!}
 
 @endsection 
+
+@extends('layout.flutuante')
+@section('conteudo')
+    Essa é a area bla
+@endsection
