@@ -38,3 +38,8 @@
     {!! Form::close() !!}
 
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    A função ao lado serve para editar a informação, a fim de deixa-la mais precisa, para que ela seja selecionada futuramente na montagem da APR.
+@endsection

@@ -36,3 +36,8 @@
     </div>
 
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    Para cadastrar uma nova ferramenta, ela deve ser associada a um risco. A associação significa que os riscos, previamente cadastrados, selecionados serão eminentes ao utilizar a ferramenta em questão, para isso basta procurá-la no campo "Risco" e clicar em "Selecionar". Se selecionado um risco que não é desejado, basta clicar em "Deletar". Quando terminar de selecionar todos os riscos, basta clicar em "Finalizar".
+@endsection

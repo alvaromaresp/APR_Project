@@ -15,3 +15,8 @@
     {!! Form::close() !!}
 
 @endsection  
+
+@extends('layout.flutuante')
+@section('conteudo')
+    A função ao lado serve para cadastrar um novo Coordenador, a fim de ser selecionada futuramente na montagem da APR.
+@endsection

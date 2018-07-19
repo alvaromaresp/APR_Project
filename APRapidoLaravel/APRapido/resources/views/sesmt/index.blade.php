@@ -24,3 +24,8 @@
     <div class="float-right">{{$sesmt->links()}}</div>
 
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    Todos os SESMTs cadastrados podem ser vistos ao lado, e também buscados. A fim de criar um novo, basta clicar em Criar Nova.
+@endsection

@@ -25,3 +25,8 @@
    	</div>
  
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    Todas as áreas cadastradas podem ser vistas ao lado, e também buscadas. A fim de criar uma nova, basta clicar em Criar Nova.
+@endsection
