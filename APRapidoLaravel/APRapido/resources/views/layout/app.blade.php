@@ -133,24 +133,6 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Ajuda</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                TEXTO TESTE AJUDA
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
                     </div>
                     <div class="col-lg-1 d-none d-lg-block">
                         <hr style="background: #00004c; height: 65vh; width: 3px">
@@ -159,7 +141,6 @@
                         <hr style="background: #00004c; height: 65vh; width: 3px; transform:rotate(90deg); margin-top: -200px">
                     </div>
                     <div class="col-lg-8 col-md-12 col-sm-12" style="margin-left: -5%">
-        
                         @yield('content')
                     </div>
                 </div>

@@ -39,3 +39,8 @@
         </div>
     </div>
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    O menu de edições serve para editar as informações ao lado, afim de que as informações para a montagem do documento APR sempre sejam atualizadas e melhoradas.
+@endsection
