@@ -6,7 +6,7 @@
 
 
     <div class="mt-5 ml-5 mr-5">
-    	<h1>Disciplina
+    	<h1>Disciplina das Ferramentas
     	<a href="/disciplina/create" class="btn btn-secondary float-right mt-2 mb-3">Criar Nova</a></h1>
 		{!! Form::open(['action' => 'DisciplinaController@search', 'method' => 'post']) !!}
 		<div class="input-group mb-4">
@@ -17,7 +17,7 @@
 		</div>
 		{!! Form::close() !!}
         @foreach($disciplina as $n)
-            <h3><a href="/disciplina/{{$n->id}}"> {{$n->disciplina}} </a></h3> <br>
+            <h4><a href="/disciplina/{{$n->id}}"> {{$n->disciplina}} </a></h4> <br>
         @endforeach
     </div>
     <div class="float-right">

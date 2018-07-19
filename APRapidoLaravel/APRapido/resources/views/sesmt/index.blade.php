@@ -6,7 +6,7 @@
 
 
     <div class="mt-5 ml-5 mr-5 mb-5">
-    	<h1>Sesmt
+    	<h1>SESMT
     	<a href="/sesmt/create" class="btn btn-secondary float-right mt-2 mb-3">Criar Nova</a></h1>
 		{!! Form::open(['action' => 'SesmtController@search', 'method' => 'post']) !!}
 		<div class="input-group mb-4">
@@ -17,7 +17,7 @@
 		</div>
 		{!! Form::close() !!}
         @foreach($sesmt as $s)
-            <h3><a href="/sesmt/{{$s->id}}"> {{$s->nome}} </a></h3> <br>
+            <h4><a href="/sesmt/{{$s->id}}"> {{$s->nome}} </a></h4> <br>
         @endforeach
     </div>
 

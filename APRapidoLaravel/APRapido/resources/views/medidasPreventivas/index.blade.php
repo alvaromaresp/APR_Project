@@ -18,7 +18,7 @@
 		</div>
 		{!! Form::close() !!}
         @foreach($medidasPreventivas as $mp)
-            <h3><a href="/medidaPreventiva/{{$mp->id}}"> {{$mp->medidapreventiva}} </a></h3> <br>
+            <h4><a href="/medidaPreventiva/{{$mp->id}}"> {{$mp->medidapreventiva}} </a></h4> <br>
         @endforeach
     </div>
 

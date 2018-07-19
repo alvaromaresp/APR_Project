@@ -4,7 +4,7 @@
     
     @include('inc.messages')
 
-
+ 
     <div class="mt-5 ml-5 mr-5">
     	<h1>Area
     	<a href="/area/create" class="btn btn-secondary float-right mt-2 mb-3">Criar Nova</a></h1>
@@ -17,7 +17,7 @@
 		</div>
 		{!! Form::close() !!}
         @foreach($area as $n)
-            <h3><a href="/area/{{$n->id}}"> {{$n->nome}} </a></h3> <br>
+            <h4><a href="/area/{{$n->id}}"> {{$n->nome}} </a></h4> <br>
         @endforeach
     </div>
     <div class="float-right">

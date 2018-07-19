@@ -8,7 +8,7 @@
             <h2> {{Form::label('atividade', 'Editar Atividade')}} </h2>	
             {{Form::text('atividade', $data['atividade']->atividade, ['class' => 'form-control', 'placeholder' => 'Atividade'])}}
             <?php
-                $dis = array();
+                $dis = array(); 
             ?>
 
             @foreach($data['disciplina'] as $d)

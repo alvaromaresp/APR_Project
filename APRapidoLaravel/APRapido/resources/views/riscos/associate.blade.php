@@ -8,7 +8,7 @@
                 $mps = array();
             ?>
 
-            <h2> {{Form::label('medidaPreventiva', 'Associar Medida Preventiva')}} </h2>
+            <h2> {{Form::label('medidaPreventiva', 'Medida Preventiva associada ao risco')}} </h2>
             @foreach($data['mp'] as $mp)
                 <?php
                     array_push($mps, [$mp->id => $mp->medidapreventiva])
@@ -16,11 +16,11 @@
             @endforeach
 
 
-            {{Form::select('medidaPreventiva', $mps, ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Medida Preventiva'])}}
+            {{Form::select('medidaPreventiva', $mps, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Medida Preventiva'])}}
                 
 
-            {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
-            <a href="/riscos">FINALIZAR</a>
+            {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
+            <a href="/riscos" class="btn mt-3 btn-secondary">Finalizar</a>
 
         {!! Form::close() !!}
 

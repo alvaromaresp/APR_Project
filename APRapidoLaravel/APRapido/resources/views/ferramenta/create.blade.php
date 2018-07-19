@@ -18,8 +18,11 @@
                 ?>
             @endforeach
 
-            {{Form::select('disciplina', $dis, ['class' => '<center></center>'])}} <br>
+            {{Form::select('disciplina', $dis, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}} <br>
    			{{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
+            <div class="float-left">
+                <a href="/ferramenta" class="btn mt-3 btn-secondary">Voltar</a>
+            </div>
    		</div>
     {!! Form::close() !!}
 

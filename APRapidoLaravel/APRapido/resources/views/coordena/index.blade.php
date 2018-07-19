@@ -6,7 +6,7 @@
 
 
     <div class="mt-5 ml-5 mr-5">
-    	<h1>Coordena
+    	<h1>Coordenador de Obra
     	<a href="/coordena/create" class="btn btn-secondary float-right mt-2 mb-3">Criar Nova</a></h1>
 		{!! Form::open(['action' => 'CoordenaController@search', 'method' => 'post']) !!}
 		<div class="input-group mb-4">
@@ -17,7 +17,7 @@
 		</div>
 		{!! Form::close() !!}
         @foreach($coordena as $n)
-            <h3><a href="/coordena/{{$n->id}}"> {{$n->nome}} </a></h3> <br>
+            <h4><a href="/coordena/{{$n->id}}"> {{$n->nome}} </a></h4> <br>
         @endforeach
     </div>
     <div class="float-right">
