@@ -19,7 +19,7 @@
                 ?>
             @endforeach
 
-            {{Form::select('empresa', $emp, null, ['placeholder' => 'Empresa'])}}
+            {{Form::select('empresa', $emp, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Empresa'])}}
 
             <?php
                 $ses = array();
@@ -31,7 +31,7 @@
                 ?>
             @endforeach
 
-            {{Form::select('sesmt', $ses, null, ['placeholder' => 'Sesmt'])}}
+            {{Form::select('sesmt', $ses, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Sesmt'])}}
 
             <?php
                 $coo = array();
@@ -43,7 +43,7 @@
                 ?>
             @endforeach
 
-            {{Form::select('coordena', $coo, null, ['placeholder' => 'Coordena'])}}
+            {{Form::select('coordena', $coo, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Coordena'])}}
 
             <?php
                 $ar = array();
@@ -55,7 +55,7 @@
                 ?>
             @endforeach
 
-            {{Form::select('area', $ar, null, ['placeholder' => 'Area'])}}
+            {{Form::select('area', $ar, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Area'])}}
 
    			{{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
    		</div>

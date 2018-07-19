@@ -17,9 +17,9 @@
     <div class="row">
         <div class="col-lg-6 mb-5" align="center">
         </div>
-        <div class="col-lg-6 mb-5 mt-5" align="center">
-            <a href="/" class="btn btn-primary">
-                Voltar
+        <div class="col-lg-6 mt-5" align="center">
+            <a href="/" class="btn bigButton">
+                <
             </a>
         </div>
     </div>

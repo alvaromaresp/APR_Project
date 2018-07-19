@@ -3,12 +3,12 @@
 @section('content')
 
     <div class="row mb-2 mt-5">
-        <div class="col-lg-6 mb-5 mt-5" align="center">
+        <div class="col-lg-6 mb-5 mt-4" align="center">
             <a href="/apr/create" class="btn btn-primary">
                 Criar APR
             </a>
         </div>
-        <div class="col-lg-6 mb-5 mt-5" align="center">
+        <div class="col-lg-6 mb-5 mt-4" align="center">
             <a href="/ferramenta/create" class="btn btn-primary">
                 Cadastro Ferramentas
             </a>

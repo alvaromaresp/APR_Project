@@ -2858,7 +2858,6 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-  width: 10em !important;
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
@@ -10413,7 +10412,7 @@ a.text-dark:focus {
 }
 
 .btn-primary {
-  width: 10em !important;
+  width: 10em;
 }
 
 .navbar-laravel {
