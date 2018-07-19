@@ -6,7 +6,7 @@
             
         <div class="form-group mt-5 ml-5 mr-5 mb-5">
             <h2> {{Form::label('ferramenta', 'Editar Ferramenta')}} </h2>	
-            {{Form::text('ferramenta', $data['ferramenta']->ferramenta, ['class' => 'form-control', 'placeholder' => 'Ferramenta'])}}
+            {{Form::text('ferramenta', $data['ferramenta']->ferramenta, ['class' => 'form-control mb-3', 'placeholder' => 'Ferramenta'])}}
  
             
             <?php
@@ -19,10 +19,13 @@
                 ?>
             @endforeach
 
-            {{Form::select('disciplina', $dis)}}
+            {{Form::select('disciplina', $dis, null,  ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}}
             {{Form::hidden('_method', 'PUT')}}
 
 		    {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
+            <div class="float-left">
+                <a href="/ferramenta" class="btn mt-3 btn-secondary">Voltar</a>
+            </div>
 		</div>
     {!! Form::close() !!}
 

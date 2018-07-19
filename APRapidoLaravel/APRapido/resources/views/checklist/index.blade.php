@@ -16,11 +16,11 @@
 			  	<div class="input-group-append">
 					<button class="btn btn-secondary" type="submit">Buscar</button>
 			  	</div>
-
+ 
 		</div>
 		{!! Form::close() !!}
         @foreach($checklist as $n)
-            <h3><a href="/checklist/{{$n->id}}"> {{$n->item}} </a></h3> <br>
+            <h4><a href="/checklist/{{$n->id}}"> {{$n->item}} </a></h4> <br>
         @endforeach
     </div>
     <div class="float-right">

@@ -2,9 +2,10 @@
     <html lang="{{app()->getLocale() }}">
         <head>
             <title>{{config('app.name','APRápido')}}</title>
+            <link rel="shortcut icon" type="image/x-icon" href="/img/icone.ico">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
+            <script src="{{asset('js/app.js')}}"></script>
             <style>
                 @media (min-width: 992px) {
                     .bigButton {
@@ -133,7 +134,7 @@
                             </div>
                         </div>
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
+                          <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Ajuda</h5>

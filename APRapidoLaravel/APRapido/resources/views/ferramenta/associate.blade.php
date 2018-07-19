@@ -8,19 +8,19 @@
                 $riscos = array();
             ?>
 
-            <h2> {{Form::label('risco', 'Associar Riscos')}} </h2>
+            <h2> {{Form::label('risco', 'Riscos associados a')}} </h2>
             @foreach($data['riscos'] as $ris)
                 <?php
                     array_push($riscos, [$ris->id => $ris->risco])
                 ?>
-            @endforeach
+            @endforeach 
 
 
-            {{Form::select('risco', $riscos, ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Risco'])}}
+            {{Form::select('risco', $riscos, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Risco'])}}
                 
 
-            {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
-            <a href="/ferramenta">FINALIZAR</a>
+            {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
+            <a href="/ferramenta" class="btn mt-3 btn-secondary">Finalizar</a>
 
         {!! Form::close() !!}
 

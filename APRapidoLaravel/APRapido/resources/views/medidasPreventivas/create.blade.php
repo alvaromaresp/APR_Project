@@ -7,6 +7,9 @@
             <h2> {{Form::label('medidapreventiva', 'Nova Medida Preventiva')}} </h2>
             {{Form::text('medidapreventiva', '', ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Medida Preventiva'])}}
    			{{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
+   			<div class="float-left">
+	            <a href="/medidaPreventiva" class="btn mt-3 btn-secondary">Voltar</a>
+	        </div>
    		</div>
     {!! Form::close() !!}
 

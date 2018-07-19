@@ -17,7 +17,7 @@
 		</div>
 		{!! Form::close() !!}
         @foreach($empresa as $emp)
-            <h3><a href="/empresa/{{$emp->id}}"> {{$emp->empresa}} </a></h3> <br>
+            <h4><a href="/empresa/{{$emp->id}}"> {{$emp->empresa}} </a></h4> <br>
         @endforeach
     </div>
 

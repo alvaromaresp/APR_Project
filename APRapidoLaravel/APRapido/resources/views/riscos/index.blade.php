@@ -17,7 +17,7 @@
 		</div>
 		{!! Form::close() !!}
         @foreach($riscos as $risco)
-            <h3><a href="/riscos/{{$risco->id}}"> {{$risco->risco}} </a></h3> <br>
+            <h4><a href="/riscos/{{$risco->id}}"> {{$risco->risco}} </a></h4> <br>
         @endforeach
     </div>
 

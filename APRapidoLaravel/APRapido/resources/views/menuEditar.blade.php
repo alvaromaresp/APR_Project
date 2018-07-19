@@ -16,7 +16,7 @@
     </div>
     <div class="row">
         <div class="col-lg-6 mb-5" align="center">
-            <a href="/ferramentas" class="btn btn-primary">
+            <a href="/ferramenta" class="btn btn-primary">
                 Ferramentas
             </a>
         </div>

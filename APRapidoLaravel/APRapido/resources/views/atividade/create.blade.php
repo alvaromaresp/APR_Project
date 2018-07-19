@@ -8,7 +8,7 @@
             {{Form::text('atividade', '', ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Atividade'])}}
 
             <?php
-                $dis = array();
+                $dis = array(); 
             ?>
 
             @foreach($data['disciplina'] as $d)
@@ -17,7 +17,7 @@
                 ?>
             @endforeach
 
-            {{Form::select('disciplina', $dis)}}
+            {{Form::select('disciplina', $dis, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}}
 
             <?php
                 $emp = array();
@@ -29,7 +29,7 @@
                 ?>
             @endforeach
 
-            {{Form::select('empresa', $emp)}}
+            {{Form::select('empresa', $emp, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Empresa'])}}
 
    			{{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
    		</div>

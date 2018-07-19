@@ -7,6 +7,9 @@
             <h2> {{Form::label('natureza_risco', 'Nova Natureza de Risco')}} </h2>
             {{Form::text('natureza_risco', '', ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Natureza Risco'])}}
    			{{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
+   			<div class="float-left">
+	            <a href="/naturezaRiscos" class="btn mt-3 btn-secondary">Voltar</a>
+	        </div>
    		</div>
     {!! Form::close() !!}
 

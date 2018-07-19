@@ -11,6 +11,9 @@
 		        {{Form::hidden('_method', 'PUT')}}
 
 		    {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
+		    <div class="float-left">
+				<a href="/empresa" class="btn mt-3 btn-secondary">Voltar</a>
+			</div>
 		</div>
     {!! Form::close() !!}
 

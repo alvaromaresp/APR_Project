@@ -15,7 +15,7 @@
 		  </div>
 		</div>
         @foreach($nr as $n)
-            <h3><a href="/naturezaRiscos/{{$n->id}}"> {{$n->natureza_risco}} </a></h3> <br>
+            <h4><a href="/naturezaRiscos/{{$n->id}}"> {{$n->natureza_risco}} </a></h4> <br>
         @endforeach
     </div>
     <div class="float-right">
