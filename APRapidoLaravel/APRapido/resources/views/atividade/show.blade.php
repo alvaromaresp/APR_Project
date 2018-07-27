@@ -3,12 +3,59 @@
 
 @section('content')
 	<div class="mt-5 ml-5 mr-5 mb-5">
-	    <h2><p class="font-weight-bold">ID: {{$data['atividade']->id}} <br>
+	    <h2><p class="font-weight-bold">
 		ITEM: {{$data['atividade']->atividade}} <br>
 		EMPRESA: {{$data['empresa']->empresa}} <br>
 		DISCIPLINA: {{$data['disciplina']->disciplina}} <br>
+
+		<?php
+			$cr = 0;
+			$cmp = 0;
+		?>
+
+
 		@foreach($data['ferramenta'] as $fer)
-			<li>{{$fer->ferramenta}}</li>
+
+			@foreach($fer->Riscos as $ris)
+				<?php
+					$cr++;
+				?>
+			@endforeach
+
+			@foreach($ris->medidaspreventivas as $mp)
+				<?php
+					$cmp++;
+				?>
+			@endforeach
+			<table class="table">
+				
+				<tr>
+					<td>{{$fer->ferramenta}}</td>
+					@foreach($fer->Riscos as $ris)
+						<td>
+							Risco: {{$ris->risco}}
+						</td>
+						@foreach($ris->medidaspreventivas as $mp)
+							<?php
+								$cmp--;
+							?>
+							<td>
+								MP: {{$mp->medidapreventiva}}
+							</td>
+							</tr>
+							@if($cmp == 0)
+								<td></td>
+								<td></td>
+							@endif
+						@endforeach
+
+						@if($cr != 0)
+							<td></td>
+						@endif
+					@endforeach
+				</tr>	
+
+			</table>
 		@endforeach
 		</p></h2><br> 
 	    <div class="float-right">
