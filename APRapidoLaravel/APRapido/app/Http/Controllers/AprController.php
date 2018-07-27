@@ -29,6 +29,11 @@ class AprController extends Controller
         return view('apr.index')->with('apr', $apr);
 
     }
+    public function imprimir(){
+        $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-L']);
+        $mpdf->WriteHTML('<h1>Hello world!</h1>');
+        $mpdf->Output();
+    }
 
     /**
      * Show the form for creating a new resource.

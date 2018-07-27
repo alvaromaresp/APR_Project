@@ -9,7 +9,7 @@ class Area extends Model
 
     protected $table = 'areas';
 
-    public function aprs(){
-        return $this->hasMany('App\Apr');
+    public function impressao(){
+        return $this->hasMany('App\Impressao');
     }
 }

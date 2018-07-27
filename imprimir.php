@@ -2,7 +2,7 @@
  error_reporting(0);
  ini_set("display_errors",0);
  $con = mysqli_connect('localhost','root','', 'aprapido');
- include("mpdf60/mpdf.php");
+ use Mpdf\Mpdf;
  date_default_timezone_set('America/Sao_Paulo');
  $data = date('d/m/Y');
  $tc = $_COOKIE['id_tarefa']; 
@@ -552,5 +552,5 @@ $mpdf = new mPDF(
  $mpdf->WriteHTML($css,1);
  $mpdf->WriteHTML($htmld);
 
- $mpdf->Output();
+ //$mpdf->Output();
  exit;
