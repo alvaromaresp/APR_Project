@@ -48,8 +48,8 @@ class AprController extends Controller
             'coordena' => $coordena,
             'area' => $area
         );
-    
-        return view('apr.create')->with('data', $data);    
+
+        return view('apr.create')->with('data', $data);
     }
 
     /**
@@ -61,7 +61,7 @@ class AprController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,['nome'=>'required', 'celula'=>'required', 'telr'=>'required', 'empresa'=>'required', 'sesmt'=>'required', 'coordena'=>'required', 'area'=>'required']);
-        
+
         $apr = new Apr;
         $apr->data = date("Y-m-d H:i:s");
         $apr->nome = $request->input('nome');
@@ -75,7 +75,7 @@ class AprController extends Controller
         $apr->save();
 
         $atividade = Atividade::all();
-        
+
         $data = array(
             'apr' => $apr,
             'atividade' => $atividade
@@ -115,7 +115,7 @@ class AprController extends Controller
             'atividade' => $atividade
         );
 
-        return view('apr.show')->with('data', $data); 
+        return view('apr.show')->with('data', $data);
     }
 
     /**
@@ -125,7 +125,7 @@ class AprController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {   
+    {
         $apr = Apr::find($id);
         $empresa = Empresa::all();
         $sesmt = Sesmt::all();
@@ -139,8 +139,8 @@ class AprController extends Controller
             'coordena' => $coordena,
             'area' => $area
         );
-    
-        return view('apr.edit')->with('data', $data);    
+
+        return view('apr.edit')->with('data', $data);
     }
 
     /**
@@ -153,7 +153,7 @@ class AprController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,['nome'=>'required', 'celula'=>'required', 'telr'=>'required', 'empresa'=>'required', 'sesmt'=>'required', 'coordena'=>'required', 'area'=>'required']);
-        
+
         $apr = Apr::find($id);
         $apr->data = date("Y-m-d H:i:s");
         $apr->nome = $request->input('nome');
@@ -167,7 +167,7 @@ class AprController extends Controller
         $apr->save();
 
         $atividade = Atividade::all();
-        
+
         $data = array(
             'apr' => $apr,
             'atividade' => $atividade
@@ -246,7 +246,7 @@ class AprController extends Controller
     {
         $apr = Apr::find($id);
         $naturezariscos = Naturezariscos::all();
-        
+
         $data = array(
             'apr' => $apr,
             'naturezariscos' => $naturezariscos
@@ -315,7 +315,7 @@ class AprController extends Controller
         }
 
         $checklist = $apr->checklists;
-        
+
         $data = array(
             'apr' => $apr,
             'checklist' => $checklist
@@ -349,7 +349,7 @@ class AprController extends Controller
 
     /**
      * Desassociate the specified resource to Checklist.
-     *
+     *$request->input('area');
      * @param Request $request
      * @param $id
      */
@@ -368,5 +368,40 @@ class AprController extends Controller
 
         return view('apr.associateChecklist')->with('data', $data);
     }
+
+    public function showAPRbyLog ($id){
+         $apr = Apr::find($id);
+
+         return view('apr.newAPRbyLog')->with('data', &apr);
+
+    }
+
+
+    public function newAPRbyLog (Request $request, $id){
+         $apr = Apr::find($id);
+         $this->validate($request,['telr'=>'required', 'empresa'=>'required', 'sesmt'=>'required', 'coordena'=>'required']);
+
+         $aprNew = new Apr;
+
+         $aprNew->nome = $apr->nome;
+         $aprNew->celula = $apr->celula;
+         $aprNew->area_id = $apr->area_id;
+         $aprNew->checklists = $apr->checklists;
+         $aprNew->atividade = $apr->atividades;
+         $aprNew->naturezasriscos = $apr->naturezasriscos;
+
+         $aprNew->data = date("Y-m-d H:i:s");
+         $aprNew->telr = $request->input('telr');
+         $aprNew->empresa_id = $request->input('empresa');
+         $aprNew->user_id = 1;
+         $aprNew->sesmt_id = $request->input('sesmt');
+         $aprNew->coordena_id = $request->input('coordena');
+
+
+         $aprNew->save();
+
+         return view('apr.newAPRbyLog');
+    }
+
 
 }
