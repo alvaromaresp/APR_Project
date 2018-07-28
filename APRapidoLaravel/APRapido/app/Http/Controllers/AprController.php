@@ -65,18 +65,12 @@ class AprController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,['nome'=>'required', 'celula'=>'required', 'telr'=>'required', 'empresa'=>'required', 'sesmt'=>'required', 'coordena'=>'required', 'area'=>'required']);
+        $this->validate($request,['nome'=>'required', 'telr'=>'required']);
 
         $apr = new Apr;
         $apr->data = date("Y-m-d H:i:s");
         $apr->nome = $request->input('nome');
-        $apr->celula = $request->input('celula');
         $apr->telr = $request->input('telr');
-        $apr->empresa_id = $request->input('empresa');
-        $apr->user_id = 1;
-        $apr->sesmt_id = $request->input('sesmt');
-        $apr->coordena_id = $request->input('coordena');
-        $apr->area_id = $request->input('area');
         $apr->save();
 
         $atividade = Atividade::all();
@@ -99,22 +93,12 @@ class AprController extends Controller
     public function show($id)
     {
         $apr = Apr::find($id);
-        $empresa = Empresa::find($apr->empresa_id);
-        $user = User::find(Auth::id());
-        $sesmt = Sesmt::find($apr->sesmt_id);
-        $coordena = Coordena::find($apr->coordena_id);
-        $area = Area::find($apr->area_id);
         $naturezariscos = $apr->naturezasriscos;
         $checklist = $apr->checklists;
         $atividade = $apr->atividades;
 
         $data = array(
             'apr' => $apr,
-            'empresa' => $empresa,
-            'user' => $user,
-            'sesmt' => $sesmt,
-            'coordena' => $coordena,
-            'area' => $area,
             'naturezariscos' => $naturezariscos,
             'checklist' => $checklist,
             'atividade' => $atividade
@@ -132,17 +116,8 @@ class AprController extends Controller
     public function edit($id)
     {
         $apr = Apr::find($id);
-        $empresa = Empresa::all();
-        $sesmt = Sesmt::all();
-        $coordena = Coordena::all();
-        $area = Area::all();
-
         $data = array(
             'apr' => $apr,
-            'empresa' => $empresa,
-            'sesmt' => $sesmt,
-            'coordena' => $coordena,
-            'area' => $area
         );
 
         return view('apr.edit')->with('data', $data);
@@ -157,18 +132,12 @@ class AprController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,['nome'=>'required', 'celula'=>'required', 'telr'=>'required', 'empresa'=>'required', 'sesmt'=>'required', 'coordena'=>'required', 'area'=>'required']);
+        $this->validate($request,['nome'=>'required', 'telr'=>'required']);
 
         $apr = Apr::find($id);
         $apr->data = date("Y-m-d H:i:s");
         $apr->nome = $request->input('nome');
-        $apr->celula = $request->input('celula');
         $apr->telr = $request->input('telr');
-        $apr->empresa_id = $request->input('empresa');
-        $apr->user_id = 1;
-        $apr->sesmt_id = $request->input('sesmt');
-        $apr->coordena_id = $request->input('coordena');
-        $apr->area_id = $request->input('area');
         $apr->save();
 
         $atividade = Atividade::all();
@@ -377,7 +346,7 @@ class AprController extends Controller
     public function showAPRbyLog ($id){
          $apr = Apr::find($id);
 
-         return view('apr.newAPRbyLog')->with('data', &apr);
+         return view('apr.newAPRbyLog')->with('data', $apr);
 
     }
 
