@@ -16,11 +16,11 @@
                 ?>
             @endforeach
 
-            {{Form::select('ferramenta', $ferramentas, ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Medida Preventiva'])}}
+            {{Form::select('ferramenta', $ferramentas, null, ['class' => 'custom-select mt-3 mb-3', 'placeholder' => 'Ferramenta'])}}
 
     
-            {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
-            <a href="/atividades">FINALIZAR</a>
+            {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
+            <a href="/atividades" class="btn mt-3 btn-secondary">Finalizar</a>
             {!! Form::close() !!}
 
             @foreach($data['atividade']->ferramentas as $fer)

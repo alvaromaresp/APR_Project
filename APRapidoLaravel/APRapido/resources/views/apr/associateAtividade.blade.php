@@ -9,21 +9,21 @@
                 $atividades = array();
             ?>
 
-            <h2> {{Form::label('atividade', 'Associar Atividades')}} </h2>
+            <h2> {{Form::label('atividade', 'Atividades associadas a APR')}} </h2>
             @foreach($data['atividade'] as $at)
                 <?php
                     array_push($atividades, [$at->id => $at->atividade])
                 ?>
             @endforeach
 
-            {{Form::select('atividade', $atividades, ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Atividade'])}}
+            {{Form::select('atividade', $atividades, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Atividades'])}}
 
-            {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
+            {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
             {!! Form::close() !!}
 
 
             {!! Form::open(['action' => ['AprController@associateNaturezariscosCall', $data['apr']->id], 'method' => 'post']) !!}
-                {{Form::submit('Ir para Natureza Risco',['class' => 'btn btn-success'])}}
+                {{Form::submit('Ir para Natureza Risco',['class' => 'mt-3 btn btn-secondary'])}}
             {!! Form::close() !!}
 
             @foreach($data['apr']->atividades as $at)
