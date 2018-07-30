@@ -1,5 +1,12 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/responsavel"> Cadastro de Responsável</a><br>
+    > <a href="/sesmt"> SESMT </a><br>
+    > Editar SESMT: {{$sesmt->nome}}</b>
+@endsection
+
 @section('content')
 
     {!! Form::open(['action' => ['SesmtController@update', $sesmt->id ], 'method' => 'post']) !!}
@@ -13,7 +20,7 @@
 
 		    {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
 		    <div class="float-left">
-	            <a href="/Sesmt" class="btn mt-3 btn-secondary">Voltar</a>
+	            <a href="/sesmt" class="btn mt-3 btn-secondary">Voltar</a>
 	        </div>
 		</div>
     {!! Form::close() !!}

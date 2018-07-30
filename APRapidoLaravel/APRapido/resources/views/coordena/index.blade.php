@@ -1,5 +1,11 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/responsavel"> Cadastro de Responsável</a><br>
+    > Coordenador Responsável</b>
+@endsection
+
 @section('content')
     
     @include('inc.messages')

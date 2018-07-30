@@ -1,5 +1,12 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="/"> Menu </a><br>
+    > <a href="/responsavel"> Cadastro de Responsável</a><br>
+    > <a href="/coordena"> Coordenador Responsável </a><br>
+    > Criar novo Coordenador</b>
+@endsection
+
 @section('content')
 
     {!! Form::open(['action' => 'CoordenaController@store', 'method' => 'post']) !!}

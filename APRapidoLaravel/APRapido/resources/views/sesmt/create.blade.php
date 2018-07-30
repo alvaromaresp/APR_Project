@@ -1,5 +1,12 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/responsavel"> Cadastro de Responsável</a><br>
+    > <a href="/sesmt"> SESMT </a><br>
+    > Criar novo SESMT</b>
+@endsection
+
 @section('content')
 
     {!! Form::open(['action' => 'SesmtController@store', 'method' => 'post']) !!}
