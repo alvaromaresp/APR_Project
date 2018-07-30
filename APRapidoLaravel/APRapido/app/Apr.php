@@ -18,16 +18,8 @@ class Apr extends Model
     public function empresa(){
         return $this->belongsTo('App\Empresa');
     }
-    public function user(){
-        return $this->belongsTo('App\User');
+    public function impressao(){
+        return $this->hasMany('App\Impressao');
     }
-    public function sesmt(){
-        return $this->belongsTo('App\Sesmt');
-    }
-    public function coordena(){
-        return $this->belongsTo('App\Coordena');
-    }
-    public function area(){
-        return $this->belongsTo('App\Area');
-    }
+
 }

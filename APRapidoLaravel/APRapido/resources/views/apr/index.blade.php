@@ -1,9 +1,9 @@
 @extends('layout.app')
 
 @section('content')
-    
+
     @include('inc.messages')
- 
+
 
     <div class="mt-5 ml-5 mr-5 mb-5">
     	<h1>APR
@@ -14,7 +14,7 @@
 		    <button class="btn btn-secondary" type="button">Buscar</button>
 		  </div>
 		</div>
-        
+
         @foreach($apr as $n)
             <h3><a href="/apr/{{$n->id}}"> {{$n->nome}} </a></h3> <br>
         @endforeach

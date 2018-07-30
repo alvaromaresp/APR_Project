@@ -13,7 +13,7 @@
 		    {!!Form::close()!!}
 		</div>
 		<div class="float-left">
-            <a href="/medidaPreventiva" class="btn btn-secondary">Voltar</a>
+            <a href="/naturezaRiscos" class="btn btn-secondary">Voltar</a>
         </div>
     </div>
 @endsection
