@@ -1,5 +1,9 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b>> Menu</b>
+@endsection
+
 @section('content')
 
     <div class="row mb-2 mt-5">
@@ -16,9 +20,9 @@
     </div>
     <div class="row">
         <div class="col-lg-6 mb-5" align="center">
-            <div class="btn btn-primary">
+            <a href="/apr" class="btn btn-primary">
                 Visualizar APRs
-            </div>
+            </a>
         </div>
         <div class="col-lg-6 mb-5" align="center">
             <a href="/riscos/create" class="btn btn-primary">
@@ -51,6 +55,7 @@
             </div>
         </div>
 @endsection
+
 
 @extends('layout.flutuante')
 @section('conteudo')

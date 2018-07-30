@@ -108,6 +108,14 @@
                     background-color: #00004c;
                     color: #e6e6e6;
                 }
+
+                a {
+                    color:grey;
+                }
+
+                a:hover{
+                    color:grey;
+                }
             </style>
 
         </head>
@@ -123,7 +131,7 @@
                         </div>
                         <div class="row">
                             <div class="col offset-lg-3">
-                                <p> > Menu</p>
+                                <p>@yield('caminho')</p>
                             </div>
                         </div>
                         <div class="row">
