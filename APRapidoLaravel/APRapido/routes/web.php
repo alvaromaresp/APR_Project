@@ -62,6 +62,8 @@ Route::post('apr/desassociateNaturezariscos/{id}', 'AprController@desassociateNa
 Route::post('apr/associateNaturezariscosCall/{id}', 'AprController@associateNaturezariscosCall');
 Route::post('apr/associateChecklistCall/{id}', 'AprController@associateChecklistCall');
 
+Route::get('pdf/{id}','ImpressaoController@geraPdf');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

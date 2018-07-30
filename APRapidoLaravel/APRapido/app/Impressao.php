@@ -6,19 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Impressao extends Model
 {
+    protected $table = 'impressao';
     public function aprs(){
-        return $this->belongsTo('App\Apr');
+        return $this->belongsTo('App\Apr','apr');
     }
-    public function user(){
-        return $this->belongsTo('App\User');
+    public function users(){
+        return $this->belongsTo('App\User','user');
     }
-    public function area(){
-        return $this->belongsTo('App\Area');
+    public function areas(){
+        return $this->belongsTo('App\Area','area');
     }
-    public function sesmt(){
-        return $this->belongsTo('App\Sesmt');
+    public function sesmts(){
+        return $this->belongsTo('App\Sesmt','sesmt');
     }
-    public function coordena(){
-        return $this->belongsTo('App\Coordena');
+    public function coordenas(){
+        return $this->belongsTo('App\Coordena','coordena');
     }
 }
