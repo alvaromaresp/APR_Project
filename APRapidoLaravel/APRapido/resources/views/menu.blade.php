@@ -8,52 +8,50 @@
 
     <div class="row mb-2 mt-5">
         <div class="col-lg-6 mb-5 mt-4" align="center">
-            <a href="/apr/create" class="btn btn-primary">
-                Criar APR
+            <a href="/apr" class="btn btn-primary">
+                Cadastrar APR
             </a>
         </div>
         <div class="col-lg-6 mb-5 mt-4" align="center">
-            <a href="/ferramenta/create" class="btn btn-primary">
-                Cadastro Ferramentas
+            <a href="/ferramenta" class="btn btn-primary">
+                Cadastrar Ferramentas
             </a>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-6 mb-5" align="center">
-            <a href="/apr" class="btn btn-primary">
-                Visualizar APRs
+            <a href="/atividades" class="btn btn-primary">
+                Cadastrar Atividade
             </a>
         </div>
         <div class="col-lg-6 mb-5" align="center">
-            <a href="/riscos/create" class="btn btn-primary">
-                Cadastro Riscos
+            <a href="/riscos" class="btn btn-primary">
+                Cadastrar Riscos
             </a>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-6 mb-5" align="center">
-            <a href="/editar" class="btn btn-primary">
-                Editar Informações
+            <a href="/responsavel" class="btn btn-primary">
+                Cadastrar Responsável
             </a>
         </div>
         <div class="col-lg-6 mb-5" align="center">
-            <a href="/medidaPreventiva/create" class="btn btn-primary">
-                Cadastro MP
+            <a href="/medidaPreventiva" class="btn btn-primary">
+                Cadastrar MP
             </a>
         </div>
     </div>
     <div class="row">
-            <div class="col-lg-6 mb-5" align="center">
-                <div class="btn btn-primary">
-                    Registro de Impressão
-                </div>
-            </div>
-            <div class="col-lg-6 mb-5" align="center">
-                <a href="/responsavel" class="btn btn-primary">
-                    Cadastrar Responsável
-                </a>
+        <div class="col-lg-6 mb-5" align="center">
+            <div class="btn btn-primary">
+                Registro de Impressão
             </div>
         </div>
+        <div class="col-lg-6 mb-5" align="center">
+            
+        </div>
+    </div>
 @endsection
 
 

@@ -1,5 +1,11 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/riscos"> Cadastrar Riscos </a><br>
+    > Criar novo Risco</b>
+@endsection 
+
 @section('content')
 
     <div class="form-group mt-5 ml-5 mr-5 mb-5">    

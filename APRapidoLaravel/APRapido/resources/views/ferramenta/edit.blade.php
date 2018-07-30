@@ -1,5 +1,11 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/ferramenta"> Cadastrar Ferramentas </a><br>
+    > Editar Ferramenta: {{$data['ferramenta']->ferramenta}} </b>
+@endsection
+
 @section('content')
 
     {!! Form::open(['action' => ['FerramentaController@update', $data['ferramenta']->id ], 'method' => 'post']) !!}

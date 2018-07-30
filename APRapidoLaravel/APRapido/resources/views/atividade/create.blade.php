@@ -1,5 +1,11 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/atividades"> Cadastrar Atividades </a><br>
+    > Criar nova Atividade</b>
+@endsection 
+
 @section('content')
 
     {!! Form::open(['action' => 'AtividadeController@store', 'method' => 'post']) !!}
@@ -10,7 +16,7 @@
             <?php
                 $dis = array(); 
             ?>
-
+ 
             @foreach($data['disciplina'] as $d)
                 <?php
                     array_push($dis, [$d->id => $d->disciplina])

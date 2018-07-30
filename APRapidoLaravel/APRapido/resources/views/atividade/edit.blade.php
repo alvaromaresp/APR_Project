@@ -1,12 +1,18 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/atividades"> Cadastrar Atividades </a><br>
+    > Editar Atividade: {{$data['atividade']->atividade}} </b>
+@endsection
+ 
 @section('content')
 
     {!! Form::open(['action' => ['AtividadeController@update', $data['atividade']->id ], 'method' => 'post']) !!}
             
         <div class="form-group mt-5 ml-5 mr-5 mb-5">
             <h2> {{Form::label('atividade', 'Editar Atividade')}} </h2>	
-            {{Form::text('atividade', $data['atividade']->atividade, ['class' => 'form-control', 'placeholder' => 'Atividade'])}}
+            {{Form::text('atividade', $data['atividade']->atividade, ['class' => 'mb-3 form-control', 'placeholder' => 'Atividade'])}}
             <?php
                 $dis = array(); 
             ?>
@@ -17,7 +23,7 @@
                 ?>
             @endforeach
 
-            {{Form::select('disciplina', $dis)}}
+            {{Form::select('disciplina', $dis, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}}
 
             <?php
                 $emp = array();
@@ -29,7 +35,7 @@
                 ?>
             @endforeach
 
-            {{Form::select('empresa', $emp)}}
+            {{Form::select('empresa', $emp, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}}
             
             {{Form::hidden('_method', 'PUT')}}
 

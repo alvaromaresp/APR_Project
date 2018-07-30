@@ -1,5 +1,10 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > Cadastrar Riscos </b>
+@endsection
+
 @section('content')
     
     @include('inc.messages')

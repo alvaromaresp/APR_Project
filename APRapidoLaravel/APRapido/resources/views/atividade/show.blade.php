@@ -1,6 +1,11 @@
 @extends('layout.app')
 
-
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/atividades"> Cadastrar Atividades </a><br>
+    > Atividade: {{$data['atividade']->atividade}} </b>
+@endsection
+ 
 @section('content')
 	<div class="mt-5 ml-5 mr-5 mb-5">
 	    <h2><p class="font-weight-bold">

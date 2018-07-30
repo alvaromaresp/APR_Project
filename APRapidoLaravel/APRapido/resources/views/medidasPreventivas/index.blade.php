@@ -1,5 +1,9 @@
-
 @extends('layout.app')
+
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > Cadastrar Medidas Preventivas </b>
+@endsection
 
 @section('content')
     

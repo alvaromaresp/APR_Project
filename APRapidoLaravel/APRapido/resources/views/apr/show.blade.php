@@ -1,5 +1,10 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/apr"> Cadastrar APR </a><br>
+    > APR: {{$data['apr']->nome}} </b>
+@endsection
 
 @section('content')
 	<div class="mt-5 ml-5 mr-5 mb-5">

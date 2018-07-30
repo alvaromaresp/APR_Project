@@ -1,5 +1,11 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/apr"> Cadastrar APR </a><br>
+    > Criar nova APR: Natureza dos Riscos</b>
+@endsection
+
 @section('content')
 
 {!! Form::open(['action' => ['AprController@associateNaturezariscos', $data['apr']->id], 'method' => 'post']) !!}
