@@ -1,19 +1,214 @@
 <link rel="stylesheet" href="{{ public_path('css/grid_bootstrap.css') }}">
 
+<table border="2px" bordercolor="black">
+<tr>
+  <td colspan='5'>
+  <h5><center>Pessoas envolvidas na atividade e treinadas na análise de riscos desta tarefa. Estou ciente de todos os riscos nas atividades a serem executadas e vou cumprir as medidas preventivas estabelecidas.</center></h5>
+  </td>
+</tr>
+<tr>
+    <td><h5><center>Nome</center></h5></td>
+    <td><h5><center>Empresa</center></h5></td>
+    <td><h5><center>Registro</center></h5></td> 
+    <td colspan='2'><h5><center>Assinatura</center></h5></td>
+</tr>
+<tr>
+    <td><h6>1- </h6></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h6>2- </h6></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h6>3- </h6></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h6>4- </h6></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h6>5- </h6></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h6>6- </h6></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h6>7- </h6></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h6>8- </h6></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h6>9- </h6></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h6>10- </h6></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h6>11- </h6></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h6>12- </h6></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <th><h5>Nomes Adicionais</h5></th>
+    <th><h5>Empresa</h5></th>
+    <th><h5>Registro</h5></th> 
+    <th><h5>Assinatura</h5></th>
+    <th><h5>Coord. Serviço</h5></th>
+</tr>
+<tr>
+    <td><h6>1- </h6></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h6>2- </h6></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h6>3- </h6></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h6>4- </h6></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h6>5- </h6></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h5><center>Modalidade da Energia (Elet. Pneum.Hidrul.Cinet.Term.Potenc.)</center></h5></td>
+    <td colspan='2'><h5><center>Localização do Bloqueio</center></h5></td>
+    <td><h5><center>Alívio de Energia</center></h5></td> 
+    <td><h5><center>Procedimentos de Testes e Verificações</center></h5></td>
+</tr>
+<tr>
+    <td><br><br><br></td>
+    <td colspan='2'></td>
+    <td></td> 
+    <td></td> 
+</tr>
+<tr>
+    <td><br><br><br><br></td>
+    <td colspan='2'></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+  <td colspan='5'><h5><center>REVALIDAÇÃO DIÁRIA</center></h5></td>
+</tr>
+<tr>
+    <td><h5><center>Coordenação do Serviço</center></h5></td>
+    <td><h5><center>Data</center></h5></td>
+    <td><h5><center>Aprovação da Área</center></h5></td> 
+    <td><h5><center>Data</center></h5></td> 
+    <td><h5><center>Número da(s) PT(s)</center></h5></td> 
+</tr>
+</tr>
+<tr>
+    <td><h6>1- </h6></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h6>2- </h6></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h6>3- </h6></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h6>4- </h6></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h6>5- </h6></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+</table>
+
+<br><br>
+
+
 <div class="container-fluid">
     <!-- CABEÇALHO -->
     <div class="row">
         <div class="col-4">
             <div class="row">
                 <div class="col">
-                    <img  class="cem" src="{{public_path('img/tik.png')}}"/>
+                    <img  class="cem" src="{{public_path('img/farmax.png')}}"/>
                 </div>
                 <div class="col">
-                    <img  class="cem" src="{{public_path('img/tik.png')}}"/>
+                    <img  class="cem" src="{{public_path('img/icot.png')}}"/>
                 </div>
             </div>
         </div>
-        <div class="col txt-centro h4">
+        <div class="col txt-centro h5">
             ANÁLISE PRELIMINAR DE RISCOS
         </div>
         <div class="col-4">
@@ -194,3 +389,4 @@
 
 
 </div>
+
