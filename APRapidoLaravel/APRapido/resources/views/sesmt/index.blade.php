@@ -1,5 +1,11 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/responsavel"> Cadastro de Responsável</a><br>
+    > SESMT</b>
+@endsection
+
 @section('content')
     
     @include('inc.messages')
@@ -27,5 +33,5 @@
 
 @extends('layout.flutuante')
 @section('conteudo')
-    Todos os SESMTs cadastrados podem ser vistos ao lado, e também buscados. A fim de criar um novo, basta clicar em Criar Nova.
+    Todos os SESMTs cadastrados podem ser vistos ao lado, e também buscados. A fim de criar um novo, basta clicar em Criar Nova. Além disso, para verificar o conteúdo do SESMT basta clicar em seu nome.
 @endsection

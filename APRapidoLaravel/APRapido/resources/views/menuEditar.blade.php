@@ -1,5 +1,10 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+     > Editar Informações</b>
+@endsection
+
 @section('content')
 
     <div class="row mb-2 mt-5">

@@ -1,5 +1,11 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/medidaPreventiva"> Cadastrar Medidas Preventivas </a><br>
+    > Criar nova Medida Preventiva</b>
+@endsection
+
 @section('content')
 
     {!! Form::open(['action' => 'MedidaPreventivaController@store', 'method' => 'post']) !!}

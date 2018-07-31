@@ -1,5 +1,10 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/medidaPreventiva"> Cadastrar Medidas Preventivas </a><br>
+    > Medida Preventiva: {{$medidasPreventivas->medidapreventiva}} </b>
+@endsection
 
 @section('content')
 	<div class="mt-5 ml-5 mr-5 mb-5">

@@ -1,5 +1,11 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/responsavel"> Cadastro de Responsável</a><br>
+    > Coordenador Responsável</b>
+@endsection
+
 @section('content')
     
     @include('inc.messages')
@@ -28,5 +34,5 @@
 
 @extends('layout.flutuante')
 @section('conteudo')
-    Todas o(s) Coordenador(es) cadastrado(s) podem ser vistas ao lado, e também buscadas. A fim de cadastrar um novo, basta clicar em Criar Nova.
+    Todas o(s) Coordenador(es) cadastrado(s) podem ser vistas ao lado, e também buscadas. A fim de cadastrar um novo, basta clicar em Criar Nova. Além disso, para verificar o conteúdo do coordenador basta clicar em seu nome.
 @endsection

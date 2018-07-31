@@ -1,5 +1,11 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/apr"> Cadastrar APR </a><br>
+    > Editar APR: {{$data['apr']->nome}} </b>
+@endsection
+
 @section('content')
 
 {!! Form::open(['action' => ['AprController@update', $data['apr']->id], 'method' => 'post']) !!}
@@ -13,4 +19,9 @@
    </div>
 {!! Form::close() !!}
 
+@endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    A função ao lado serve para editar a APR, a fim de melhorar o conteúdo do documento final.
 @endsection

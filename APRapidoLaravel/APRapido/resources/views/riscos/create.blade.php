@@ -1,5 +1,12 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/riscos"> Cadastrar Riscos </a><br>
+    > Criar novo Risco</b>
+@endsection 
+
+
 @section('content')
 
     {!! Form::open(['action' => 'RiscosController@store', 'method' => 'post']) !!}

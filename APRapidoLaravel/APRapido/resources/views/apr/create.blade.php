@@ -1,5 +1,12 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/apr"> Cadastrar APR </a><br>
+    > Criar nova APR</b>
+@endsection 
+
+
 @section('content')
 
     {!! Form::open(['action' => 'AprController@store', 'method' => 'post']) !!}
@@ -15,8 +22,7 @@
 
 @endsection
 
-<!-- old code
-
-
-
--->
+@extends('layout.flutuante')
+@section('conteudo')
+    A função ao lado serve para criar um novo documento APR. 
+@endsection

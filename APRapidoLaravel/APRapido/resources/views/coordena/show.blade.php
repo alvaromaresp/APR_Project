@@ -1,5 +1,11 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/responsavel"> Cadastro de Responsável</a><br>
+    > <a href="/coordena"> Coordenador Responsável </a><br>
+    > Coordenador: {{$coordena->nome}}</b>
+@endsection
 
 @section('content')
 	<div class="mt-5 ml-5 mr-5 mb-5">

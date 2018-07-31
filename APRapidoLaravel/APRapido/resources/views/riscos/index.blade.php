@@ -1,5 +1,10 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > Cadastrar Riscos </b>
+@endsection
+
 @section('content')
     
     @include('inc.messages')
@@ -27,5 +32,5 @@
 
 @extends('layout.flutuante')
 @section('conteudo')
-    Todas os riscos cadastrados podem ser vistas ao lado, e também buscados. A fim de criar um novo, basta clicar em Criar Novo.
+    Todas os riscos cadastrados podem ser vistas ao lado, e também buscados. A fim de criar um novo, basta clicar em Criar Novo. Além disso, para verificar o conteúdo do risco basta clicar em seu nome.
 @endsection
