@@ -1,5 +1,11 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/apr"> Cadastrar APR </a><br>
+    > Criar nova APR: Natureza dos Riscos</b>
+@endsection
+
 @section('content')
 
 {!! Form::open(['action' => ['AprController@associateNaturezariscos', $data['apr']->id], 'method' => 'post']) !!}
@@ -37,4 +43,9 @@
             @endforeach
    		</div>
 
+@endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    O documento APR tem a identificação das Naturezas de Risco que a tarefa a ser executada pode oferecer. Para associá-las com a tarefa, basta procurar a Natureza de Risco em questão no campo "Naturezas de Risco" e clicar em "Selecionar". Se selecionada uma natureza de risco que não é desejada, basta clicar em "Deletar". Quando terminar de selecionar todas as naturezas de risco, basta clicar em "Ir para Checklist".
 @endsection

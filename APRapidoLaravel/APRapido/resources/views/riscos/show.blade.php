@@ -1,11 +1,20 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/riscos"> Cadastrar Riscos </a><br>
+    > Riscos: {{$data['riscos']->risco}} </b>
+@endsection
 
 @section('content')
 	<div class="mt-5 ml-5 mr-5 mb-5">
 	    <h2><p class="font-weight-bold">ID: {{$data['riscos']->id}} <br>
 		ITEM: {{$data['riscos']->risco}} <br>
-		MEDIDAS PREVENTIVAS {{$data['mp']}}<br>
+		MEDIDAS PREVENTIVAS <br>
+
+		@foreach($data['mp'] as $mp)
+			<li>{{$mp->medidapreventiva}}</li>
+		@endforeach
 		
 		</p></h2><br>
 	    <div class="float-right">

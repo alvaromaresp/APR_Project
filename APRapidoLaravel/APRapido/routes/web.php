@@ -1,4 +1,4 @@
-<?php
+	<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +61,8 @@ Route::post('apr/associateNaturezariscos/{id}', 'AprController@associateNatureza
 Route::post('apr/desassociateNaturezariscos/{id}', 'AprController@desassociateNaturezariscos');
 Route::post('apr/associateNaturezariscosCall/{id}', 'AprController@associateNaturezariscosCall');
 Route::post('apr/associateChecklistCall/{id}', 'AprController@associateChecklistCall');
+
+Route::get('pdf/{id}','ImpressaoController@geraPdf');
 
 Auth::routes();
 

@@ -18,7 +18,7 @@ class Apr extends Model
     public function empresa(){
         return $this->belongsTo('App\Empresa');
     }
-    public function impressao(){
+    public function impressoes(){
         return $this->hasMany('App\Impressao');
     }
 

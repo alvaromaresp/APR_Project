@@ -7,7 +7,7 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div class="modal-body">
+    <div class="text-justify modal-body">
       @yield('conteudo')
     </div>
     <div class="modal-footer">

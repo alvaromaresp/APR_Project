@@ -1,10 +1,17 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/apr"> Cadastrar APR </a><br>
+    > Criar nova APR: Check List</b>
+@endsection
+
 @section('content')
 
     <div class="mt-5 ml-5 mr-5 mb-5">
 
         <h2> {{Form::label('checklist', 'Checklist')}} </h2>
+
         @foreach($data['checklist'] as $cl)
             <div class="form-group">
                 @if($data['apr']->checklists->find($cl)->pivot->checado == 0)
@@ -27,4 +34,9 @@
         <a href="/apr/">Finalizar</a>
    	</div>
 
+@endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    O documento APR possui um Check List. Se o Item é verificado na tarefa em questão, basta checar o botão na frente.  Quando terminar de selecionar todas as naturezas de risco, basta clicar em "Ir para Checklist".
 @endsection

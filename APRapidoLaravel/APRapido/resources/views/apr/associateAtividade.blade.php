@@ -1,5 +1,11 @@
 @extends('layout.app')
 
+@section('caminho')
+    <b> > <a href="\"> Menu </a><br>
+    > <a href="/apr"> Cadastrar APR </a><br>
+    > Criar nova APR</b>
+@endsection
+
 @section('content')
 
 {!! Form::open(['action' => ['AprController@associateAtividade', $data['apr']->id], 'method' => 'post']) !!}
@@ -37,4 +43,9 @@
             @endforeach
    		</div>
 
+@endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    Para cadastrar uma nova APR, ela deve ser associada a uma atividade. A associação significa que as atividades, previamente cadastrada, selecionadas serão utilizadas ao executar a tarefa da APR em questão, para isso basta procurá-la no campo "Atividades" e clicar em "Selecionar". Se selecionada uma atividade que não é desejada, basta clicar em "Deletar". Quando terminar de selecionar todas as atividades, basta clicar em "Ir para Natureza de Risco".
 @endsection
