@@ -293,14 +293,14 @@
 <table border="2px" bordercolor="black">
 <tr>
   <td colspan='5'>
-  <h5><center>Pessoas envolvidas na atividade e treinadas na análise de riscos desta tarefa. Estou ciente de todos os riscos nas atividades a serem executadas e vou cumprir as medidas preventivas estabelecidas.</center></h5>
+  <h6><center>Pessoas envolvidas na atividade e treinadas na análise de riscos desta tarefa. Estou ciente de todos os riscos nas atividades a serem executadas e vou cumprir as medidas preventivas estabelecidas.</center></h6>
   </td>
 </tr>
 <tr>
-    <td><h5><center>Nome</center></h5></td>
-    <td><h5><center>Empresa</center></h5></td>
-    <td><h5><center>Registro</center></h5></td> 
-    <td colspan='2'><h5><center>Assinatura</center></h5></td>
+    <td><h6><center>Nome</center></h6></td>
+    <td><h6><center>Empresa</center></h6></td>
+    <td><h6><center>Registro</center></h6></td> 
+    <td colspan='2'><h6><center>Assinatura</center></h6></td>
 </tr>
 <tr>
     <td><h6>1- </h6></td>
@@ -375,11 +375,11 @@
     <td colspan='2'></td>
 </tr>
 <tr>
-    <th><h5>Nomes Adicionais</h5></th>
-    <th><h5>Empresa</h5></th>
-    <th><h5>Registro</h5></th> 
-    <th><h5>Assinatura</h5></th>
-    <th><h5>Coord. Serviço</h5></th>
+    <th><h6>Nomes Adicionais</h6></th>
+    <th><h6>Empresa</h6></th>
+    <th><h6>Registro</h6></th> 
+    <th><h6>Assinatura</h6></th>
+    <th><h6>Coord. Serviço</h6></th>
 </tr>
 <tr>
     <td><h6>1- </h6></td>
@@ -417,10 +417,10 @@
     <td></td>
 </tr>
 <tr>
-    <td><h5><center>Modalidade da Energia (Elet. Pneum.Hidrul.Cinet.Term.Potenc.)</center></h5></td>
-    <td colspan='2'><h5><center>Localização do Bloqueio</center></h5></td>
-    <td><h5><center>Alívio de Energia</center></h5></td> 
-    <td><h5><center>Procedimentos de Testes e Verificações</center></h5></td>
+    <td><h6><center>Modalidade da Energia (Elet. Pneum.Hidrul.Cinet.Term.Potenc.)</center></h6></td>
+    <td colspan='2'><h6><center>Localização do Bloqueio</center></h6></td>
+    <td><h6><center>Alívio de Energia</center></h6></td> 
+    <td><h6><center>Procedimentos de Testes e Verificações</center></h6></td>
 </tr>
 <tr>
     <td><br><br><br></td>
@@ -429,20 +429,20 @@
     <td></td> 
 </tr>
 <tr>
-    <td><br><br><br><br></td>
+    <td><br><br><br></td>
     <td colspan='2'></td> 
     <td></td> 
     <td></td>
 </tr>
 <tr>
-  <td colspan='5'><h5><center>REVALIDAÇÃO DIÁRIA</center></h5></td>
+  <td colspan='5'><h6><center>REVALIDAÇÃO DIÁRIA</center></h6></td>
 </tr>
 <tr>
-    <td><h5><center>Coordenação do Serviço</center></h5></td>
-    <td><h5><center>Data</center></h5></td>
-    <td><h5><center>Aprovação da Área</center></h5></td> 
-    <td><h5><center>Data</center></h5></td> 
-    <td><h5><center>Número da(s) PT(s)</center></h5></td> 
+    <td><h6><center>Coordenação do Serviço</center></h6></td>
+    <td><h6><center>Data</center></h6></td>
+    <td><h6><center>Aprovação da Área</center></h6></td> 
+    <td><h6><center>Data</center></h6></td> 
+    <td><h6><center>Número da(s) PT(s)</center></h6></td> 
 </tr>
 </tr>
 <tr>
