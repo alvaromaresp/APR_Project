@@ -35,3 +35,8 @@
    	</div>
 
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    O documento APR possui um Check List. Se o Item é verificado na tarefa em questão, basta checar o botão na frente.  Quando terminar de selecionar todas as naturezas de risco, basta clicar em "Ir para Checklist".
+@endsection
