@@ -41,11 +41,21 @@
         <div class="col">
             <div class="row bordaBaixa">
                 <div class="col">
-                    <div class="quadradin mt-1">
-                        S
+                    <div class="row">
+                        <div class="quadradin mt-1">
+                            S
+                        </div>
+                        <div class="quadradin float-left">
+                            NA
+                        </div>
                     </div>
-                    <div class="quadradin float-left">
-                        NA
+                    <div class="row">
+                        <div class="quadradin mt-1">
+                            S
+                        </div>
+                        <div class="quadradin float-left">
+                            NA
+                        </div>
                     </div>
                 </div>
                 <div class="col">
@@ -206,6 +216,77 @@
     </div>
 
 
+</div>
+<br><br>
+<div class="container-fluid borda">
+    <!-- CABEÇALHO --><br>
+    <div class="row bordaBaixa">
+        <div class="col-4">
+            <div class="row">
+                <div class="col">
+                    <img  class="cem mt-2 float-right" src="{{public_path('img/farmax.png')}}"/>
+                </div>
+                <div class="col">
+                    <img  class="cem mt-2 float-left" src="{{public_path('img/icot.png')}}"/>
+                </div>
+            </div>
+        </div>
+        <div class="col txt-centro h4 mt-2">
+            <b>ANÁLISE PRELIMINAR DE RISCOS</b>
+        </div>
+        <div class="col-4">
+            <div class="row txt-dir">
+                <div class="col">
+                    APR N°: id apr
+                </div>
+                <div class="col">
+                    Data: data do dia
+                </div>
+                <div class="col">
+                    Pág: paginacao
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+
+    <div class="row">
+        <div class="col txt-centro bordaBaixa" style="background-color: rgb(220,220,220);">
+            <b>CHECK LIST</b>
+        </div>
+    </div>
+
+    <div class="row bordaBaixa">
+        <div class="col-8 bordaLado">
+            <b>ITEM</b>
+        </div>
+        <div class="col bordaLado txt-centro">
+            <b>SIM</b>
+        </div>
+        <div class="col txt-centro">
+            <b>NÃO</b>
+        </div>
+    </div>
+
+    <div class="row bordaBaixa">
+        <div class="col-8 bordaLado">
+            <b>Blá blá</b>
+        </div>
+        <div class="col bordaLado txt-centro cinquenta"> 
+        </div>
+        <div class="col txt-centro">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-8 bordaLado">
+            <b>Blá blá</b>
+        </div>
+        <div class="col bordaLado txt-centro"> 
+        </div>
+        <div class="col txt-centro cinquenta">
+        </div>
+    </div>
 </div>
 <br><br>
 
