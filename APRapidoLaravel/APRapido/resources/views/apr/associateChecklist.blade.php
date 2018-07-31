@@ -11,6 +11,7 @@
     <div class="mt-5 ml-5 mr-5 mb-5">
 
         <h2> {{Form::label('checklist', 'Checklist')}} </h2>
+
         @foreach($data['checklist'] as $cl)
             <div class="form-group">
                 @if($data['apr']->checklists->find($cl)->pivot->checado == 0)
