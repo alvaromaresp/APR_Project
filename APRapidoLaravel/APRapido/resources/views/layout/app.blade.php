@@ -131,6 +131,7 @@
                         </div>
                         <div class="row">
                             <div class="col offset-lg-3">
+                                <br>
                                 <p>@yield('caminho')</p>
                             </div>
                         </div>

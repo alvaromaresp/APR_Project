@@ -32,5 +32,5 @@
 
 @extends('layout.flutuante')
 @section('conteudo')
-    Todas as ferramentas cadastradas podem ser vistas ao lado, e também buscadas. A fim de criar uma nova, basta clicar em Criar Nova.
+    Todas as ferramentas cadastradas podem ser vistas ao lado, e também buscadas. A fim de criar uma nova, basta clicar em Criar Nova. Além disso, para verificar o conteúdo da ferramenta basta clicar em seu nome.
 @endsection

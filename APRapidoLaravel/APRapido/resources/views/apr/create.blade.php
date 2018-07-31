@@ -22,8 +22,7 @@
 
 @endsection
 
-<!-- old code
-
-
-
--->
+@extends('layout.flutuante')
+@section('conteudo')
+    A função ao lado serve para criar um novo documento APR. 
+@endsection

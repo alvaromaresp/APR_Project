@@ -28,3 +28,8 @@
     <div class="float-right">{{$apr->links()}}</div>
 
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    Todas as APRs cadastradas podem ser vistas ao lado, e também buscadas. A fim de criar uma nova, basta clicar em Criar Nova. Além disso, para verificar o conteúdo da APR basta clicar em seu nome.
+@endsection

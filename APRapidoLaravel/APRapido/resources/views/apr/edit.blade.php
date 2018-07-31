@@ -20,3 +20,8 @@
 {!! Form::close() !!}
 
 @endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    A função ao lado serve para editar a APR, a fim de melhorar o conteúdo do documento final.
+@endsection
