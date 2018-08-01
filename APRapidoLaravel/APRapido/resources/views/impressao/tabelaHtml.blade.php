@@ -1,101 +1,175 @@
 <link rel="stylesheet" href="{{ public_path('css/grid_bootstrap.css') }}">
 
-<div class="container-fluid">
-    <!-- CABEÇALHO -->
-    <div class="row">
+<div class="container-fluid borda">
+    <!-- CABEÇALHO --><br>
+    <div class="row bordaBaixa">
         <div class="col-4">
             <div class="row">
                 <div class="col">
-                    <img  class="cem" src="{{public_path('img/tik.png')}}"/>
+                    <img  class="cem mt-2 float-right" src="{{public_path('img/farmax.png')}}"/>
                 </div>
                 <div class="col">
-                    <img  class="cem" src="{{public_path('img/tik.png')}}"/>
+                    <img  class="cem mt-2 float-left" src="{{public_path('img/icot.png')}}"/>
                 </div>
             </div>
         </div>
-        <div class="col txt-centro h4">
-            ANÁLISE PRELIMINAR DE RISCOS
+        <div class="col txt-centro h4 mt-2">
+            <b>ANÁLISE PRELIMINAR DE RISCOS</b>
         </div>
         <div class="col-4">
             <div class="row txt-dir">
                 <div class="col">
-                    APR N°: 0019
+                    APR N°: id apr
                 </div>
                 <div class="col">
-                    Data: 21/07/2018
+                    Data: data do dia
                 </div>
                 <div class="col">
-                    Pág: 1/3
+                    Pág: paginacao
                 </div>
             </div>
         </div>
+        <br><br><br>
     </div>
 
     <!-- NATUREZA DOS RISCOS -->
     <div class="row">
-        <div class="col-4 txt-centro">
+        <div class="col-4 txt-centro bordaBaixa bordaLado">
             NATUREZA DOS RISCOS<br/>
             Caso marcar um item 'S' deve abrir uma PT.
         </div>
         <div class="col">
-            <div class="row">
+            <div class="row bordaBaixa">
                 <div class="col">
-                    1
+                    <div class="row">
+                        <div class="col quadradin mt-2">
+                            S
+                        </div>
+                        <div class="col quadradin mt-2 cinquenta">
+                            NA
+                        </div>
+                        <div class="col-8 mt-1">
+                            Trabalho em altura
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col quadradin mt-2 cinquenta">
+                            S
+                        </div>
+                        <div class="col quadradin mt-2">
+                            NA
+                        </div>
+                        <div class="col-8 mt-1">
+                            Trabalho com içamentos
+                        </div>
+                    </div>
                 </div>
                 <div class="col">
-                    2
+                    <div class="row">
+                        <div class="col quadradin mt-2 cinquenta">
+                            S
+                        </div>
+                        <div class="col quadradin mt-2">
+                            NA
+                        </div>
+                        <div class="col-8 mt-1 ">
+                            Fonte de energia perigosa
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col quadradin mt-2">
+                            S
+                        </div>
+                        <div class="col quadradin mt-2 cinquenta">
+                            NA
+                        </div>
+                        <div class="col-8 mt-1">
+                            Ambiente confinado
+                        </div>
+                    </div>
                 </div>
                 <div class="col">
-                    3
+                    <div class="row">
+                        <div class="col quadradin mt-2 cinquenta">
+                            S
+                        </div>
+                        <div class="col quadradin mt-2">
+                            NA
+                        </div>
+                        <div class="col-8 mt-1">
+                            Trabalho a quente
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col quadradin mt-2 cinquenta">
+                            S
+                        </div>
+                        <div class="col quadradin mt-2">
+                            NA
+                        </div>
+                        <div class="col-8 mt-1">
+                            Produtos Químicos
+                        </div>
+                    </div>
                 </div>
                 <div class="col">
-                    4
+                    <div class="row">
+                        <div class="col quadradin mt-2">
+                            S
+                        </div>
+                        <div class="col quadradin mt-2 cinquenta">
+                            NA
+                        </div>
+                        <div class="col-8 mt-1">
+                            Escavações
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- SETOR E LOCAL -->
-    <div class="row">
-        <div class="col-4">
-            SETOR: ALMOXARIFADO COSMETICO II
+    <div class="row bordaBaixa">
+        <div class="col-4 bordaLado">
+            <b>SETOR: </b>local 
         </div>
         <div class="col">
-            LOCAL DO SERVIÇO:
+            <b>LOCAL DO SERVIÇO: </b> celula
         </div>
     </div>
 
     <!-- TAREFA -->
-    <div class="row">
+    <div class="row bordaBaixa">
         <div class="col">
-            Tarefa: khdasah
+            <b>TAREFA:</b>nome apr
         </div>
     </div>
 
     <div class="row">
-        <div class="col">
-            Cabe ao contratado a responsabilidade de treinar todos os executantes nas tarefas definidas nesse documento, evidenciando com as assinaturas no verso.
+        <div class="col txt-centro bordaBaixa">
+            <b>Cabe ao contratado a responsabilidade de treinar todos os executantes nas tarefas definidas nesse documento, evidenciando com as assinaturas no verso.</b>
         </div>
     </div>
     <!-- CORDENAÇÃO DE SERVIÇO SESMT RESPONSÁVEL PELA ÁREA -->
-    <div class="row">
-        <div class="col">
-            CORDENAÇÃO DE SERVIÇO
+    <div class="row bordaBaixa">
+        <div class="col bordaLado txt-centro">
+           <b> CORDENAÇÃO DE SERVIÇO </b>
         </div>
-        <div class="col">
-            SESMT
+        <div class="col bordaLado txt-centro">
+           <b> SESMT </b>
         </div>
-        <div class="col">
-            RESPONSÁVEL PELA ÁREA
+        <div class="col txt-centro">
+            <b> RESPONSÁVEL PELA ÁREA </b>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
+    <div class="row bordaBaixa">
+        <div class="col bordaLado">
             Nome: coordenador<br/>
             Tel: +55 (37) 0000-0000<br/><br/>
             Assinatura:
         </div>
-        <div class="col">
+        <div class="col bordaLado">
             Nome: Rafaela Sousa<br/>
             Tel: +55 (37) 2101-9651<br/><br/>
             Assinatura:
@@ -109,23 +183,23 @@
 
 
     <!-- ATIVIDADES RISCOS POTENCIAIS MEDIDAS PREVENTIVAS/RECOMENDAÇÕES DE SEGURANÇA -->
-    <div class="row">
-        <div class="col">
-            ATIVIDADES
+    <div class="row txt-centro bordaBaixa">
+        <div class="col bordaLado">
+            <b>ATIVIDADES</b>
+        </div>
+        <div class="col bordaLado">
+            <b>RISCOS POTENCIAIS</b>
         </div>
         <div class="col">
-            RISCOS POTENCIAIS
-        </div>
-        <div class="col">
-            MEDIDAS PREVENTIVAS/RECOMENDAÇÕES DE
-            SEGURANÇA
+            <b>MEDIDAS PREVENTIVAS/RECOMENDAÇÕES DE
+            SEGURANÇA</b>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
+    <div class="row txt-centro bordaBaixa">
+        <div class="col bordaLado">
             (com suas respectivas etapas/passos)
         </div>
-        <div class="col">
+        <div class="col bordaLado">
             (o que poderá sair de errado)
         </div>
         <div class="col">
@@ -137,8 +211,8 @@
 
     <div class="row">
         @foreach($data['atividade'] as $atv)
-            <div class="row">
-                <div class="col">{{$atv->atividade}}</div>
+            <div class="row bordaBaixa">
+                <div class="col bordaLado">{{$atv->atividade}}</div>
 
                 <?php
                 $bf = true;
@@ -146,7 +220,7 @@
 
                 @foreach($atv->Ferramentas as $fer)
                     @if(!$bf)
-                        <div class="col">EMPTY</div>
+                        <div class="col bordaLado">EMPTY</div>
                     @endif
 
                     <div class="col">{{$fer->ferramenta}}</div>
@@ -194,3 +268,270 @@
 
 
 </div>
+<br><br>
+<div class="container-fluid borda">
+    <!-- CABEÇALHO --><br>
+    <div class="row bordaBaixa">
+        <div class="col-4">
+            <div class="row">
+                <div class="col">
+                    <img  class="cem mt-2 float-right" src="{{public_path('img/farmax.png')}}"/>
+                </div>
+                <div class="col">
+                    <img  class="cem mt-2 float-left" src="{{public_path('img/icot.png')}}"/>
+                </div>
+            </div>
+        </div>
+        <div class="col txt-centro h4 mt-2">
+            <b>ANÁLISE PRELIMINAR DE RISCOS</b>
+        </div>
+        <div class="col-4">
+            <div class="row txt-dir">
+                <div class="col">
+                    APR N°: id apr
+                </div>
+                <div class="col">
+                    Data: data do dia
+                </div>
+                <div class="col">
+                    Pág: paginacao
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+
+    <div class="row">
+        <div class="col txt-centro bordaBaixa tons">
+            <b>CHECK LIST</b>
+        </div>
+    </div>
+
+    <div class="row bordaBaixa">
+        <div class="col-8 bordaLado">
+            <b>ITEM</b>
+        </div>
+        <div class="col bordaLado txt-centro">
+            <b>SIM</b>
+        </div>
+        <div class="col txt-centro">
+            <b>NÃO</b>
+        </div>
+    </div>
+
+    <div class="row bordaBaixa">
+        <div class="col-8 bordaLado">
+            <b>Blá blá</b>
+        </div>
+        <div class="col bordaLado txt-centro cinquenta"> 
+        </div>
+        <div class="col txt-centro">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-8 bordaLado">
+            <b>Blá blá</b>
+        </div>
+        <div class="col bordaLado txt-centro"> 
+        </div>
+        <div class="col txt-centro cinquenta">
+        </div>
+    </div>
+</div>
+<br><br>
+
+<table border="2px" bordercolor="black">
+<tr>
+  <td colspan='5'>
+  <h6><center>Pessoas envolvidas na atividade e treinadas na análise de riscos desta tarefa. Estou ciente de todos os riscos nas atividades a serem executadas e vou cumprir as medidas preventivas estabelecidas.</center></h6>
+  </td>
+</tr>
+<tr>
+    <td><h6><center>Nome</center></h6></td>
+    <td><h6><center>Empresa</center></h6></td>
+    <td><h6><center>Registro</center></h6></td> 
+    <td colspan='2'><h6><center>Assinatura</center></h6></td>
+</tr>
+<tr>
+    <td><h7>1- </h7></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h7>2- </h7></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h7>3- </h7></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h7>4- </h7></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h7>5- </h7></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h7>6- </h7></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h7>7- </h7></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h7>8- </h7></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h7>9- </h7></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h7>10- </h7></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h7>11- </h7></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <td><h7>12- </h7></td>
+    <td></td>
+    <td></td> 
+    <td colspan='2'></td>
+</tr>
+<tr>
+    <th><h6>Nomes Adicionais</h6></th>
+    <th><h6>Empresa</h6></th>
+    <th><h6>Registro</h6></th> 
+    <th><h6>Assinatura</h6></th>
+    <th><h6>Coord. Serviço</h6></th>
+</tr>
+<tr>
+    <td><h7>1- </h7></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h7>2- </h7></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h7>3- </h7></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h7>4- </h7></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h7>5- </h7></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h6><center>Modalidade da Energia (Elet. Pneum.Hidrul.Cinet.Term.Potenc.)</center></h6></td>
+    <td colspan='2'><h6><center>Localização do Bloqueio</center></h6></td>
+    <td><h6><center>Alívio de Energia</center></h6></td> 
+    <td><h6><center>Procedimentos de Testes e Verificações</center></h6></td>
+</tr>
+<tr>
+    <td><br><br><br></td>
+    <td colspan='2'></td>
+    <td></td> 
+    <td></td> 
+</tr>
+<tr>
+    <td><br><br><br></td>
+    <td colspan='2'></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+  <td colspan='5'><h6><center>REVALIDAÇÃO DIÁRIA</center></h6></td>
+</tr>
+<tr>
+    <td><h6><center>Coordenação do Serviço</center></h6></td>
+    <td><h6><center>Data</center></h6></td>
+    <td><h6><center>Aprovação da Área</center></h6></td> 
+    <td><h6><center>Data</center></h6></td> 
+    <td><h6><center>Número da(s) PT(s)</center></h6></td> 
+</tr>
+</tr>
+<tr>
+    <td><h7>1- </h7></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h7>2- </h7></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h7>3- </h7></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h7>4- </h7></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+<tr>
+    <td><h7>5- </h7></td>
+    <td></td>
+    <td></td> 
+    <td></td> 
+    <td></td>
+</tr>
+</table>
+
+<br><br>
+

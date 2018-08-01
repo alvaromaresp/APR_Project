@@ -92,6 +92,7 @@
 		</p></h2><br>
 	    <div class="float-right">
 			<a href="/apr/{{$data['apr']->id}}/edit" class="btn btn-success mt-2">Editar</a>
+			<a href="/impressao/{{$data['apr']->id}}" class="btn btn-info mt-2">Imprimir</a>
 		    {!!Form::open(['action' => ['AprController@destroy', $data['apr']->id], 'method', 'post', 'class' => 'mt-2'])!!}
 		        {{Form::hidden('_method', 'DELETE')}}
 		        {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}

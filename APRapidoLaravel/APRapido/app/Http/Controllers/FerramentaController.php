@@ -76,10 +76,12 @@ class FerramentaController extends Controller
     {
         $ferramenta = Ferramenta::find($id);
         $riscos = $ferramenta->riscos;
+        $disciplina = Disciplina::find($ferramenta->disciplina_id);
 
         $data = array(
             'ferramenta' => $ferramenta,
-            'riscos' => $riscos
+            'riscos' => $riscos,
+            'disciplina' => $disciplina
         );
         return view('ferramenta.show')->with('data', $data);
     }

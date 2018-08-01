@@ -10,7 +10,7 @@
 	<div class="mt-5 ml-5 mr-5 mb-5">
 	    <h2><p class="font-weight-bold">ID: {{$data['ferramenta']->id}} <br>
 		ITEM: {{$data['ferramenta']->ferramenta}} <br>
-		DISCIPLINA: {{$data['ferramenta']->disciplina_id}} <br>
+		DISCIPLINA: {{$data['disciplina']->disciplina}} <br>
 		RISCOS
 		@foreach($data['riscos'] as $ris)
 
