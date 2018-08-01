@@ -42,37 +42,88 @@
             <div class="row bordaBaixa">
                 <div class="col">
                     <div class="row">
-                        <div class="quadradin mt-1">
+                        <div class="col quadradin mt-2">
                             S
                         </div>
-                        <div class="quadradin float-left">
+                        <div class="col quadradin mt-2">
                             NA
+                        </div>
+                        <div class="col-8 mt-1">
+                            Trabalho em altura
                         </div>
                     </div>
                     <div class="row">
-                        <div class="quadradin mt-1">
+                        <div class="col quadradin mt-2">
                             S
                         </div>
-                        <div class="quadradin float-left">
+                        <div class="col quadradin mt-2">
                             NA
+                        </div>
+                        <div class="col-8 mt-1">
+                            Trabalho com içamentos
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="quadradin mt-1">
-                        NA
+                    <div class="row">
+                        <div class="col quadradin mt-2">
+                            S
+                        </div>
+                        <div class="col quadradin mt-2">
+                            NA
+                        </div>
+                        <div class="col-8 mt-1 ">
+                            Fonte de energia perigosa
+                        </div>
                     </div>
-                    aline
-                    <div class="quadradin">
-                        S
+                    <div class="row">
+                        <div class="col quadradin mt-2">
+                            S
+                        </div>
+                        <div class="col quadradin mt-2">
+                            NA
+                        </div>
+                        <div class="col-8 mt-1">
+                            Ambiente confinado
+                        </div>
                     </div>
                 </div>
                 <div class="col">
-                    3
+                    <div class="row">
+                        <div class="col quadradin mt-2">
+                            S
+                        </div>
+                        <div class="col quadradin mt-2">
+                            NA
+                        </div>
+                        <div class="col-8 mt-1">
+                            Trabalho a quente
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col quadradin mt-2">
+                            S
+                        </div>
+                        <div class="col quadradin mt-2">
+                            NA
+                        </div>
+                        <div class="col-8 mt-1">
+                            Produtos Químicos
+                        </div>
+                    </div>
                 </div>
                 <div class="col">
-                    <br><br>
-                    4
+                    <div class="row">
+                        <div class="col quadradin mt-2">
+                            S
+                        </div>
+                        <div class="col quadradin mt-2">
+                            NA
+                        </div>
+                        <div class="col-8 mt-1">
+                            Escavações
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
