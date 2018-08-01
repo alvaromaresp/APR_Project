@@ -45,7 +45,7 @@
                         <div class="col quadradin mt-2">
                             S
                         </div>
-                        <div class="col quadradin mt-2">
+                        <div class="col quadradin mt-2 cinquenta">
                             NA
                         </div>
                         <div class="col-8 mt-1">
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col quadradin mt-2">
+                        <div class="col quadradin mt-2 cinquenta">
                             S
                         </div>
                         <div class="col quadradin mt-2">
@@ -66,7 +66,7 @@
                 </div>
                 <div class="col">
                     <div class="row">
-                        <div class="col quadradin mt-2">
+                        <div class="col quadradin mt-2 cinquenta">
                             S
                         </div>
                         <div class="col quadradin mt-2">
@@ -80,7 +80,7 @@
                         <div class="col quadradin mt-2">
                             S
                         </div>
-                        <div class="col quadradin mt-2">
+                        <div class="col quadradin mt-2 cinquenta">
                             NA
                         </div>
                         <div class="col-8 mt-1">
@@ -90,7 +90,7 @@
                 </div>
                 <div class="col">
                     <div class="row">
-                        <div class="col quadradin mt-2">
+                        <div class="col quadradin mt-2 cinquenta">
                             S
                         </div>
                         <div class="col quadradin mt-2">
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col quadradin mt-2">
+                        <div class="col quadradin mt-2 cinquenta">
                             S
                         </div>
                         <div class="col quadradin mt-2">
@@ -117,7 +117,7 @@
                         <div class="col quadradin mt-2">
                             S
                         </div>
-                        <div class="col quadradin mt-2">
+                        <div class="col quadradin mt-2 cinquenta">
                             NA
                         </div>
                         <div class="col-8 mt-1">
@@ -302,7 +302,7 @@
     </div>
 
     <div class="row">
-        <div class="col txt-centro bordaBaixa" style="background-color: rgb(220,220,220);">
+        <div class="col txt-centro bordaBaixa tons">
             <b>CHECK LIST</b>
         </div>
     </div>

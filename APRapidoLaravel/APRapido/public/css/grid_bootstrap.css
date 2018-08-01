@@ -10452,11 +10452,14 @@ a.text-dark:focus {
   text-align: center;
   text-decoration: bold;
   margin: 10px;
-  background: grey;
 }
 
 .cinquenta {
-  background-color: rgb(220,220,220);
+  background-color: grey;
+}
+
+.tons{
+  background: rgb(220,220,220);
 }
 
 
