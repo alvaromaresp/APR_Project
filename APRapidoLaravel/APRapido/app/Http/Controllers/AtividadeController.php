@@ -68,7 +68,8 @@ class AtividadeController extends Controller
         $atividade->data = date("Y-m-d H:i:s");
         $atividade->save();
 
-        $ferramentas = Ferramenta::all();
+        $disciplina = Disciplina::find($request->input('disciplina'));
+        $ferramentas = $disciplina->ferramentas;
 
         $data = array(
             'atividade' => $atividade,
