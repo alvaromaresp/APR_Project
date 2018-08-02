@@ -13,25 +13,33 @@
         <h2> {{Form::label('checklist', 'Checklist')}} </h2>
 
         @foreach($data['checklist'] as $cl)
-            <div class="form-group">
+            <div class="table"> 
                 @if($data['apr']->checklists->find($cl)->pivot->checado == 0)
                     {!! Form::open(['action' => ['AprController@associateChecklist', $data['apr']->id], 'method'=>'post']) !!}
-                        <p class="float-left">{{$cl->item}}</p>
-                        {!! Form::hidden('checklist', $cl->id) !!}
-                        {!! Form::submit('check', ['class' => 'btn btn-success mt-3 float-right']) !!}
+                        <div class="row">
+                            <div class="col-5"><p class="float-left mt-4">{{$cl->item}}</p></div>
+                            <div class="col">
+                                {!! Form::hidden('checklist', $cl->id) !!}
+                                {!! Form::submit('check', ['class' => 'btn btn-success mt-2 float-right']) !!}
+                            </div>
+                        </div>
                     {!! Form::close() !!}
                 @else
                     {!! Form::open(['action' => ['AprController@desassociateChecklist', $data['apr']->id], 'method'=>'post']) !!}
-                        <p class="float-left">{{$cl->item}}</p>
-                        {!! Form::hidden('checklist', $cl->id) !!}
-                        {!! Form::submit('unchek', ['class' => 'btn btn-danger mt-3 float-right']) !!}
+                        <div class="row">
+                            <div class="col-10"><p class="float-left mt-4">{{$cl->item}}</p></div>
+                            <div class="col">
+                                {!! Form::hidden('checklist', $cl->id) !!}
+                                {!! Form::submit('unchek', ['class' => 'btn btn-danger mt-2 float-right']) !!}
+                            </div>
+                        </div>
                     {!! Form::close() !!}
                 @endif
             </div>
             <br>
         @endforeach
         <br>
-        <a href="/apr/">Finalizar</a>
+        <a href="/apr/" class="btn btn-secondary mt-3 float-right">Finalizar</a>
    	</div>
 
 @endsection
