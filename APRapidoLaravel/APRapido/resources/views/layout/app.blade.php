@@ -152,7 +152,7 @@
                         </div>
                     </div>
                     <div class="col-lg-1 d-none d-lg-block">
-                        <hr id="linha" style="background: #00004c; width: 3px; min-height: 65vh;">
+                        <hr id="linha" style="background: #00004c; width: 3px; min-height: 60vh;">
                     </div>
                     <div class="col-lg-1 d-block d-lg-none" style="max-height: 100px; max-width: 80vw;">
                         <hr style="background: #00004c; height: 65vh; width: 3px; transform:rotate(90deg); margin-top: -200px">

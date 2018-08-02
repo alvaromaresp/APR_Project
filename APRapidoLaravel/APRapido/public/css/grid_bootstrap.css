@@ -10430,6 +10430,18 @@ a.text-dark:focus {
   border-color: black;
 }
 
+.bordaCheck {
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: black;
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-right-color: black;
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: black;
+}
+
 .bordaBaixa {
   border-bottom-width: 2px;
   border-bottom-style: solid;
@@ -10468,3 +10480,7 @@ a.text-dark:focus {
   background: gainsboro;
 }
 
+.imgm {
+  width: 75%;
+  height: 50px;
+}

@@ -113,6 +113,7 @@ class ImpressaoController extends Controller
         //return view('impressao.tabelaHtml')->with(['data'=>$data]);
 
         $pdf = PDF::loadView('impressao.tabelaHtml', ['data'=>$data]);
+        $pdf->setOption('footer-html', 'Page [page] of [topage]');
         $pdf->setPaper('a4')->setOrientation('landscape')->setOption('margin-bottom', 0)->setOption('viewport-size','1280x1024')->setOption('encoding','utf-8');
         return $pdf->inline();
         

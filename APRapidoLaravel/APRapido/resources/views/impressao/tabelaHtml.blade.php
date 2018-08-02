@@ -1,16 +1,33 @@
+<!DOCTYPE html>
+<html>
 <link rel="stylesheet" href="{{ public_path('css/grid_bootstrap.css') }}">
 <link rel="stylesheet" href="{{ asset('css/grid_bootstrap.css') }}">
+<head>
+    <script>
+        window.onload=function subst() {
+          var vars={};
+          var x=document.location.search.substring(1).split('&');
+          for (var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+          var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+          for (var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for (var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+          }
+        }
+    </script>    
+</head>
 
+<body>
 <div class="container-fluid borda">
     <!-- CABEÇALHO --><br>
     <div class="row bordaBaixa">
         <div class="col-4">
             <div class="row">
                 <div class="col">
-                    <img  class="cem mt-2 float-right" src="{{public_path('img/farmax.png')}}"/>
+                    <img  class="imgm mt-2 float-right" src="{{public_path('img/farmax.png')}}"/>
                 </div>
                 <div class="col">
-                    <img  class="cem mt-2 float-left" src="{{public_path('img/icot.png')}}"/>
+                    <img  class="imgm mt-2 float-left" src="{{public_path('img/icot.png')}}"/>
                 </div>
             </div>
         </div>
@@ -20,14 +37,15 @@
         <div class="col-4">
             <div class="row txt-dir">
                 <div class="col">
-                    APR N°: {{sprintf('%04d', $data['apr']->id)}}
+                    APR N°: {{sprintf('%04d', $data['impressao']->id)}}
                 </div>
                 <div class="col">
                     Data: {{$data['impressao']->created_at->format('d/m/Y')}}
                 </div>
                 <div class="col">
-                    Pág: paginacao
+                    Pág: <span class="page"></span> / <span class="topage"></span>
                 </div>
+
             </div>
         </div>
         <br><br><br>
@@ -80,17 +98,17 @@
     <!-- SETOR E LOCAL -->
     <div class="row bordaBaixa">
         <div class="col-4 bordaLado">
-            <b>SETOR: </b>local 
+            <b>SETOR: </b> {{$data['impressao']->celula}} 
         </div>
         <div class="col">
-            <b>LOCAL DO SERVIÇO: </b> celula
+            <b>LOCAL DO SERVIÇO: </b> {{$data['area']->area}}
         </div>
     </div>
 
     <!-- TAREFA -->
     <div class="row bordaBaixa">
         <div class="col">
-            <b>TAREFA:</b>nome apr
+            <b>TAREFA:</b> {{$data['apr']->nome}}
         </div>
     </div>
 
@@ -143,7 +161,7 @@
             SEGURANÇA</b>
         </div>
     </div>
-    <div class="row txt-centro bordaBaixa">
+    <div class="row txt-centro">
         <div class="col bordaLado">
             (com suas respectivas etapas/passos)
         </div>
@@ -181,21 +199,20 @@
         @endforeach
     @endforeach
 </div>
-
-
-
 </div>
-<br><br>
-<div class="container-fluid borda">
+
+<!-- CHECK LIST -->
+<div style="page-break-before: always;"></div>
+<div class="container-fluid bordaCheck">
     <!-- CABEÇALHO --><br>
     <div class="row bordaBaixa">
         <div class="col-4">
             <div class="row">
                 <div class="col">
-                    <img  class="cem mt-2 float-right" src="{{public_path('img/farmax.png')}}"/>
+                    <img  class="imgm mt-2 float-right" src="{{public_path('img/farmax.png')}}"/>
                 </div>
                 <div class="col">
-                    <img  class="cem mt-2 float-left" src="{{public_path('img/icot.png')}}"/>
+                    <img  class="imgm mt-2 float-left" src="{{public_path('img/icot.png')}}"/>
                 </div>
             </div>
         </div>
@@ -205,7 +222,7 @@
         <div class="col-4">
             <div class="row txt-dir">
                 <div class="col">
-                    APR N°: {{sprintf('%04d', $data['apr']->id)}}
+                    APR N°: {{sprintf('%04d', $data['impressao']->id)}}
                 </div>
                 <div class="col">
                     Data: {{$data['impressao']->created_at->format('d/m/Y')}}
@@ -263,8 +280,10 @@
         </div>
     @endforeach
 </div>
-<br><br>
 
+
+<!-- PAGINA DE ASSINATURAS -->
+<div style="page-break-before: always;"></div>
 <table border="2px" bordercolor="black">
 <tr>
   <td colspan='5'>
@@ -459,3 +478,5 @@
 
 <br><br>
 
+</body>
+</html>

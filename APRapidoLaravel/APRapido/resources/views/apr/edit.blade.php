@@ -12,7 +12,6 @@
     <div class="form-group mt-5 ml-5 mr-5 mb-5">
         <h2> {{Form::label('nome', 'Nova APR')}} </h2>
         {{Form::text('nome', $data['apr']->nome, ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Nome'])}}
-        {{Form::text('telr', $data['apr']->telr, ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Telr'])}}
 
         {{Form::hidden('_method', 'PUT')}}
         {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
