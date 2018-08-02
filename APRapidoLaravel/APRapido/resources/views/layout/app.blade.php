@@ -6,6 +6,14 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="{{ asset('css/app.css') }}">
             <script src="{{asset('js/app.js')}}"></script>
+            <script type="text/javascript">
+                window.onload=function(){
+                  var elemento = document.getElementById('corpo');
+                  var linha = document.getElementById('linha');
+                  var altura = elemento.scrollHeight;
+                  linha.style.height = altura + 'px';
+                }
+            </script>  
             <style>
                 @media (min-width: 992px) {
                     .bigButton {
@@ -121,7 +129,7 @@
         </head>
 
         <body>
-            <div class="container mb-5 mt-5" style="border: 1vh solid #00004c">
+            <div class="container mb-5 mt-5" id="corpo" style="border: 1vh solid #00004c">
                 <div class="row mt-4 mb-4">
                     <div class="col-lg-3 col-md-12 col-sm-12">
                         <div class="row">
@@ -144,7 +152,7 @@
                         </div>
                     </div>
                     <div class="col-lg-1 d-none d-lg-block">
-                        <hr style="background: #00004c; height: 65vh; width: 3px">
+                        <hr id="linha" style="background: #00004c; width: 3px; min-height: 65vh;">
                     </div>
                     <div class="col-lg-1 d-block d-lg-none" style="max-height: 100px; max-width: 80vw;">
                         <hr style="background: #00004c; height: 65vh; width: 3px; transform:rotate(90deg); margin-top: -200px">
