@@ -23,7 +23,7 @@
                     APR N°: {{sprintf('%04d', $data['apr']->id)}}
                 </div>
                 <div class="col">
-                    Data: data do dia
+                    Data: {{$data['impressao']->created_at->format('d/m/Y')}}
                 </div>
                 <div class="col">
                     Pág: paginacao
@@ -208,7 +208,7 @@
                     APR N°: {{sprintf('%04d', $data['apr']->id)}}
                 </div>
                 <div class="col">
-                    Data: data do dia
+                    Data: {{$data['impressao']->created_at->format('d/m/Y')}}
                 </div>
                 <div class="col">
                     Pág: paginacao
