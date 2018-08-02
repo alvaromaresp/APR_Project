@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html>
+<meta charset="utf-8">
 <link rel="stylesheet" href="{{ public_path('css/grid_bootstrap.css') }}">
 <link rel="stylesheet" href="{{ asset('css/grid_bootstrap.css') }}">
 <head>
     <script>
-        window.onload=function subst() {
-          var vars={};
-          var x=document.location.search.substring(1).split('&');
-          for (var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
-          var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
-          for (var i in x) {
-            var y = document.getElementsByClassName(x[i]);
-            for (var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
-          }
+        function substitutePdfVariables() {
+
+            function getParameterByName(name) {
+                var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+                return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+            }
+
+            function substitute(name) {
+                var value = getParameterByName(name);
+                var elements = document.getElementsByClassName(name);
+
+                for (var i = 0; elements && i < elements.length; i++) {
+                    elements[i].textContent = value;
+                }
+            }
+
+            ['frompage', 'topage', 'page', 'webpage', 'section', 'subsection', 'subsubsection']
+                .forEach(function(param) {
+                    substitute(param);
+                });
         }
-    </script>    
+    </script>   
 </head>
 
-<body>
+<body onload="substitutePdfVariables()">
 <div class="container-fluid borda">
     <!-- CABEÇALHO --><br>
     <div class="row bordaBaixa">
@@ -228,7 +240,7 @@
                     Data: {{$data['impressao']->created_at->format('d/m/Y')}}
                 </div>
                 <div class="col">
-                    Pág: paginacao
+                    Pág: <span class="page"></span> / <span class="topage"></span>
                 </div>
             </div>
         </div>
@@ -417,13 +429,13 @@
     <td><h6><center>Procedimentos de Testes e Verificações</center></h6></td>
 </tr>
 <tr>
-    <td><br><br><br></td>
+    <td><br><br></td>
     <td colspan='2'></td>
     <td></td> 
     <td></td> 
 </tr>
 <tr>
-    <td><br><br><br></td>
+    <td><br><br></td>
     <td colspan='2'></td> 
     <td></td> 
     <td></td>
@@ -476,7 +488,5 @@
 </tr>
 </table>
 
-<br><br>
-
 </body>
-</html>
+</html> 
