@@ -10452,9 +10452,8 @@ a.text-dark:focus {
   border-width: 1px;
   border-style: solid;
   border-color: black;
-  height: 25px;
-  width: 25px;
   font-size: 15px;
+  padding-left: 0 !important;
   text-align: center;
   -webkit-text-decoration: bold;
           text-decoration: bold;
