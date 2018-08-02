@@ -19,7 +19,7 @@
         <div class="col-4">
             <div class="row txt-dir">
                 <div class="col">
-                    APR N°: id apr
+                    APR N°: {{sprintf('%04d', $data['apr']->id)}}
                 </div>
                 <div class="col">
                     Data: data do dia
@@ -288,7 +288,7 @@
         <div class="col-4">
             <div class="row txt-dir">
                 <div class="col">
-                    APR N°: id apr
+                    APR N°: {{sprintf('%04d', $data['apr']->id)}}
                 </div>
                 <div class="col">
                     Data: data do dia
@@ -318,26 +318,33 @@
             <b>NÃO</b>
         </div>
     </div>
+    @php
+    $arrayCheck = array();
+    foreach ($data['checklist'] as $check){
+        array_push( $arrayCheck,$check->id);
+    }
+    @endphp
+    @foreach($data['checklistsGeral'] as $check)
+        <div class="row bordaBaixa">
+            <div class="col-8 bordaLado">
+                <b>{{$check->item}}</b>
+            </div>
+            @php
+                $completa1 = "";
+                $completa2 = "cinquenta";
 
-    <div class="row bordaBaixa">
-        <div class="col-8 bordaLado">
-            <b>Blá blá</b>
-        </div>
-        <div class="col bordaLado txt-centro cinquenta"> 
-        </div>
-        <div class="col txt-centro">
-        </div>
-    </div>
+                if(in_array($check->id,$arrayCheck)){
+                    $completa1 = "cinquenta";
+                    $completa2 = "";
+                }
+            @endphp
+            <div class="col bordaLado txt-centro {{$completa1}}">
 
-    <div class="row">
-        <div class="col-8 bordaLado">
-            <b>Blá blá</b>
+            </div>
+            <div class="col txt-centro {{$completa2}}">
+            </div>
         </div>
-        <div class="col bordaLado txt-centro"> 
-        </div>
-        <div class="col txt-centro cinquenta">
-        </div>
-    </div>
+    @endforeach
 </div>
 <br><br>
 

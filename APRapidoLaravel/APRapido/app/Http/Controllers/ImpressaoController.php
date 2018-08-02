@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Checklist;
 use Auth;
 use App\Sesmt;
 use Illuminate\Http\Request;
@@ -35,12 +36,14 @@ class ImpressaoController extends Controller
         }
 
 
+
         $data = array(
             'apr'=>$apr,
             'areas'=>$areas,
             'sesmts'=>$sesmts,
             'coordenas'=>$coordena,
             'empresas'=>$empresa
+
         );
 
         return view('impressao.preImpressao')->with(['data'=>$data]);
@@ -88,6 +91,7 @@ class ImpressaoController extends Controller
         $naturezariscos = $apr->naturezasriscos;
         $checklist = $apr->checklists;
         $atividade = $apr->atividades;
+        $checklists = Checklist::all();
 
         $data = array(
             'apr' => $apr,
@@ -98,7 +102,8 @@ class ImpressaoController extends Controller
             'user'=>$user,
             'area'=>$area,
             'sesmt'=>$sesmt,
-            'coordena'=>$coordena
+            'coordena'=>$coordena,
+            'checklistsGeral'=>$checklists
 
         );
 
