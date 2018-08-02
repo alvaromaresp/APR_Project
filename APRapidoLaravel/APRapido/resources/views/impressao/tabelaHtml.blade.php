@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{ public_path('css/grid_bootstrap.css') }}">
+<link rel="stylesheet" href="{{ asset('css/grid_bootstrap.css') }}">
 
 <div class="container-fluid borda">
     <!-- CABEÇALHO --><br>
@@ -165,18 +166,18 @@
     </div>
     <div class="row bordaBaixa">
         <div class="col bordaLado">
-            Nome: coordenador<br/>
-            Tel: +55 (37) 0000-0000<br/><br/>
+            Nome: {{$data['coordena']->nome}}<br/>
+            Tel: {{$data['coordena']->telefone}}<br/><br/>
             Assinatura:
         </div>
         <div class="col bordaLado">
-            Nome: Rafaela Sousa<br/>
-            Tel: +55 (37) 2101-9651<br/><br/>
+            Nome: {{$data['sesmt']->nome}}<br/>
+            Tel: {{$data['sesmt']->telefone}}<br/><br/>
             Assinatura:
         </div>
         <div class="col">
-            Nome:<br/>
-            Tel: +55 (37) 0000-0000<br/><br/>
+            Nome: {{$data['impressao']->responsavel}}<br/>
+            Tel: {{$data['impressao']->telResponsavel}}<br/><br/>
             Assinatura:
         </div>
     </div>
@@ -207,64 +208,33 @@
         </div>
     </div>
 
-
-
-    <div class="row">
-        @foreach($data['atividade'] as $atv)
-            <div class="row bordaBaixa">
-                <div class="col bordaLado">{{$atv->atividade}}</div>
-
-                <?php
-                $bf = true;
-                ?>
-
-                @foreach($atv->Ferramentas as $fer)
-                    @if(!$bf)
-                        <div class="col bordaLado">EMPTY</div>
+    @foreach($data['atividade'] as $atv)
+        <div class="row bordaAlto">
+        @php $prim = true; @endphp
+        <div class="col-4 bordaLado">{{$atv->atividade}}</div>
+        @foreach($atv->ferramentas as $fer)
+            @foreach($fer->riscos as $risco)
+                @if(!$prim)
+                    <div class="row">
+                        <div class="col-4  bordaLado"></div>
+                    @php $prim = true; @endphp
+                @endif
+                <div class="col-4  bordaLado  bordaAlto">{{$risco->risco}}</div>
+                @foreach($risco->medidaspreventivas as $mp)
+                    @if(!$prim)
+                        <div class="row">
+                            <div class="col-4 bordaLado"></div>
+                            <div class="col-4 bordaLado"></div>
                     @endif
-
-                    <div class="col">{{$fer->ferramenta}}</div>
-
-                    <?php
-                    $br = true;
-                    ?>
-
-                    @foreach($fer->Riscos as $ris)
-                        @if(!$br)
-                            <div class="col">EMPTY</div>
-                            <div class="col">EMPTY</div>
-                        @endif
-                        <div class="col">{{$ris->risco}}</div>
-
-                        <?php
-                        $bmp = true;
-                        ?>
-                        @foreach($ris->medidaspreventivas as $mp)
-                            @if(!$bmp)
-                                <div class="col">EMPTY</div>
-                                <div class="col">EMPTY</div>
-                                <div class="col">EMPTY</div>
-                            @endif
-                            <div class="col">{{$mp->medidapreventiva}}</div>
-
-            </div>
-            <?php
-            $bmp = false;
-            ?>
+                        <div class="col-4 bordaAlto">{{$mp->medidapreventiva}}</div>
+                    </div>
+                    @php $prim=false; @endphp
+                @endforeach
+            @endforeach
         @endforeach
+    @endforeach
+</div>
 
-        <?php
-        $br = false;
-        ?>
-        @endforeach
-
-        <?php
-        $bf = false;
-        ?>
-        @endforeach
-
-        @endforeach
-    </div>
 
 
 </div>
