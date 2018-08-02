@@ -2,8 +2,9 @@
 <html>
 <meta charset="utf-8">
 <link rel="stylesheet" href="{{ public_path('css/grid_bootstrap.css') }}">
-<link rel="stylesheet" href="{{ asset('css/grid_bootstrap.css') }}">
+
 <head>
+    <!--
     <script>
         function substitutePdfVariables() {
 
@@ -26,10 +27,11 @@
                     substitute(param);
                 });
         }
-    </script>   
+    </script>
+    -->
 </head>
 
-<body onload="substitutePdfVariables()">
+<body>
 <div class="container-fluid borda">
     <!-- CABEÇALHO --><br>
     <div class="row bordaBaixa">
@@ -54,9 +56,7 @@
                 <div class="col">
                     Data: {{$data['impressao']->created_at->format('d/m/Y')}}
                 </div>
-                <div class="col">
-                    Pág: <span class="page"></span> / <span class="topage"></span>
-                </div>
+                
 
             </div>
         </div>
@@ -110,10 +110,10 @@
     <!-- SETOR E LOCAL -->
     <div class="row bordaBaixa">
         <div class="col-4 bordaLado">
-            <b>SETOR: </b> {{$data['impressao']->celula}} 
+            <b>SETOR: </b> {{$data['area']->nome}}
         </div>
         <div class="col">
-            <b>LOCAL DO SERVIÇO: </b> {{$data['area']->area}}
+            <b>LOCAL DO SERVIÇO: </b> {{$data['impressao']->celula}}
         </div>
     </div>
 
@@ -239,9 +239,7 @@
                 <div class="col">
                     Data: {{$data['impressao']->created_at->format('d/m/Y')}}
                 </div>
-                <div class="col">
-                    Pág: <span class="page"></span> / <span class="topage"></span>
-                </div>
+
             </div>
         </div>
         <br><br><br>
