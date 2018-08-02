@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Checklist;
+use App\Naturezariscos;
 use Auth;
 use App\Sesmt;
 use Illuminate\Http\Request;
@@ -92,9 +93,11 @@ class ImpressaoController extends Controller
         $checklist = $apr->checklists;
         $atividade = $apr->atividades;
         $checklists = Checklist::all();
+        $todosnr = Naturezariscos::all();
 
         $data = array(
             'apr' => $apr,
+            'todosnr' => $todosnr,
             'naturezariscos' => $naturezariscos,
             'checklist' => $checklist,
             'atividade' => $atividade,

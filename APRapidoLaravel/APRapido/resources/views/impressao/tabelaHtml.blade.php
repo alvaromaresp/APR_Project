@@ -23,7 +23,7 @@
                     APR N°: {{sprintf('%04d', $data['apr']->id)}}
                 </div>
                 <div class="col">
-                    Data: data do dia
+                    Data: {{$data['impressao']->created_at->format('d/m/Y')}}
                 </div>
                 <div class="col">
                     Pág: paginacao
@@ -39,94 +39,41 @@
             NATUREZA DOS RISCOS<br/>
             Caso marcar um item 'S' deve abrir uma PT.
         </div>
-        <div class="col">
-            <div class="row bordaBaixa">
-                <div class="col">
-                    <div class="row">
-                        <div class="col quadradin mt-2">
-                            S
-                        </div>
-                        <div class="col quadradin mt-2 cinquenta">
-                            NA
-                        </div>
-                        <div class="col-8 mt-1">
-                            Trabalho em altura
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col quadradin mt-2 cinquenta">
-                            S
-                        </div>
-                        <div class="col quadradin mt-2">
-                            NA
-                        </div>
-                        <div class="col-8 mt-1">
-                            Trabalho com içamentos
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="row">
-                        <div class="col quadradin mt-2 cinquenta">
-                            S
-                        </div>
-                        <div class="col quadradin mt-2">
-                            NA
-                        </div>
-                        <div class="col-8 mt-1 ">
-                            Fonte de energia perigosa
+        <div class="col bordaBaixa">
+            <div class="row">
+                @php
+                    $i=0;
+                    $arrayNR = array();
+                    foreach ($data['naturezariscos'] as $nat){
+                        array_push( $arrayNR,$nat->id);
+                    }
+                @endphp
+                @foreach($data['todosnr'] as $nat)
+                    @php
+                        $completa1 = "";
+                        $completa2 = "cinquenta";
+
+                        if(in_array($nat->id,$arrayNR)){
+                            $completa1 = "cinquenta";
+                            $completa2 = "";
+                        }
+                    @endphp
+                    <div class="col">
+                        <div class="row">
+                            <div class="col quadradin {{$completa1}}">S</div>
+                            <div class="col quadradin {{$completa2}}">NA</div>
+                            <div class="col-8">{{$nat->natureza_risco}}</div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col quadradin mt-2">
-                            S
+                    @php $i++; @endphp
+                    @if($i>=3)
+                        @php $i=0; @endphp
                         </div>
-                        <div class="col quadradin mt-2 cinquenta">
-                            NA
-                        </div>
-                        <div class="col-8 mt-1">
-                            Ambiente confinado
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="row">
-                        <div class="col quadradin mt-2 cinquenta">
-                            S
-                        </div>
-                        <div class="col quadradin mt-2">
-                            NA
-                        </div>
-                        <div class="col-8 mt-1">
-                            Trabalho a quente
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col quadradin mt-2 cinquenta">
-                            S
-                        </div>
-                        <div class="col quadradin mt-2">
-                            NA
-                        </div>
-                        <div class="col-8 mt-1">
-                            Produtos Químicos
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="row">
-                        <div class="col quadradin mt-2">
-                            S
-                        </div>
-                        <div class="col quadradin mt-2 cinquenta">
-                            NA
-                        </div>
-                        <div class="col-8 mt-1">
-                            Escavações
-                        </div>
-                    </div>
-                </div>
+                        <div class="row">
+                    @endif
+                @endforeach
             </div>
+
         </div>
     </div>
 
@@ -261,7 +208,7 @@
                     APR N°: {{sprintf('%04d', $data['apr']->id)}}
                 </div>
                 <div class="col">
-                    Data: data do dia
+                    Data: {{$data['impressao']->created_at->format('d/m/Y')}}
                 </div>
                 <div class="col">
                     Pág: paginacao

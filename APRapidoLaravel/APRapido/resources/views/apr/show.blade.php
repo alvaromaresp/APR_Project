@@ -8,13 +8,14 @@
 
 @section('content')
 	<div class="mt-5 ml-5 mr-5 mb-5">
-	    <h2><p class="font-weight-bold">ID: {{$data['apr']->id}} <br>
-		ITEM: {{$data['apr']->nome}} <br>
-		NATUREZA RISCOS:
+	    <h3><p class="font-weight-bold">
+		ITEM: {{$data['apr']->nome}} <br><br>
+		NATUREZA RISCOS:</p>
 		@foreach($data['naturezariscos'] as $nr)
 			<li>{{$nr->natureza_risco}}</li>
 		@endforeach
-		CHECKLIST:
+		<br>
+		<p class="font-weight-bold"> CHECKLIST: </p>
 		@foreach($data['checklist'] as $cl)
 			@if($cl->pivot->checado == 1)
 				<?php
@@ -25,12 +26,19 @@
 					$checado = 'não';
 				?>
 			@endif
-			<li>{{$cl->item}}:{{$checado}}</li>
+			<li>{{$cl->item}}: {{$checado}}</li>
 		@endforeach
+<<<<<<< HEAD
 
 		ATIVIDADES:
 
 
+=======
+		<br>
+		<p class="font-weight-bold"> ATIVIDADES:</p>
+
+		<br>
+>>>>>>> bd122d934181904fd9e9301da8be5213d725cfb7
 		<table class="table">
 			@foreach($data['atividade'] as $atv)
 				<tr>
@@ -97,7 +105,6 @@
 		        {{Form::hidden('_method', 'DELETE')}}
 		        {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
 		    {!!Form::close()!!}
-              <a href="{{ route('showAPRbyLog', {{$data['apr']->id}}) }}"> <button type="submit" class="btn btn-default"> Re-utilizar </button> </a>
 		</div>
 		<div class="float-left">
 			<a href="/apr" class="btn btn-secondary">Voltar</a>
