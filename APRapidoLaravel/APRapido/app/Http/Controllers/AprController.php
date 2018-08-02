@@ -377,5 +377,5 @@ class AprController extends Controller
          return view('apr.newAPRbyLog');
     }
 
-
+    
 }
