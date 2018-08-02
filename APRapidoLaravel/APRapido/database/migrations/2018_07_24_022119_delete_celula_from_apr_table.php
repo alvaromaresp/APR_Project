@@ -15,6 +15,7 @@ class DeleteCelulaFromAprTable extends Migration
     {
         Schema::table('aprs', function($table) {
             $table->dropColumn('celula');
+            $table->dropColumn('telr');
         });
     }
 
