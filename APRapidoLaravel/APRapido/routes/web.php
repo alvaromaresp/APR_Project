@@ -49,7 +49,7 @@ Route::post('/sesmt/search','SesmtController@search');
 Route::resource('coordena', 'CoordenaController');
 Route::post('/coordena/search','CoordenaController@search');
 
-Route::resource('empresa', 'EmpresaController'); 
+Route::resource('empresa', 'EmpresaController');
 Route::post('/empresa/search','EmpresaController@search');
 
 Route::resource('apr', 'AprController');
@@ -61,6 +61,7 @@ Route::post('apr/associateNaturezariscos/{id}', 'AprController@associateNatureza
 Route::post('apr/desassociateNaturezariscos/{id}', 'AprController@desassociateNaturezariscos');
 Route::post('apr/associateNaturezariscosCall/{id}', 'AprController@associateNaturezariscosCall');
 Route::post('apr/associateChecklistCall/{id}', 'AprController@associateChecklistCall');
+Route::post('apr/show/{id}', 'AprController@showAPRbyLog')->name('showAPRbyLog');
 
 
 Route::post('impressao/store', 'ImpressaoController@store');

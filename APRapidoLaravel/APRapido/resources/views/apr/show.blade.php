@@ -29,24 +29,24 @@
 		@endforeach
 
 		ATIVIDADES:
-	
-		
+
+
 		<table class="table">
-			@foreach($data['atividade'] as $atv)	
+			@foreach($data['atividade'] as $atv)
 				<tr>
 					<td>{{$atv->atividade}}</td>
-					
+
 					<?php
 						$bf = true;
 					?>
-				
+
 					@foreach($atv->Ferramentas as $fer)
 						@if(!$bf)
 							<td></td>
 						@endif
 
 						<td>{{$fer->ferramenta}}</td>
-					
+
 						<?php
 							$br = true;
 						?>
@@ -79,7 +79,7 @@
 								$br = false;
 							?>
 						@endforeach
-							
+
 						<?php
 							$bf = false;
 						?>
@@ -97,6 +97,7 @@
 		        {{Form::hidden('_method', 'DELETE')}}
 		        {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
 		    {!!Form::close()!!}
+              <a href="{{ route('showAPRbyLog', {{$data['apr']->id}}) }}"> <button type="submit" class="btn btn-default"> Re-utilizar </button> </a>
 		</div>
 		<div class="float-left">
 			<a href="/apr" class="btn btn-secondary">Voltar</a>
