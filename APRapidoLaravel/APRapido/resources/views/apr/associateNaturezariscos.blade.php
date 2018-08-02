@@ -18,7 +18,7 @@
             <h2> {{Form::label('naturezariscos', 'Naturezas de Risco associadas a Atividade')}} </h2>
             @foreach($data['naturezariscos'] as $nr)
                 <?php
-                    array_push($naturezariscos, [$nr->id => $nr->natureza_risco])
+                    $naturezariscos[$nr->id] = $nr->natureza_risco;
                 ?>
             @endforeach
 

@@ -18,7 +18,7 @@
             <h2> {{Form::label('atividade', 'Atividades associadas a APR')}} </h2>
             @foreach($data['atividade'] as $at)
                 <?php
-                    array_push($atividades, [$at->id => $at->atividade])
+                    $atividades[$at->id] = $at->atividade;
                 ?>
             @endforeach
 
