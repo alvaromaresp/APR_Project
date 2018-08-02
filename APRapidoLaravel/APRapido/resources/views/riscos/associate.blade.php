@@ -17,7 +17,7 @@
             <h2> {{Form::label('medidaPreventiva', 'Medida Preventiva associada ao risco')}} </h2>
             @foreach($data['mp'] as $mp)
                 <?php
-                    array_push($mps, [$mp->id => $mp->medidapreventiva])
+                    $mps[$mp->id] = $mp->medidapreventiva;
                 ?>
             @endforeach
 
