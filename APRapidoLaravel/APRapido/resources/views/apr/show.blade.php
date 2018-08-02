@@ -28,26 +28,33 @@
 			@endif
 			<li>{{$cl->item}}: {{$checado}}</li>
 		@endforeach
+<<<<<<< HEAD
+
+		ATIVIDADES:
+
+
+=======
 		<br>
 		<p class="font-weight-bold"> ATIVIDADES:</p>
-	
+
 		<br>
+>>>>>>> bd122d934181904fd9e9301da8be5213d725cfb7
 		<table class="table">
-			@foreach($data['atividade'] as $atv)	
+			@foreach($data['atividade'] as $atv)
 				<tr>
 					<td>{{$atv->atividade}}</td>
-					
+
 					<?php
 						$bf = true;
 					?>
-				
+
 					@foreach($atv->Ferramentas as $fer)
 						@if(!$bf)
 							<td></td>
 						@endif
 
 						<td>{{$fer->ferramenta}}</td>
-					
+
 						<?php
 							$br = true;
 						?>
@@ -80,7 +87,7 @@
 								$br = false;
 							?>
 						@endforeach
-							
+
 						<?php
 							$bf = false;
 						?>
@@ -98,6 +105,7 @@
 		        {{Form::hidden('_method', 'DELETE')}}
 		        {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
 		    {!!Form::close()!!}
+              <a href="{{ route('showAPRbyLog', {{$data['apr']->id}}) }}"> <button type="submit" class="btn btn-default"> Re-utilizar </button> </a>
 		</div>
 		<div class="float-left">
 			<a href="/apr" class="btn btn-secondary">Voltar</a>
