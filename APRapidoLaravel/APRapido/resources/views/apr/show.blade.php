@@ -105,6 +105,7 @@
 		        {{Form::hidden('_method', 'DELETE')}}
 		        {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
 		    {!!Form::close()!!}
+              <a href="{{ route('showAPRbyLog', {{$data['apr']->id}}) }}"> <button type="submit" class="btn btn-default"> Re-utilizar </button> </a>
 		</div>
 		<div class="float-left">
 			<a href="/apr" class="btn btn-secondary">Voltar</a>
