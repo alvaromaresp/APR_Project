@@ -17,7 +17,7 @@
             <h2> {{Form::label('risco', 'Riscos associados a')}} </h2>
             @foreach($data['riscos'] as $ris)
                 <?php
-                    array_push($riscos, [$ris->id => $ris->risco])
+                    $riscos[$ris->id] = $ris->risco;
                 ?>
             @endforeach 
 
