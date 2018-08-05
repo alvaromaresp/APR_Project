@@ -56,7 +56,7 @@
                 <div class="col">
                     Data: {{$data['impressao']->created_at->format('d/m/Y')}}
                 </div>
-                
+
 
             </div>
         </div>
