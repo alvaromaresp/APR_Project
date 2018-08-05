@@ -17,6 +17,11 @@ use PDF;
 class ImpressaoController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('role:admin');
+    }
+
     public function preImpressao($id){
         $apr =$id;
         $areas = array();

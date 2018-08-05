@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Hash;
 use App\User;
+use App\Empresa;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use jeremykenedy\LaravelRoles\Models\Role;
+use jeremykenedy\LaravelRoles\Models\Permission;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -63,10 +65,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        $user = User::create([
+            'nome' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'senha' => Hash::make($data['password']),
         ]);
+        $user->empresa = Empresa::find(1);
+        $role = Role::where('name', '=', 'User')->first();  //choose the default role upon user creation.
+        $user->attachRole($role);
+
+        return $user;
     }
 }
