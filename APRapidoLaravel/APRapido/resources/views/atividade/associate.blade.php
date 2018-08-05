@@ -18,7 +18,7 @@
             <h2> {{Form::label('ferramenta', 'Associar Ferramentas')}} </h2>
             @foreach($data['ferramentas'] as $fer)
                 <?php
-                    array_push($ferramentas, [$fer->id => $fer->ferramenta])
+                    $ferramentas[$fer->id] = $fer->ferramenta;
                 ?>
             @endforeach
 

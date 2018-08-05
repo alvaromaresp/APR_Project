@@ -8,13 +8,14 @@
 
 @section('content')
 	<div class="mt-5 ml-5 mr-5 mb-5">
-	    <h2><p class="font-weight-bold">ID: {{$data['apr']->id}} <br>
-		ITEM: {{$data['apr']->nome}} <br>
-		NATUREZA RISCOS:
+	    <h3><p class="font-weight-bold">
+		ITEM: {{$data['apr']->nome}} <br><br>
+		NATUREZA RISCOS:</p>
 		@foreach($data['naturezariscos'] as $nr)
 			<li>{{$nr->natureza_risco}}</li>
 		@endforeach
-		CHECKLIST:
+		<br>
+		<p class="font-weight-bold"> CHECKLIST: </p>
 		@foreach($data['checklist'] as $cl)
 			@if($cl->pivot->checado == 1)
 				<?php
@@ -25,28 +26,29 @@
 					$checado = 'não';
 				?>
 			@endif
-			<li>{{$cl->item}}:{{$checado}}</li>
+			<li>{{$cl->item}}: {{$checado}}</li>
 		@endforeach
 
-		ATIVIDADES:
-	
-		
+		<br>
+		<p class="font-weight-bold"> ATIVIDADES:</p>
+
+		<br>
 		<table class="table">
-			@foreach($data['atividade'] as $atv)	
+			@foreach($data['atividade'] as $atv)
 				<tr>
 					<td>{{$atv->atividade}}</td>
-					
+
 					<?php
 						$bf = true;
 					?>
-				
+
 					@foreach($atv->Ferramentas as $fer)
 						@if(!$bf)
 							<td></td>
 						@endif
 
 						<td>{{$fer->ferramenta}}</td>
-					
+
 						<?php
 							$br = true;
 						?>
@@ -79,7 +81,7 @@
 								$br = false;
 							?>
 						@endforeach
-							
+
 						<?php
 							$bf = false;
 						?>

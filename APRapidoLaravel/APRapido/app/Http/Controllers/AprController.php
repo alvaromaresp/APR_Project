@@ -65,12 +65,11 @@ class AprController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,['nome'=>'required', 'telr'=>'required']);
+        $this->validate($request,['nome'=>'required']);
 
         $apr = new Apr;
         $apr->data = date("Y-m-d H:i:s");
         $apr->nome = $request->input('nome');
-        $apr->telr = $request->input('telr');
         $apr->save();
 
         $atividade = Atividade::all();
@@ -132,12 +131,11 @@ class AprController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,['nome'=>'required', 'telr'=>'required']);
+        $this->validate($request,['nome'=>'required']);
 
         $apr = Apr::find($id);
         $apr->data = date("Y-m-d H:i:s");
         $apr->nome = $request->input('nome');
-        $apr->telr = $request->input('telr');
         $apr->save();
 
         $atividade = Atividade::all();
@@ -353,7 +351,7 @@ class AprController extends Controller
 
     public function newAPRbyLog (Request $request, $id){
          $apr = Apr::find($id);
-         $this->validate($request,['telr'=>'required', 'empresa'=>'required', 'sesmt'=>'required', 'coordena'=>'required']);
+         $this->validate($request,['empresa'=>'required', 'sesmt'=>'required', 'coordena'=>'required']);
 
          $aprNew = new Apr;
 
@@ -365,7 +363,6 @@ class AprController extends Controller
          $aprNew->naturezasriscos = $apr->naturezasriscos;
 
          $aprNew->data = date("Y-m-d H:i:s");
-         $aprNew->telr = $request->input('telr');
          $aprNew->empresa_id = $request->input('empresa');
          $aprNew->user_id = 1;
          $aprNew->sesmt_id = $request->input('sesmt');
@@ -377,5 +374,5 @@ class AprController extends Controller
          return view('apr.newAPRbyLog');
     }
 
-
+    
 }

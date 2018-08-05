@@ -10420,8 +10420,8 @@ a.text-dark:focus {
 }
 
 .cem {
-  width: 50%;
-  height: 40px;
+  width: 100%;
+  height: 100px;
 }
 
 .borda {
@@ -10430,10 +10430,28 @@ a.text-dark:focus {
   border-color: black;
 }
 
+.bordaCheck {
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: black;
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-right-color: black;
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: black;
+}
+
 .bordaBaixa {
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: black;
+}
+
+.bordaAlto {
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: black;
 }
 
 .bordaLado {
@@ -10442,15 +10460,15 @@ a.text-dark:focus {
   border-right-color: black;
 }
 
-.quadradin{
+.quadradin {
   border-width: 1px;
   border-style: solid;
   border-color: black;
-  height: 25px;
-  width: 25px;
   font-size: 15px;
+  padding-left: 0 !important;
   text-align: center;
-  text-decoration: bold;
+  -webkit-text-decoration: bold;
+          text-decoration: bold;
   margin: 10px;
 }
 
@@ -10458,8 +10476,11 @@ a.text-dark:focus {
   background-color: grey;
 }
 
-.tons{
-  background: rgb(220,220,220);
+.tons {
+  background: gainsboro;
 }
 
-
+.imgm {
+  width: 75%;
+  height: 50px;
+}

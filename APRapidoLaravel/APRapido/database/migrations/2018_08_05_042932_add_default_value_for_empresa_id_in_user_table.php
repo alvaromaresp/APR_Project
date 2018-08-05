@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DeleteCelulaFromAprTable extends Migration
+class AddDefaultValueForEmpresaIdInUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class DeleteCelulaFromAprTable extends Migration
      */
     public function up()
     {
-        Schema::table('aprs', function($table) {
-            $table->dropColumn('celula');
-            $table->dropColumn('telr');
+        Schema::table('users', function(Blueprint $table) {
+            $table->integer('empresa_idEmpresa')->unsigned()->default(1)->change();
+            $table->foreign('empresa_idEmpresa')->references('id')
+                ->on('empresas')->onDelete('cascade');
         });
     }
 

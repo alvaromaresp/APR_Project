@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DeleteCelulaFromAprTable extends Migration
+class CreateFkFerramentas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,16 @@ class DeleteCelulaFromAprTable extends Migration
      */
     public function up()
     {
-        Schema::table('aprs', function($table) {
-            $table->dropColumn('celula');
-            $table->dropColumn('telr');
+        Schema::table('ferramentas', function(Blueprint $table)
+        {
+            $table->integer('disciplina_id')->unsigned()->change();
+
+
+
+            $table->foreign('disciplina_id')->references('id')
+                ->on('disciplinas')->onDelete('cascade');
+
+
         });
     }
 

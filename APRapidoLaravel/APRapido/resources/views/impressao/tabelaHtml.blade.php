@@ -1,15 +1,47 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
 <link rel="stylesheet" href="{{ public_path('css/grid_bootstrap.css') }}">
 
+<head>
+    <!--
+    <script>
+        function substitutePdfVariables() {
+
+            function getParameterByName(name) {
+                var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+                return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+            }
+
+            function substitute(name) {
+                var value = getParameterByName(name);
+                var elements = document.getElementsByClassName(name);
+
+                for (var i = 0; elements && i < elements.length; i++) {
+                    elements[i].textContent = value;
+                }
+            }
+
+            ['frompage', 'topage', 'page', 'webpage', 'section', 'subsection', 'subsubsection']
+                .forEach(function(param) {
+                    substitute(param);
+                });
+        }
+    </script>
+    -->
+</head>
+
+<body>
 <div class="container-fluid borda">
     <!-- CABEÇALHO --><br>
     <div class="row bordaBaixa">
         <div class="col-4">
             <div class="row">
                 <div class="col">
-                    <img  class="cem mt-2 float-right" src="{{public_path('img/farmax.png')}}"/>
+                    <img  class="imgm mt-2 float-right" src="{{public_path('img/farmax.png')}}"/>
                 </div>
                 <div class="col">
-                    <img  class="cem mt-2 float-left" src="{{public_path('img/icot.png')}}"/>
+                    <img  class="imgm mt-2 float-left" src="{{public_path('img/icot.png')}}"/>
                 </div>
             </div>
         </div>
@@ -19,14 +51,13 @@
         <div class="col-4">
             <div class="row txt-dir">
                 <div class="col">
-                    APR N°: id apr
+                    APR N°: {{sprintf('%04d', $data['impressao']->id)}}
                 </div>
                 <div class="col">
-                    Data: data do dia
+                    Data: {{$data['impressao']->created_at->format('d/m/Y')}}
                 </div>
-                <div class="col">
-                    Pág: paginacao
-                </div>
+
+
             </div>
         </div>
         <br><br><br>
@@ -38,111 +69,58 @@
             NATUREZA DOS RISCOS<br/>
             Caso marcar um item 'S' deve abrir uma PT.
         </div>
-        <div class="col">
-            <div class="row bordaBaixa">
-                <div class="col">
-                    <div class="row">
-                        <div class="col quadradin mt-2">
-                            S
-                        </div>
-                        <div class="col quadradin mt-2 cinquenta">
-                            NA
-                        </div>
-                        <div class="col-8 mt-1">
-                            Trabalho em altura
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col quadradin mt-2 cinquenta">
-                            S
-                        </div>
-                        <div class="col quadradin mt-2">
-                            NA
-                        </div>
-                        <div class="col-8 mt-1">
-                            Trabalho com içamentos
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="row">
-                        <div class="col quadradin mt-2 cinquenta">
-                            S
-                        </div>
-                        <div class="col quadradin mt-2">
-                            NA
-                        </div>
-                        <div class="col-8 mt-1 ">
-                            Fonte de energia perigosa
+        <div class="col bordaBaixa">
+            <div class="row">
+                @php
+                    $i=0;
+                    $arrayNR = array();
+                    foreach ($data['naturezariscos'] as $nat){
+                        array_push( $arrayNR,$nat->id);
+                    }
+                @endphp
+                @foreach($data['todosnr'] as $nat)
+                    @php
+                        $completa1 = "";
+                        $completa2 = "cinquenta";
+
+                        if(in_array($nat->id,$arrayNR)){
+                            $completa1 = "cinquenta";
+                            $completa2 = "";
+                        }
+                    @endphp
+                    <div class="col">
+                        <div class="row">
+                            <div class="col quadradin {{$completa1}}">S</div>
+                            <div class="col quadradin {{$completa2}}">NA</div>
+                            <div class="col-8">{{$nat->natureza_risco}}</div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col quadradin mt-2">
-                            S
+                    @php $i++; @endphp
+                    @if($i>=3)
+                        @php $i=0; @endphp
                         </div>
-                        <div class="col quadradin mt-2 cinquenta">
-                            NA
-                        </div>
-                        <div class="col-8 mt-1">
-                            Ambiente confinado
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="row">
-                        <div class="col quadradin mt-2 cinquenta">
-                            S
-                        </div>
-                        <div class="col quadradin mt-2">
-                            NA
-                        </div>
-                        <div class="col-8 mt-1">
-                            Trabalho a quente
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col quadradin mt-2 cinquenta">
-                            S
-                        </div>
-                        <div class="col quadradin mt-2">
-                            NA
-                        </div>
-                        <div class="col-8 mt-1">
-                            Produtos Químicos
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="row">
-                        <div class="col quadradin mt-2">
-                            S
-                        </div>
-                        <div class="col quadradin mt-2 cinquenta">
-                            NA
-                        </div>
-                        <div class="col-8 mt-1">
-                            Escavações
-                        </div>
-                    </div>
-                </div>
+                        <div class="row">
+                    @endif
+                @endforeach
             </div>
+
         </div>
     </div>
 
     <!-- SETOR E LOCAL -->
     <div class="row bordaBaixa">
         <div class="col-4 bordaLado">
-            <b>SETOR: </b>local 
+            <b>SETOR: </b> {{$data['area']->nome}}
         </div>
         <div class="col">
-            <b>LOCAL DO SERVIÇO: </b> celula
+            <b>LOCAL DO SERVIÇO: </b> {{$data['impressao']->celula}}
         </div>
     </div>
 
     <!-- TAREFA -->
     <div class="row bordaBaixa">
         <div class="col">
-            <b>TAREFA:</b>nome apr
+            <b>TAREFA:</b> {{$data['apr']->nome}}
         </div>
     </div>
 
@@ -165,18 +143,18 @@
     </div>
     <div class="row bordaBaixa">
         <div class="col bordaLado">
-            Nome: coordenador<br/>
-            Tel: +55 (37) 0000-0000<br/><br/>
+            Nome: {{$data['coordena']->nome}}<br/>
+            Tel: {{$data['coordena']->telefone}}<br/><br/>
             Assinatura:
         </div>
         <div class="col bordaLado">
-            Nome: Rafaela Sousa<br/>
-            Tel: +55 (37) 2101-9651<br/><br/>
+            Nome: {{$data['sesmt']->nome}}<br/>
+            Tel: {{$data['sesmt']->telefone}}<br/><br/>
             Assinatura:
         </div>
         <div class="col">
-            Nome:<br/>
-            Tel: +55 (37) 0000-0000<br/><br/>
+            Nome: {{$data['impressao']->responsavel}}<br/>
+            Tel: {{$data['impressao']->telResponsavel}}<br/><br/>
             Assinatura:
         </div>
     </div>
@@ -195,7 +173,7 @@
             SEGURANÇA</b>
         </div>
     </div>
-    <div class="row txt-centro bordaBaixa">
+    <div class="row txt-centro">
         <div class="col bordaLado">
             (com suas respectivas etapas/passos)
         </div>
@@ -207,78 +185,46 @@
         </div>
     </div>
 
-
-
-    <div class="row">
-        @foreach($data['atividade'] as $atv)
-            <div class="row bordaBaixa">
-                <div class="col bordaLado">{{$atv->atividade}}</div>
-
-                <?php
-                $bf = true;
-                ?>
-
-                @foreach($atv->Ferramentas as $fer)
-                    @if(!$bf)
-                        <div class="col bordaLado">EMPTY</div>
+    @foreach($data['atividade'] as $atv)
+        <div class="row bordaAlto">
+        @php $prim = true; @endphp
+        <div class="col-4 bordaLado">{{$atv->atividade}}</div>
+        @foreach($atv->ferramentas as $fer)
+            @foreach($fer->riscos as $risco)
+                @if(!$prim)
+                    <div class="row">
+                        <div class="col-4  bordaLado"></div>
+                    @php $prim = true; @endphp
+                @endif
+                <div class="col-4  bordaLado  bordaAlto">{{$risco->risco}}</div>
+                @foreach($risco->medidaspreventivas as $mp)
+                    @if(!$prim)
+                        <div class="row">
+                            <div class="col-4 bordaLado"></div>
+                            <div class="col-4 bordaLado"></div>
                     @endif
-
-                    <div class="col">{{$fer->ferramenta}}</div>
-
-                    <?php
-                    $br = true;
-                    ?>
-
-                    @foreach($fer->Riscos as $ris)
-                        @if(!$br)
-                            <div class="col">EMPTY</div>
-                            <div class="col">EMPTY</div>
-                        @endif
-                        <div class="col">{{$ris->risco}}</div>
-
-                        <?php
-                        $bmp = true;
-                        ?>
-                        @foreach($ris->medidaspreventivas as $mp)
-                            @if(!$bmp)
-                                <div class="col">EMPTY</div>
-                                <div class="col">EMPTY</div>
-                                <div class="col">EMPTY</div>
-                            @endif
-                            <div class="col">{{$mp->medidapreventiva}}</div>
-
-            </div>
-            <?php
-            $bmp = false;
-            ?>
+                        <div class="col-4 bordaAlto">{{$mp->medidapreventiva}}</div>
+                    </div>
+                    @php $prim=false; @endphp
+                @endforeach
+            @endforeach
         @endforeach
-
-        <?php
-        $br = false;
-        ?>
-        @endforeach
-
-        <?php
-        $bf = false;
-        ?>
-        @endforeach
-
-        @endforeach
-    </div>
-
-
+    @endforeach
 </div>
-<br><br>
-<div class="container-fluid borda">
+</div>
+
+<!-- CHECK LIST -->
+<div style="page-break-before: always;"></div>
+<div class="container-fluid bordaCheck">
     <!-- CABEÇALHO --><br>
     <div class="row bordaBaixa">
         <div class="col-4">
             <div class="row">
                 <div class="col">
-                    <img  class="cem mt-2 float-right" src="{{public_path('img/farmax.png')}}"/>
+                    <img  class="imgm mt-2 float-right" src="{{public_path('img/farmax.png')}}"/>
                 </div>
                 <div class="col">
-                    <img  class="cem mt-2 float-left" src="{{public_path('img/icot.png')}}"/>
+                    <img  class="imgm mt-2 float-left" src="{{public_path('img/icot.png')}}"/>
                 </div>
             </div>
         </div>
@@ -288,14 +234,12 @@
         <div class="col-4">
             <div class="row txt-dir">
                 <div class="col">
-                    APR N°: id apr
+                    APR N°: {{sprintf('%04d', $data['impressao']->id)}}
                 </div>
                 <div class="col">
-                    Data: data do dia
+                    Data: {{$data['impressao']->created_at->format('d/m/Y')}}
                 </div>
-                <div class="col">
-                    Pág: paginacao
-                </div>
+
             </div>
         </div>
         <br><br><br>
@@ -318,29 +262,38 @@
             <b>NÃO</b>
         </div>
     </div>
+    @php
+    $arrayCheck = array();
+    foreach ($data['checklist'] as $check){
+        array_push( $arrayCheck,$check->id);
+    }
+    @endphp
+    @foreach($data['checklistsGeral'] as $check)
+        <div class="row bordaBaixa">
+            <div class="col-8 bordaLado">
+                <b>{{$check->item}}</b>
+            </div>
+            @php
+                $completa1 = "";
+                $completa2 = "cinquenta";
 
-    <div class="row bordaBaixa">
-        <div class="col-8 bordaLado">
-            <b>Blá blá</b>
-        </div>
-        <div class="col bordaLado txt-centro cinquenta"> 
-        </div>
-        <div class="col txt-centro">
-        </div>
-    </div>
+                if(in_array($check->id,$arrayCheck)){
+                    $completa1 = "cinquenta";
+                    $completa2 = "";
+                }
+            @endphp
+            <div class="col bordaLado txt-centro {{$completa1}}">
 
-    <div class="row">
-        <div class="col-8 bordaLado">
-            <b>Blá blá</b>
+            </div>
+            <div class="col txt-centro {{$completa2}}">
+            </div>
         </div>
-        <div class="col bordaLado txt-centro"> 
-        </div>
-        <div class="col txt-centro cinquenta">
-        </div>
-    </div>
+    @endforeach
 </div>
-<br><br>
 
+
+<!-- PAGINA DE ASSINATURAS -->
+<div style="page-break-before: always;"></div>
 <table border="2px" bordercolor="black">
 <tr>
   <td colspan='5'>
@@ -474,13 +427,13 @@
     <td><h6><center>Procedimentos de Testes e Verificações</center></h6></td>
 </tr>
 <tr>
-    <td><br><br><br></td>
+    <td><br><br></td>
     <td colspan='2'></td>
     <td></td> 
     <td></td> 
 </tr>
 <tr>
-    <td><br><br><br></td>
+    <td><br><br></td>
     <td colspan='2'></td> 
     <td></td> 
     <td></td>
@@ -533,5 +486,5 @@
 </tr>
 </table>
 
-<br><br>
-
+</body>
+</html> 

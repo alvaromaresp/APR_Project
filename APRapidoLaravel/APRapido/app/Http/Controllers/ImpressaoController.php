@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Checklist;
+use App\Naturezariscos;
 use Auth;
 use App\Sesmt;
 use Illuminate\Http\Request;
@@ -15,6 +17,11 @@ use PDF;
 class ImpressaoController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('role:admin');
+    }
+
     public function preImpressao($id){
         $apr =$id;
         $areas = array();
@@ -35,12 +42,14 @@ class ImpressaoController extends Controller
         }
 
 
+
         $data = array(
             'apr'=>$apr,
             'areas'=>$areas,
             'sesmts'=>$sesmts,
             'coordenas'=>$coordena,
             'empresas'=>$empresa
+
         );
 
         return view('impressao.preImpressao')->with(['data'=>$data]);
@@ -88,9 +97,12 @@ class ImpressaoController extends Controller
         $naturezariscos = $apr->naturezasriscos;
         $checklist = $apr->checklists;
         $atividade = $apr->atividades;
+        $checklists = Checklist::all();
+        $todosnr = Naturezariscos::all();
 
         $data = array(
             'apr' => $apr,
+            'todosnr' => $todosnr,
             'naturezariscos' => $naturezariscos,
             'checklist' => $checklist,
             'atividade' => $atividade,
@@ -98,13 +110,19 @@ class ImpressaoController extends Controller
             'user'=>$user,
             'area'=>$area,
             'sesmt'=>$sesmt,
-            'coordena'=>$coordena
+            'coordena'=>$coordena,
+            'checklistsGeral'=>$checklists
 
         );
 
         //return view('impressao.tabelaHtml')->with(['data'=>$data]);
 
         $pdf = PDF::loadView('impressao.tabelaHtml', ['data'=>$data]);
+        //$pdf->setOption('enable-javascript', true);
+        //$pdf->setOption('javascript-delay', 13500);
+        //$pdf->setOption('enable-smart-shrinking', true);
+        //$pdf->setOption('no-stop-slow-scripts', true);
+        $pdf->setOption('header-right','Página [page]');
         $pdf->setPaper('a4')->setOrientation('landscape')->setOption('margin-bottom', 0)->setOption('viewport-size','1280x1024')->setOption('encoding','utf-8');
         return $pdf->inline();
         

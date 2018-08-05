@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DeleteCelulaFromAprTable extends Migration
+class DeleteColumnAdmIsAdmEmpresaIdFromUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class DeleteCelulaFromAprTable extends Migration
      */
     public function up()
     {
-        Schema::table('aprs', function($table) {
-            $table->dropColumn('celula');
-            $table->dropColumn('telr');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('adm');
+            $table->dropColumn('isAdm');
+            $table->dropColumn('empresa_id');
         });
     }
 
@@ -26,6 +27,6 @@ class DeleteCelulaFromAprTable extends Migration
      */
     public function down()
     {
-        //
+
     }
 }

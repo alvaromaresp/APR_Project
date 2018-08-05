@@ -59,5 +59,8 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'role' => \jeremykenedy\LaravelRoles\Middleware\VerifyRole::class,
+        'permission' => \jeremykenedy\LaravelRoles\Middleware\VerifyPermission::class,
+        'level' => \jeremykenedy\LaravelRoles\Middleware\VerifyLevel::class,
     ];
 }
