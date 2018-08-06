@@ -69,10 +69,6 @@ Route::post('impressao/store', 'ImpressaoController@store');
 Route::get('impressao/{id}','ImpressaoController@preImpressao');
 Route::get('pdf/{id}','ImpressaoController@geraPdf');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
+Route::auth();
 
 Route::get('/home', 'HomeController@index')->name('home');

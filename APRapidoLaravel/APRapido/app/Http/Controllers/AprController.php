@@ -21,7 +21,7 @@ class AprController extends Controller
     //
     public function __construct()
     {
-        //$this->middleware('role:user');
+        $this->middleware('role:user');
     }
     
     /**

@@ -68,7 +68,7 @@ class RegisterController extends Controller
         $user = User::create([
             'nome' => $data['name'],
             'email' => $data['email'],
-            'senha' => Hash::make($data['password']),
+            'password' => Hash::make($data['password']),
         ]);
         $user->empresa = Empresa::find(1);
         $role = Role::where('name', '=', 'User')->first();  //choose the default role upon user creation.

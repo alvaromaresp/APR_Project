@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('nome',191);
             $table->string('email',191)->unique();
-            $table->string('senha',191);
+            $table->string('password',191);
             $table->tinyInteger('adm');
             $table->integer('empresa_idEmpresa');
             $table->rememberToken();

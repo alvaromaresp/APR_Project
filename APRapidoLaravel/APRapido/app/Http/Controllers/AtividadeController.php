@@ -14,7 +14,7 @@ class AtividadeController extends Controller
     //
     public function __construct()
     {
-        //$this->middleware('role:user');
+        $this->middleware('role:user');
     }
 
     /**

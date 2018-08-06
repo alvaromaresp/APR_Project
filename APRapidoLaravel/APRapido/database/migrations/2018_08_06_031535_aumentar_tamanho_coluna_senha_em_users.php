@@ -14,7 +14,7 @@ class AumentarTamanhoColunaSenhaEmUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('senha',210)->change();
+            $table->string('password',210)->change();
         });
     }
 
