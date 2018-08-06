@@ -1,3 +1,9 @@
+<?php 
+    if(@!$data['modal']){
+        $data['modal']="false";
+    }
+    // var_dump($data['modal']);
+?>  
 <DOCTYPE html>
     <html lang="{{app()->getLocale() }}">
         <head>
@@ -127,40 +133,44 @@
             </style>
 
         </head>
-
-        <body>
-            <div class="container mb-5 mt-5" id="corpo" style="border: 1vh solid #00004c">
-                <div class="row mt-4 mb-4">
-                    <div class="col-lg-3 col-md-12 col-sm-12">
-                        <div class="row">
-                            <div class="col">
-                                <img src="/img/logo.png" width="250">
+        @if($data['modal']=="false")
+            <body>
+                <div class="container mb-5 mt-5" id="corpo" style="border: 1vh solid #00004c">
+                    <div class="row mt-4 mb-4">
+                        <div class="col-lg-3 col-md-12 col-sm-12">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="/img/logo.png" width="250">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col offset-lg-3">
+                                    <br>
+                                    <p>@yield('caminho')</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <button type="button" class="btn smallButton" data-toggle="modal" data-target="#exampleModal">
+                                    ?
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col offset-lg-3">
-                                <br>
-                                <p>@yield('caminho')</p>
-                            </div>
+                        <div class="col-lg-1 d-none d-lg-block">
+                            <hr id="linha" style="background: #00004c; width: 3px; min-height: 60vh;">
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <button type="button" class="btn smallButton" data-toggle="modal" data-target="#exampleModal">
-                                  ?
-                                </button>
-                            </div>
+                        <div class="col-lg-1 d-block d-lg-none" style="max-height: 100px; max-width: 80vw;">
+                            <hr style="background: #00004c; height: 65vh; width: 3px; transform:rotate(90deg); margin-top: -200px">
                         </div>
-                    </div>
-                    <div class="col-lg-1 d-none d-lg-block">
-                        <hr id="linha" style="background: #00004c; width: 3px; min-height: 60vh;">
-                    </div>
-                    <div class="col-lg-1 d-block d-lg-none" style="max-height: 100px; max-width: 80vw;">
-                        <hr style="background: #00004c; height: 65vh; width: 3px; transform:rotate(90deg); margin-top: -200px">
-                    </div>
-                    <div class="col-lg-8 col-md-12 col-sm-12" style="margin-left: -5%">
-                        @yield('content')
+                        <div class="col-lg-8 col-md-12 col-sm-12" style="margin-left: -5%">
+                            @yield('content')
+                        </div>
                     </div>
                 </div>
-            </div>
-        </body>
+            </body>
+        @else
+            @yield("content")
+        @endif
+
     </html>

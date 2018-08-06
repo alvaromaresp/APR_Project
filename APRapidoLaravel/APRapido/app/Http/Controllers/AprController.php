@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Apr;
 use App\Atividade;
 use App\Checklist;
+use App\Disciplina;
 use App\Naturezariscos;
 use App\Area;
 use App\Empresa;
@@ -20,7 +21,7 @@ class AprController extends Controller
     //
     public function __construct()
     {
-        $this->middleware('role:user');
+        //$this->middleware('role:user');
     }
     
     /**
@@ -79,10 +80,14 @@ class AprController extends Controller
         $apr->save();
 
         $atividade = Atividade::all();
+        $disciplina = Disciplina::all();
+        $empresa = Empresa::all();
 
         $data = array(
             'apr' => $apr,
-            'atividade' => $atividade
+            'atividade' => $atividade,
+            'disciplina' => $disciplina,
+            'empresa' => $empresa
         );
 
 

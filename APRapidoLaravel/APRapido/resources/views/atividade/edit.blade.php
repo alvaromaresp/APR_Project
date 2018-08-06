@@ -19,7 +19,7 @@
 
             @foreach($data['disciplina'] as $d)
                 <?php
-                    array_push($dis, [$d->id => $d->disciplina])
+                    $dis[$d->id] = $d->disciplina;
                 ?>
             @endforeach
 
@@ -31,7 +31,7 @@
 
             @foreach($data['empresa'] as $e)
                 <?php
-                    array_push($emp, [$e->id => $e->empresa])
+                    $emp[$e->id] = $e->empresa;
                 ?>
             @endforeach
 

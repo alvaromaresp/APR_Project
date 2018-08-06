@@ -24,9 +24,14 @@
 
             {{Form::select('ferramenta', $ferramentas, null, ['class' => 'custom-select mt-3 mb-3', 'placeholder' => 'Ferramenta'])}}
 
+            {{Form::hidden('modal', $data['modal'])}}
     
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
-            <a href="/atividades" class="btn mt-3 btn-secondary">Finalizar</a>
+            
+            @if($data['modal'] == "false")
+                <a href="/atividades" class="btn mt-3 btn-secondary">Finalizar</a>
+            @endif
+            
             {!! Form::close() !!}
 
             @foreach($data['atividade']->ferramentas as $fer)

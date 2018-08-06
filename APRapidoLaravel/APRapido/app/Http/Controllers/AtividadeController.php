@@ -14,7 +14,7 @@ class AtividadeController extends Controller
     //
     public function __construct()
     {
-        $this->middleware('role:user');
+        //$this->middleware('role:user');
     }
 
     /**
@@ -22,12 +22,15 @@ class AtividadeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($modal = false)
     {
 
 
         $atividades = Atividade::orderBy('atividade', 'desc')->paginate(5);
 
+        if($modal){
+            return 'Fechar';   
+        }
         return view('atividade.index')->with('atividades', $atividades);
 
 
@@ -38,16 +41,18 @@ class AtividadeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($modal = "false")
     {
+
         $emp = Empresa::all();
         $dis = Disciplina::all();
 
         $data = array(
             'empresa' => $emp,
-            'disciplina' => $dis
+            'disciplina' => $dis,
+            'modal' => $modal
         );
-        return view('atividade.create')->with('data', $data);
+        return view("atividade.create")->with('data', $data);
     }
 
     /**
@@ -69,12 +74,17 @@ class AtividadeController extends Controller
         $disciplina = Disciplina::find($request->input('disciplina'));
         $ferramentas = $disciplina->ferramentas;
 
+        $modal = $request->input('modal');
+
+
         $data = array(
             'atividade' => $atividade,
-            'ferramentas' => $ferramentas
+            'ferramentas' => $ferramentas,
+            'modal' => $modal,
+            'teste' => "false"
         );
 
-        return view('atividade.associate')->with('data', $data);
+        return view("atividade.associate")->with('data', $data);
     }
 
     /**
@@ -174,10 +184,12 @@ class AtividadeController extends Controller
 
         $ferramenta = Ferramenta::all();
 
-        $data = array(
+        $modal = $request->input('modal');
 
+        $data = array(
             'atividade' => $atividade,
-            'ferramentas' => $ferramenta
+            'ferramentas' => $ferramenta,
+            'modal' => $modal
         );
 
         return view('atividade.associate')->with('data', $data);

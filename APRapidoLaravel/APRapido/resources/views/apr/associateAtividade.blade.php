@@ -32,6 +32,7 @@
                 {{Form::submit('Ir para Natureza Risco',['class' => 'mt-3 btn btn-secondary'])}}
             {!! Form::close() !!}
 
+
             @foreach($data['apr']->atividades as $at)
                 
                 {!!Form::open(['action' => ['AprController@desassociateAtividade', $data['apr']->id], 'method', 'post', 'class' => 'mt-2'])!!}
@@ -41,7 +42,34 @@
                 {!!Form::close()!!}
 
             @endforeach
-   		</div>
+        </div>
+           
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#novaatividade">
+           Nova Atividade
+        </button>
+        <div class="modal fade" id="novaatividade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Nova Atividade</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" id="resposta-modal">
+                    <iframe src="/atividades/create/true" width="800" height="500"></iframe>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        <script>
+            $(document).ready(function(){
+                $('#novaatividade').on('hidden.bs.modal', function () {
+                    location.reload();
+                });
+            });
+        </script>
 
 @endsection
 

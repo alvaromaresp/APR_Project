@@ -48,6 +48,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        return parent::render($request, $exception);
         try{
             return response()->view('error.index', ['exception'=>$exception], 500);
         }catch(Exception $e){

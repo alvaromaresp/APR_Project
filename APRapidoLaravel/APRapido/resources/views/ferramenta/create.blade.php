@@ -20,7 +20,7 @@
 
             @foreach($disciplina as $d)
                 <?php
-                    array_push($dis, [$d->id => $d->disciplina])
+                    $dis[$d->id] = $d->disciplina;
                 ?>
             @endforeach
 

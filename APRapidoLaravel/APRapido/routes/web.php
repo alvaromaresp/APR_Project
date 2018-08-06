@@ -18,6 +18,7 @@ Route::get('/editar', 'pagesController@menuEditar');
 Route::resource('atividades','AtividadeController');
 Route::post('atividades/associate/{id}', 'AtividadeController@associate');
 Route::post('atividades/desassociate/{id}', 'AtividadeController@desassociate');
+Route::get('atividades/create/{modal}', 'AtividadeController@create');
 
 Route::resource('medidaPreventiva','MedidaPreventivaController');
 Route::post('/medidaPreventiva/search','MedidaPreventivaController@search');
