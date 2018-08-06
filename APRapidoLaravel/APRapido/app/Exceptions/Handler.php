@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use jeremykenedy\LaravelRoles\Exceptions\AccessDeniedException; 
 
 class Handler extends ExceptionHandler
 {
@@ -34,6 +35,7 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+        
         parent::report($exception);
     }
 
@@ -46,6 +48,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+        try{
+            return response()->view('error.index', ['exception'=>$exception], 500);
+        }catch(Exception $e){
+            return parent::render($request, $exception);
+        }
+        //return parent::render($request, $exception);
     }
 }
