@@ -9,6 +9,12 @@ use App\Riscos;
 
 class FerramentaController extends Controller
 {
+    //
+    public function __construct()
+    {
+        $this->middleware('role:user');
+    }
+    
     /**
      * Display a listing of the resource.
      *

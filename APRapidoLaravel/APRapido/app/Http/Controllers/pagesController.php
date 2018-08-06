@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class pagesController extends Controller
 {
+    //
+    public function __construct()
+    {
+        $this->middleware('role:user');
+    }
+    
     public function menu(){
         return view('menu');
     }

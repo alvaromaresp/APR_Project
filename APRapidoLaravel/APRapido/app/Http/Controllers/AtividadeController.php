@@ -11,12 +11,10 @@ use App\Atividade;
 
 class AtividadeController extends Controller
 {
-    /**
-     * AtividadeController constructor.
-     */
+    //
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('role:user');
     }
 
     /**
