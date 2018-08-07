@@ -72,4 +72,4 @@ Route::auth();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/registros', 'RegistrosController@index');
-Route::get('/registros/search', 'RegistrosController@search');
+Route::post('/registros/search', 'RegistrosController@search');
