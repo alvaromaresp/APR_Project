@@ -21,10 +21,8 @@ class RegistrosController extends Controller
 
 
     public function search(Request $request){ 
-        $request=date_format($request->input('search'), 'Y-m-d'); 
-
     	$registros = Impressao::where([
-            ['created_at', 'BETWEEN', $request . '00:00:00 AND' . $request . '23:59:59']
+            ['created_at', 'BETWEEN', $request->input('search') . '00:00:00 AND' . $request->input('search')  . '23:59:59']
         ])->paginate(10);
 
         return view('registro.index')->with('registros',$registros);
