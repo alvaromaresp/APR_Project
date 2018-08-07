@@ -115,7 +115,7 @@
         <div class="col">
             <b>LOCAL DO SERVIÇO: </b> {{$data['impressao']->celula}}
         </div>
-    </div>
+    </div> 
 
     <!-- TAREFA -->
     <div class="row bordaBaixa">

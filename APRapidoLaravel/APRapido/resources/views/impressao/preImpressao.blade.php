@@ -8,7 +8,7 @@
 
 @section('content')
 
-    {!! Form::open(['action' => 'ImpressaoController@store', 'method' => 'post']) !!}
+    {!! Form::open(['action' => 'ImpressaoController@store', 'method' => 'post', 'target' => '_blank']) !!}
     <div class="form-group mt-5 ml-5 mr-5 mb-5">
         <h2> {{Form::label('nome', 'Nova Impressão')}} </h2>
         {{Form::hidden('apr',$data['apr'])}}

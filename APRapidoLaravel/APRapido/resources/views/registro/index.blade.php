@@ -51,7 +51,7 @@
 							{{sprintf('%04d', $registro-> id)}}
 						</td>
 						<td>
-							{{date_format($registro-> created_at, 'd-m-Y')}}
+							{{date_format($registro-> created_at, 'd/m/Y')}}
 						</td>
 						<td>
 							{{date_format($registro-> created_at, 'H:i:s')}}
