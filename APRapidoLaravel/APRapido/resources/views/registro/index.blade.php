@@ -45,7 +45,7 @@
 				@foreach($registros as $registro)
 					<tr>
 						<td>
-							{{$registro-> apr}} 
+							{{$registro-> aprs-> nome}} 
 						</td>
 						<td>
 							{{sprintf('%04d', $registro-> id)}}
@@ -57,7 +57,7 @@
 							{{date_format($registro-> created_at, 'H:i:s')}}
 						</td>
 						<td>
-							{{$registro-> user}}
+							{{$registro-> users-> nome}}
 						</td>
 					</tr>
 
