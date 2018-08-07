@@ -208,10 +208,13 @@ class AtividadeController extends Controller
 
         $ferramenta = Ferramenta::all();
 
+        $modal = $request->input('modal');
+
         $data = array(
 
             'atividade' => $atividade,
-            'ferramentas' => $ferramenta
+            'ferramentas' => $ferramenta,
+            'modal' => $modal
         );
 
         return view('atividade.associate')->with('data', $data);

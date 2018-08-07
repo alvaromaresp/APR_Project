@@ -40,9 +40,12 @@ class MedidaPreventivaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($modal = "false")
     {
-        return view('medidasPreventivas.create');
+        $data = array(
+            'modal' => $modal
+        );
+        return view('medidasPreventivas.create')->with('data', $data);
     }
 
     /**
@@ -57,6 +60,15 @@ class MedidaPreventivaController extends Controller
         $medidaPreventiva = new Medidaspreventivas;
         $medidaPreventiva->medidapreventiva = $request->input('medidapreventiva');
         $medidaPreventiva->save();
+
+        $modal = $request->input('modal');
+        
+        if($modal == "true"){
+            $data = array(
+                'modal' => $modal
+            );
+            return view('medidasPreventivas.create')->with('data', $data);
+        }
 
         return redirect('/medidaPreventiva')->with('success','Sucesso!');
     }

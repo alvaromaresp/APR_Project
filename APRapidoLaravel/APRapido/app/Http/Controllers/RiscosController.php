@@ -41,9 +41,13 @@ class RiscosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($modal = "false")
     {
-        return view('riscos.create');
+
+        $data = array(
+            'modal' => $modal
+        );
+        return view('riscos.create')->with('data', $data);
     }
 
     /**
@@ -61,10 +65,12 @@ class RiscosController extends Controller
         
         
         $mp = Medidaspreventivas::all();
+        $modal = $request->input('modal');
 
         $data = array(
             'risco' => $risco,
-            'mp' => $mp
+            'mp' => $mp,
+            'modal' => $modal
         );
 
         return view('Riscos.associate')->with('data', $data);
@@ -157,9 +163,12 @@ class RiscosController extends Controller
 
         $mp = Medidaspreventivas::all();
 
+        $modal = $request->input('modal');
+
         $data = array(
             'risco' => $risco,
-            'mp' => $mp
+            'mp' => $mp,
+            'modal' => $modal
         );
 
         return view('Riscos.associate')->with('data', $data);
@@ -179,9 +188,12 @@ class RiscosController extends Controller
 
         $mp = Medidaspreventivas::all();
 
+        $modal = $request->input('modal');
+
         $data = array(
             'risco' => $risco,
-            'mp' => $mp
+            'mp' => $mp,
+            'modal' => $modal
         );
 
         return view('Riscos.associate')->with('data', $data);

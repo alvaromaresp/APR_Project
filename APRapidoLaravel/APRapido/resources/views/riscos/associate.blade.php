@@ -24,6 +24,26 @@
 
             {{Form::select('medidaPreventiva', $mps, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Medida Preventiva'])}}
                 
+            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#novamp">
+                Nova MP 
+             </button>
+             </div>
+             <div class="modal fade" id="novamp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                 <div class="modal-dialog modal-lg" role="document">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h5 class="modal-title" id="exampleModalLabel"></h5>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                       </button>
+                     </div>
+                     <div class="modal-body" id="resposta-modal">
+                         <iframe src="/medidaPreventiva/create/true" width="765" height="500"></iframe>
+                     </div>
+                   </div>
+                 </div>
+             </div>
+             
 
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
             <a href="/riscos" class="btn mt-3 btn-secondary">Finalizar</a>
@@ -40,6 +60,14 @@
 
         @endforeach
     </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#novamp').on('hidden.bs.modal', function () {
+                location.reload();
+            });
+        });
+    </script>
 
 @endsection
 

@@ -64,13 +64,13 @@
             </div>
         </div>
         
-        <script>
-            $(document).ready(function(){
-                $('#novaatividade').on('hidden.bs.modal', function () {
-                    location.reload();
+            <script>
+                $(document).ready(function(){
+                    $('#novaatividade').on('hidden.bs.modal', function () {
+                        location.reload();
+                    });
                 });
-            });
-        </script>
+            </script>
 
 @endsection
 

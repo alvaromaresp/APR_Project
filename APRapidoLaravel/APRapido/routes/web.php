@@ -20,6 +20,8 @@ Route::get('atividades/create/{modal}', 'AtividadeController@create');
 
 Route::resource('medidaPreventiva','MedidaPreventivaController');
 Route::post('/medidaPreventiva/search','MedidaPreventivaController@search');
+Route::get('/medidaPreventiva/create/{modal}', 'MedidaPreventivaController@create');
+
 
 Route::resource('riscos', 'RiscosController');
 Route::post('/riscos/search','RiscosController@search');
