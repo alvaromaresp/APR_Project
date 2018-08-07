@@ -10,14 +10,6 @@ use App\User;
 class RegistrosController extends Controller
 {
     public function index(){
-        $aprs = array();
-        foreach (Apr::all()as $apr){
-            $aprs[$apr->id] = $apr;
-        }
-        $users = array();
-        foreach (Sesmt::all() as $user){
-            $users[$user->id] = $user;
-        }
     	$registros = Impressao::orderBy('created_at', 'desc')->paginate(10);
         return view('registro.index')->with('registros',$registros);
     }
