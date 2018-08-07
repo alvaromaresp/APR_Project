@@ -8,12 +8,10 @@
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-|
+| 
 */
 
 Route::get('/', 'pagesController@menu');
-Route::get('/responsavel', 'pagesController@menuResponsavel');
-Route::get('/editar', 'pagesController@menuEditar');
 
 Route::resource('atividades','AtividadeController');
 Route::post('atividades/associate/{id}', 'AtividadeController@associate');
@@ -72,3 +70,6 @@ Route::get('pdf/{id}','ImpressaoController@geraPdf');
 Route::auth();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/registros', 'RegistrosController@index');
+Route::get('/registros/search', 'RegistrosController@search');

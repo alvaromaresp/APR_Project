@@ -8,7 +8,7 @@ class Impressao extends Model
 {
     protected $table = 'impressao';
     public function aprs(){
-        return $this->belongsTo('App\Apr','apr');
+        return $this->belongsTo('App\Apr','apr'); 
     }
     public function users(){
         return $this->belongsTo('App\User','user');

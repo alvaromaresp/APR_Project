@@ -8,7 +8,7 @@ use Auth;
 use App\Sesmt;
 use Illuminate\Http\Request;
 use App\Impressao;
-use App\Apr;
+use App\Apr; 
 use App\Area;
 use App\Coordena;
 use App\Empresa;

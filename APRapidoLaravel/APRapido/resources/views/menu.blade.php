@@ -44,12 +44,12 @@
     </div>
     <div class="row">
         <div class="col-lg-6 mb-5" align="center">
-            <div class="btn btn-primary">
+            <a href="/registros" class="btn btn-primary">
                 Registro de Impressão
-            </div>
+            </a>
         </div>
         <div class="col-lg-6 mb-5" align="center">
-            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+            <a class="btn btn-primary" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Sair') }}</a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
