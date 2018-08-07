@@ -16,22 +16,6 @@ class RegistrosController extends Controller
     
     public function index(){
     	$registros = Impressao::orderBy('created_at', 'desc')->paginate(10);
-        $apr = Apr::all();
-        $user = User::all();
-
-       /* foreach ($registros as $registro){ 
-            for($i=0; $i<count($user); $i++){
-               if($registro->user==$user->id){
-                  $registro->user=$user->nome;  
-               } 
-            }
-            for($i=0; $i<count($apr); $i++){
-               if($registro->apr==$apr->id){
-                   $registro->apr=$apr->nome;
-               } 
-            }
-        }
-*/
         return view('registro.index')->with('registros', $registros);
     }
 

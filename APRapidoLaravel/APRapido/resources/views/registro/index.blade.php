@@ -10,7 +10,7 @@
 
 	<div class="mt-5 ml-5 mr-5 mb-5">
 		<h2> Registro de Impressão</h2>
-
+		
 		{!! Form::open(['action' => 'RegistrosController@search', 'method' => 'post']) !!}
 		<div class="input-group mb-4 mt-4">
 		  <input type="date" class="form-control" name="search" id="search" placeholder="Data Procurada"/>
@@ -26,19 +26,19 @@
 			<thead>
 				<tr>
 					<th>
-						<b>Nome da APR</b>
+						Nome da APR
 					</th>
 					<th>
-						<b>Número do Documento</b>
+						Número do Documento
 					</th>
 					<th>
-						<b>Data de Impressão</b>
+						Data de Impressão
 					</th>
 					<th>
-						<b>Hora de Impressão</b>
+						Hora de Impressão
 					</th>
 					<th>
-						<b>Usuário</b>
+						Usuário
 					</th>
 				</tr>
 			</thead>
