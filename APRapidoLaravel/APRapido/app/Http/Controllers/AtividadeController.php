@@ -147,6 +147,7 @@ class AtividadeController extends Controller
         $atividade->atividade = $request->input('atividade');
         $atividade->empresa_id = $request->input('empresa');
         $atividade->disciplina_id = $request->input('disciplina');
+        $ferramenta = $atividade->Ferramentas;
 
         $atividade->save();
 
@@ -182,7 +183,7 @@ class AtividadeController extends Controller
         $atividade = Atividade::find($id);
         $atividade->ferramentas()->attach($request->input('ferramenta'));
 
-        $ferramenta = Ferramenta::all();
+        $ferramenta = $atividade->Ferramentas;
 
         $modal = $request->input('modal');
 
@@ -206,7 +207,7 @@ class AtividadeController extends Controller
         $atividade = Atividade::find($id);
         $atividade->ferramentas()->detach($request->input('ferramenta'));
 
-        $ferramenta = Ferramenta::all();
+        $ferramenta = $atividade->Ferramentas;
 
         $modal = $request->input('modal');
 
