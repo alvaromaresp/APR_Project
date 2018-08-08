@@ -9,7 +9,7 @@
 @desktop
 @section('content')
 
-    <div class="form-group mt-5 ml-5 mr-5 mb-5">    
+    <div class="form-group mt-5 ml-5 mr-5">    
         {!! Form::open(['action' => ['FerramentaController@associate', $data['ferramenta']->id], 'method' => 'post']) !!}
             <?php
                 $riscos = array();
@@ -25,9 +25,12 @@
 
             {{Form::select('risco', $riscos, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Risco'])}}
                 
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#novorisco">
+            {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
+            <button type="button" class="btn btn-dark mt-3" data-toggle="modal" data-target="#novorisco">
                     Novo Risco 
-            </button>
+            </button><br>
+            
+            <a href="/ferramenta" class="btn mt-3 btn-secondary">Finalizar</a>
             </div>
             <div class="modal fade" id="novorisco" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
@@ -45,11 +48,10 @@
                 </div>
             </div>
 
-            {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
-            <a href="/ferramenta" class="btn mt-3 btn-secondary">Finalizar</a>
+            
 
         {!! Form::close() !!}
-
+    <div class="form-group ml-5 mr-5 mb-5">
         @foreach($data['ferramenta']->riscos as $ris)
                     
                     {!!Form::open(['action' => ['FerramentaController@desassociate', $data['ferramenta']->id], 'method', 'post', 'class' => 'mt-2'])!!}

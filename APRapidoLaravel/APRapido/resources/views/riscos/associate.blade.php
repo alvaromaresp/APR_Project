@@ -9,13 +9,13 @@
 @desktop
 @section('content')
 
-    <div class="form-group mt-5 ml-5 mr-5 mb-5">    
+    <div class="form-group mt-5 ml-5 mr-5">    
         {!! Form::open(['action' => ['RiscosController@associate', $data['risco']->id], 'method' => 'post']) !!}
             <?php
                 $mps = array();
             ?>
 
-            <h2> {{Form::label('medidaPreventiva', 'Medida Preventiva associada ao risco')}} </h2>
+            <h2> {{Form::label('medidaPreventiva', 'Associar Medida Preventiva')}} </h2>
             @foreach($data['mp'] as $mp)
                 <?php
                     $mps[$mp->id] = $mp->medidapreventiva;
@@ -54,7 +54,7 @@
             
 
         {!! Form::close() !!}
-
+        <div class="ml-5 mr-5 mb-5">
         @foreach($data['risco']->medidaspreventivas as $mp)
                     
                     {!!Form::open(['action' => ['RiscosController@desassociate', $data['risco']->id], 'method', 'post', 'class' => 'mt-2'])!!}
@@ -65,6 +65,7 @@
                     {!!Form::close()!!}
 
         @endforeach
+    </div>
     </div>
 
     <script>
@@ -79,13 +80,13 @@
 @elsedesktop
 @section('content')
 
-    <div class="form-group ml-5 mr-3 mb-5">    
+    <div class="form-group ml-5 mr-3">    
         {!! Form::open(['action' => ['RiscosController@associate', $data['risco']->id], 'method' => 'post']) !!}
             <?php
                 $mps = array();
             ?>
 
-            <h2> {{Form::label('medidaPreventiva', 'Medida Preventiva associada ao risco')}} </h2>
+            <h2> {{Form::label('medidaPreventiva', 'Associar Medida Preventiva')}} </h2>
             @foreach($data['mp'] as $mp)
                 <?php
                     $mps[$mp->id] = $mp->medidapreventiva;
@@ -122,7 +123,7 @@
             {{Form::hidden('modal', $data['modal'])}}
 
         {!! Form::close() !!}
-
+        <div class="mb-5"> 
         @foreach($data['risco']->medidaspreventivas as $mp)
                     
                     {!!Form::open(['action' => ['RiscosController@desassociate', $data['risco']->id], 'method', 'post', 'class' => 'mt-2'])!!}
@@ -133,6 +134,7 @@
                     {!!Form::close()!!}
 
         @endforeach
+    </div>
     </div>
     </div>
     <script>
