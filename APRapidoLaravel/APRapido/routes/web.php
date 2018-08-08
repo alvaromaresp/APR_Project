@@ -27,6 +27,8 @@ Route::resource('riscos', 'RiscosController');
 Route::post('/riscos/search','RiscosController@search');
 Route::post('riscos/associate/{id}', 'RiscosController@associate');
 Route::post('riscos/desassociate/{id}', 'RiscosController@desassociate');
+Route::get('/riscos/create/{modal}', 'RiscosController@create');
+
 
 Route::resource('ferramenta', 'FerramentaController');
 Route::post('/ferramenta/search','FerramentaController@search');

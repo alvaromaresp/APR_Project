@@ -26,27 +26,30 @@
                 
             <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#novamp">
                 Nova MP 
-             </button>
-             </div>
-             <div class="modal fade" id="novamp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                 <div class="modal-dialog modal-lg" role="document">
-                   <div class="modal-content">
-                     <div class="modal-header">
-                       <h5 class="modal-title" id="exampleModalLabel"></h5>
-                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                         <span aria-hidden="true">&times;</span>
-                       </button>
-                     </div>
-                     <div class="modal-body" id="resposta-modal">
-                         <iframe src="/medidaPreventiva/create/true" width="765" height="500"></iframe>
-                     </div>
-                   </div>
-                 </div>
-             </div>
+            </button>
+            </div>
+            <div class="modal fade" id="novamp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body" id="resposta-modal">
+                        <iframe src="/medidaPreventiva/create/true" width="765" height="500"></iframe>
+                    </div>
+                </div>
+                </div>
+            </div>
              
-
+            {{Form::hidden('modal', $data['modal'])}}
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
+
+            @if($data['modal'] == "false")
             <a href="/riscos" class="btn mt-3 btn-secondary">Finalizar</a>
+            @endif
 
         {!! Form::close() !!}
 
@@ -54,6 +57,7 @@
                     
                     {!!Form::open(['action' => ['RiscosController@desassociate', $data['risco']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$mp->medidapreventiva}}</p>
+                        {{Form::hidden('modal', $data['modal'])}}
                         {{Form::hidden('mp', $mp->id)}}
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}

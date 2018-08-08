@@ -43,7 +43,6 @@ class RiscosController extends Controller
      */
     public function create($modal = "false")
     {
-
         $data = array(
             'modal' => $modal
         );
