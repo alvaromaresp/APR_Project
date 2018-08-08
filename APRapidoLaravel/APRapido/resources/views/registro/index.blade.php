@@ -10,7 +10,7 @@
 
 	<div class="mt-5 ml-5 mr-5 mb-5">
 		<h2> Registro de Impressão</h2>
-		
+
 		{!! Form::open(['action' => 'RegistrosController@search', 'method' => 'post']) !!}
 		<div class="input-group mb-4 mt-4">
 		  <input type="date" class="form-control" name="search" id="search" placeholder="Data Procurada"/>
@@ -65,6 +65,12 @@
 			@else
 				<p> Nenhuma APR encontrada. </p>
 			@endif
+		</table>
 		</div>
 	</div>
+@endsection
+
+@extends('layout.flutuante')
+@section('conteudo')
+    A página atual tem a função de mostrar o registro de todas as APRs impressas, qual foi ela, a data de impressão e quem a imprimiu. Além disso, o registro pode ser buscado pela data que foi emitido.
 @endsection
