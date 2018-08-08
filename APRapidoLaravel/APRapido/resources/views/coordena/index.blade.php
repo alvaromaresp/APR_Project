@@ -6,6 +6,7 @@
     > Coordenador Responsável</b>
 @endsection
 
+@desktop
 @section('content')
     
     @include('inc.messages')
@@ -31,7 +32,33 @@
    	</div>
  
 @endsection
+@elsedesktop
+@section('content')
+    
+    @include('inc.messages')
 
+
+    <div class="ml-5 mr-3 mb-5">
+        <h3>Coordenador de Obra
+        <a href="/coordena/create" class="btn btn-secondary float-right mt-2 mb-3">Criar Nova</a></h3>
+        {!! Form::open(['action' => 'CoordenaController@search', 'method' => 'post']) !!}
+        <div class="input-group mb-4">
+          <input type="text" class="form-control" name="search" id="search">
+          <div class="input-group-append">
+            <button class="btn btn-secondary" type="submit">Buscar</button>
+          </div>
+        </div>
+        {!! Form::close() !!}
+        @foreach($coordena as $n)
+            <h4><a href="/coordena/{{$n->id}}"> {{$n->nome}} </a></h4> <br>
+        @endforeach
+    </div>
+    <div class="float-right">
+        {{$coordena->links()}}
+    </div>
+ 
+@endsection
+@enddesktop
 @extends('layout.flutuante')
 @section('conteudo')
     Todas o(s) Coordenador(es) cadastrado(s) podem ser vistas ao lado, e também buscadas. A fim de cadastrar um novo, basta clicar em Criar Nova. Além disso, para verificar o conteúdo do coordenador basta clicar em seu nome.

@@ -4,8 +4,8 @@
     <b>> Menu</b>
 @endsection
 
-@section('content')
-
+@section('content') 
+@desktop 
     <div class="row mb-2 mt-5">
         <div class="col-lg-6 mb-5 mt-4" align="center">
             <a href="/apr" class="btn btn-primary">
@@ -58,6 +58,60 @@
     </div>
 @endsection
 
+@elsedesktop
+    @section('content')
+    <div class="row mt-2 ml-2">
+        <div class="col-lg-6 mb-5" align="center">
+            <a href="/apr" class="btn btn-primary">
+                Cadastrar APR
+            </a>
+        </div>
+        <div class="col-lg-6 mb-5" align="center">
+            <a href="/ferramenta" class="btn btn-primary">
+                Cadastrar Ferramentas
+            </a>
+        </div>
+    </div>
+    <div class="row ml-2">
+        <div class="col-lg-6 mb-5" align="center">
+            <a href="/atividades" class="btn btn-primary">
+                Cadastrar Atividade
+            </a>
+        </div>
+        <div class="col-lg-6 mb-5" align="center">
+            <a href="/riscos" class="btn btn-primary">
+                Cadastrar Riscos
+            </a>
+        </div>
+    </div>
+    <div class="row ml-2">
+        <div class="col-lg-6 mb-5" align="center">
+            <a href="/responsavel" class="btn btn-primary">
+                Cadastrar Responsável
+            </a>
+        </div>
+        <div class="col-lg-6 mb-5" align="center">
+            <a href="/medidaPreventiva" class="btn btn-primary">
+                Cadastrar MP
+            </a>
+        </div>
+    </div>
+    <div class="row ml-2">
+        <div class="col-lg-6 mb-5" align="center">
+            <a href="/registros" class="btn btn-primary">
+                Registro de Impressão
+            </a>
+        </div>
+        <div class="col-lg-6 mb-5" align="center">
+            <a class="btn btn-primary" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Sair') }}</a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        </div>
+    </div>
+@endsection
+@enddesktop
 
 @extends('layout.flutuante')
 @section('conteudo')

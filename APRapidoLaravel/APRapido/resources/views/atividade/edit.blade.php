@@ -6,6 +6,7 @@
     > Editar Atividade: {{$data['atividade']->atividade}} </b>
 @endsection
  
+@desktop
 @section('content')
 
     {!! Form::open(['action' => ['AtividadeController@update', $data['atividade']->id ], 'method' => 'post']) !!}
@@ -35,7 +36,7 @@
                 ?>
             @endforeach
 
-            {{Form::select('empresa', $emp, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}}
+            {{Form::select('empresa', $emp, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Empresa'])}}
             
             {{Form::hidden('_method', 'PUT')}}
 
@@ -44,6 +45,46 @@
     {!! Form::close() !!}
 
 @endsection
+@elsedesktop
+@section('content')
+
+    {!! Form::open(['action' => ['AtividadeController@update', $data['atividade']->id ], 'method' => 'post']) !!}
+            
+        <div class="form-group ml-5 mr-3 mb-5">
+            <h2> {{Form::label('atividade', 'Editar Atividade')}} </h2> 
+            {{Form::text('atividade', $data['atividade']->atividade, ['class' => 'mb-3 form-control', 'placeholder' => 'Atividade'])}}
+            <?php
+                $dis = array(); 
+            ?>
+
+            @foreach($data['disciplina'] as $d)
+                <?php
+                    $dis[$d->id] = $d->disciplina;
+                ?>
+            @endforeach
+
+            {{Form::select('disciplina', $dis, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}}
+
+            <?php
+                $emp = array();
+            ?>
+
+            @foreach($data['empresa'] as $e)
+                <?php
+                    $emp[$e->id] = $e->empresa;
+                ?>
+            @endforeach
+
+            {{Form::select('empresa', $emp, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Empresa'])}}
+            
+            {{Form::hidden('_method', 'PUT')}}
+
+            {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 mb-5 float-right'])}}
+        </div>
+    {!! Form::close() !!}
+
+@endsection
+@enddesktop
 
 @extends('layout.flutuante')
 @section('conteudo')

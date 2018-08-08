@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'pagesController@menu');
+Route::get('/responsavel', 'pagesController@menuResponsavel');
 
 Route::resource('atividades','AtividadeController');
 Route::post('atividades/associate/{id}', 'AtividadeController@associate');
