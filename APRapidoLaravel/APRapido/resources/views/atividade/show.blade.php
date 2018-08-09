@@ -33,34 +33,48 @@
 					$cmp++;
 				?>
 			@endforeach
+			<?php
+				$comp=$cmp;
+			?>
 			<table class="table">
-				
+				<thead>
+					<tr>
+						<th> </th>
+						<th>Risco </th>
+						<th>Medida Preventiva </th>
+					</tr>
+				</thead>
 				<tr>
 					<td>{{$fer->ferramenta}}</td>
 					@foreach($fer->Riscos as $ris)
 						<td>
-							Risco: {{$ris->risco}}
+							{{$ris->risco}}
 						</td>
 						@foreach($ris->medidaspreventivas as $mp)
+						@if($cmp == $comp)
+							<td>
+								{{$mp->medidapreventiva}}
+							</td>
 							<?php
 								$cmp--;
 							?>
-							<td>
-								MP: {{$mp->medidapreventiva}}
-							</td>
+						@else
+							@if($cmp>0)
+							<tr>
+								<td> </td>
+								<td> </td>
+								<td>
+									{{$mp->medidapreventiva}}
+								</td>
 							</tr>
-							@if($cmp == 0)
-								<td></td>
-								<td></td>
 							@endif
-						@endforeach
-
-						@if($cr != 0)
-							<td></td>
+							<?php
+								$cmp--;
+							?>
 						@endif
+						@endforeach
 					@endforeach
-				</tr>	
-
+				</tr>
 			</table>
 		@endforeach
 		</p></h3><br> 
@@ -103,35 +117,49 @@
 					$cmp++;
 				?>
 			@endforeach
+			<?php
+				$comp=$cmp;
+			?>
 			<div class="table-responsive-sm">
 			<table class="table">
-				
+				<thead>
+					<tr>
+						<th> </th>
+						<th>Risco </th>
+						<th>Medida Preventiva </th>
+					</tr>
+				</thead>
 				<tr>
 					<td>{{$fer->ferramenta}}</td>
 					@foreach($fer->Riscos as $ris)
 						<td>
-							Risco: {{$ris->risco}}
+							{{$ris->risco}}
 						</td>
 						@foreach($ris->medidaspreventivas as $mp)
+						@if($cmp == $comp)
+							<td>
+								{{$mp->medidapreventiva}}
+							</td>
 							<?php
 								$cmp--;
 							?>
-							<td>
-								MP: {{$mp->medidapreventiva}}
-							</td>
+						@else
+							@if($cmp>0)
+							<tr>
+								<td> </td>
+								<td> </td>
+								<td>
+									{{$mp->medidapreventiva}}
+								</td>
 							</tr>
-							@if($cmp == 0)
-								<td></td>
-								<td></td>
 							@endif
-						@endforeach
-
-						@if($cr != 0)
-							<td></td>
+							<?php
+								$cmp--;
+							?>
 						@endif
+						@endforeach
 					@endforeach
-				</tr>	
-
+				</tr>
 			</table>
 		</div>
 		@endforeach
@@ -144,7 +172,7 @@
 		    {!!Form::close()!!}
 		</div>
 		<div class="float-left">
-			<a href="/atividades" class="btn btn-secondary">Voltar</a>
+			<a href="/atividades" class="btn mt-2 btn-secondary">Voltar</a>
 		</div>
     </div>
 @endsection

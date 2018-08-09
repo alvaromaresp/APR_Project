@@ -45,7 +45,7 @@
                         <iframe src="/riscos/create/true" width="765" height="500"></iframe>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close btn-secondary" data-dismiss="modal" aria-label="Close">
                             Finalizar
                         </button>
                     </div>
@@ -117,7 +117,7 @@
                         <iframe src="/riscos/create/true" width="325" height="500"></iframe>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close btn-secondary" data-dismiss="modal" aria-label="Close">
                             Finalizar
                         </button>
                     </div>
