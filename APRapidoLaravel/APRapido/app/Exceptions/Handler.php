@@ -4,7 +4,6 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use jeremykenedy\LaravelRoles\Exceptions\AccessDeniedException; 
 
 class Handler extends ExceptionHandler
 {
@@ -48,12 +47,14 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+        //return parent::render($request, $exception);
         try{
+            $ar = $this->renderExceptionWithSymfony($exception, true);
+            $pr = print_r($ar, true);
+            //return var_dump($pr);
             return response()->view('error.index', ['exception'=>$exception], 500);
         }catch(Exception $e){
             return parent::render($request, $exception);
         }
-        //return parent::render($request, $exception);
     }
 }
