@@ -286,19 +286,21 @@ class AprController extends Controller
      * @param Request $request
      * @param $id
      */
-    public function associateChecklistCall(Request $request, $id)
+    public function associateChecklistCall($id)
     {
         $apr = Apr::find($id);
         $checklist = Checklist::all();
-
+        /*
+        $novoCheck = array();
         foreach($checklist as $cl){
             if(!$apr->checklists->contains($cl)){
                 $apr->checklists()->save($cl, ['checado' => 0]);
+                array_push($novoCheck,$cl);
             }
         }
 
         $checklist = $apr->checklists;
-
+        */
         $data = array(
             'apr' => $apr,
             'checklist' => $checklist
@@ -318,9 +320,13 @@ class AprController extends Controller
     {
         $apr = Apr::find($id);
         $check = Checklist::find($request->input('checklist'));
-        $apr->checklists()->updateExistingPivot($check, ['checado' => 1]);
 
-        $checklist = $apr->checklists;
+
+        $apr->checklists()->attach($check);
+        //array_push($checks,$check);
+        //$apr->checklists = $checks;
+
+        $checklist = Checklist::all();
 
         $data = array(
             'apr' => $apr,
@@ -340,9 +346,9 @@ class AprController extends Controller
     {
         $apr = Apr::find($id);
         $check = Checklist::find($request->input('checklist'));
-        $apr->checklists()->updateExistingPivot($check, ['checado' => 0]);
+        $apr->checklists()->detach($check);
 
-        $checklist = $apr->checklists;
+        $checklist = Checklist::all();
 
         $data = array(
             'apr' => $apr,

@@ -64,7 +64,7 @@ Route::post('apr/desassociateChecklist/{id}', 'AprController@desassociateCheckli
 Route::post('apr/associateNaturezariscos/{id}', 'AprController@associateNaturezariscos');
 Route::post('apr/desassociateNaturezariscos/{id}', 'AprController@desassociateNaturezariscos');
 Route::post('apr/associateNaturezariscosCall/{id}', 'AprController@associateNaturezariscosCall');
-Route::post('apr/associateChecklistCall/{id}', 'AprController@associateChecklistCall');
+Route::get('apr/associateChecklistCall/{id}', 'AprController@associateChecklistCall');
 Route::post('apr/show/{id}', 'AprController@showAPRbyLog')->name('showAPRbyLog');
 
 
