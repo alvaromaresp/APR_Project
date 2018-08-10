@@ -40,7 +40,7 @@
             <br>
         @endforeach
         <br>
-        <a href="/apr/" class="btn btn-secondary mt-3 float-right">Finalizar</a>
+        <a href="/impressao/{{$data['apr']->id}}" class="btn btn-secondary mt-3 float-right">Finalizar</a>
    	</div>
 
 @endsection
@@ -78,7 +78,7 @@
             <br>
         @endforeach
         <br>
-        <a href="/apr/" class="btn btn-secondary mt-3 float-right">Finalizar</a>
+        <a href="/impressao/{{$data['apr']->id}}" class="btn btn-secondary mt-3 float-right">Finalizar</a>
     </div>
 
 @endsection
