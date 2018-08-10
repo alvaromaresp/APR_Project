@@ -147,7 +147,9 @@ class AtividadeController extends Controller
         $atividade->atividade = $request->input('atividade');
         $atividade->empresa_id = $request->input('empresa');
         $atividade->disciplina_id = $request->input('disciplina');
-        $ferramenta = $atividade->Ferramentas;
+        
+        $disciplina = Disciplina::find($request->input('disciplina'));
+        $ferramentas = $disciplina->ferramentas;
 
         $atividade->save();
 
@@ -155,7 +157,7 @@ class AtividadeController extends Controller
 
         $data = array(
             'atividade' => $atividade,
-            'ferramentas' => $ferramenta
+            'ferramentas' => $ferramentas
         );
 
         return view('atividade.associate')->with('data', $data);
@@ -183,13 +185,14 @@ class AtividadeController extends Controller
         $atividade = Atividade::find($id);
         $atividade->ferramentas()->attach($request->input('ferramenta'));
 
-        $ferramenta = $atividade->Ferramentas;
+        $disciplina = Disciplina::find($atividade->disciplina_id);
+        $ferramentas = $disciplina->ferramentas;
 
         $modal = $request->input('modal');
 
         $data = array(
             'atividade' => $atividade,
-            'ferramentas' => $ferramenta,
+            'ferramentas' => $ferramentas,
             'modal' => $modal
         );
 
@@ -207,14 +210,15 @@ class AtividadeController extends Controller
         $atividade = Atividade::find($id);
         $atividade->ferramentas()->detach($request->input('ferramenta'));
 
-        $ferramenta = $atividade->Ferramentas;
+        $disciplina = Disciplina::find($atividade->disciplina_id);
+        $ferramentas = $disciplina->ferramentas;
 
         $modal = $request->input('modal');
 
         $data = array(
 
             'atividade' => $atividade,
-            'ferramentas' => $ferramenta,
+            'ferramentas' => $ferramentas,
             'modal' => $modal
         );
 

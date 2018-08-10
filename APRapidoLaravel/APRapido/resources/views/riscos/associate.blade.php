@@ -32,7 +32,7 @@
 
             @if($data['modal'] == "false")<br>
             <a href="/riscos" class="btn mt-3 btn-secondary">Finalizar</a>
-            @endif
+            
             </div>
             <div class="modal fade" id="novamp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
@@ -54,7 +54,7 @@
                 </div>
                 </div>
             </div>
-             
+            @endif
             {{Form::hidden('modal', $data['modal'])}}
             
 
@@ -100,15 +100,16 @@
 
 
             {{Form::select('medidaPreventiva', $mps, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Medida Preventiva'])}}
-                
+            {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3'])}}
+            
+            @if($data['modal'] == "false")
             <button type="button" class="btn btn-dark mt-3" data-toggle="modal" data-target="#novamp">
                 Nova MP 
             </button><br>
-            {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3'])}}
 
-            @if($data['modal'] == "false")<br>
+            <br>
             <a href="/riscos" class="btn mt-3 btn-secondary">Finalizar</a>
-            @endif
+            
             <div class="modal fade" id="novamp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -129,7 +130,7 @@
                 </div>
                 </div>
             </div>
-             
+            @endif
             {{Form::hidden('modal', $data['modal'])}}
 
         {!! Form::close() !!}
