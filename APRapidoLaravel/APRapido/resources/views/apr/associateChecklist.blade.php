@@ -14,8 +14,8 @@
         <h2> {{Form::label('checklist', 'Checklist')}} </h2>
 
         @foreach($data['checklist'] as $cl)
-            <div class="table"> 
-                @if($data['apr']->checklists->find($cl)->pivot->checado == 0)
+            <div class="table">
+                @if(is_null($data['apr']->checklists->find($cl)))
                     {!! Form::open(['action' => ['AprController@associateChecklist', $data['apr']->id], 'method'=>'post']) !!}
                         <div class="row">
                             <div class="col-5"><p class="float-left mt-4">{{$cl->item}}</p></div>
@@ -40,7 +40,7 @@
             <br>
         @endforeach
         <br>
-        <a href="/apr/" class="btn btn-secondary mt-3 float-right">Finalizar</a>
+        <a href="/impressao/{{$data['apr']->id}}" class="btn btn-secondary mt-3 float-right">Finalizar</a>
    	</div>
 
 @endsection
@@ -52,8 +52,8 @@
         <h2> {{Form::label('checklist', 'Checklist')}} </h2>
 
         @foreach($data['checklist'] as $cl)
-            <div class="table"> 
-                @if($data['apr']->checklists->find($cl)->pivot->checado == 0)
+            <div class="table">
+                @if(is_null($data['apr']->checklists->find($cl)))
                     {!! Form::open(['action' => ['AprController@associateChecklist', $data['apr']->id], 'method'=>'post']) !!}
                         <div class="row">
                             <div class="col-5"><p class="float-left mt-4">{{$cl->item}}</p></div>
@@ -78,7 +78,7 @@
             <br>
         @endforeach
         <br>
-        <a href="/apr/" class="btn btn-secondary mt-3 float-right">Finalizar</a>
+        <a href="/impressao/{{$data['apr']->id}}" class="btn btn-secondary mt-3 float-right">Finalizar</a>
     </div>
 
 @endsection

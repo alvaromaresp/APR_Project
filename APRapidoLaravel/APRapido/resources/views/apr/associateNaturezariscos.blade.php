@@ -29,9 +29,8 @@
             {!! Form::close() !!}
 
 
-            {!! Form::open(['action' => ['AprController@associateChecklistCall', $data['apr']->id]]) !!}
-                {{Form::submit('Ir para Checklist',['class' => 'btn btn-secondary mt-3 '])}}
-            {!! Form::close() !!}
+
+                <a href="../associateChecklistCall/{{$data['apr']->id}}"> <button  type="button" class="btn btn-secondary mt-3">Ir para Checklist</button></a>
 
             @foreach($data['apr']->naturezasriscos as $nr)
                 

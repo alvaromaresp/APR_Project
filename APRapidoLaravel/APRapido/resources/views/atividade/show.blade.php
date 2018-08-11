@@ -14,29 +14,7 @@
 		EMPRESA: {{$data['empresa']->empresa}} <br><br>
 		DISCIPLINA: {{$data['disciplina']->disciplina}} <br><br>
 		FERRAMENTAS: <br><br>
-		<?php
-			$cr = 0;
-			$cmp = 0;
-		?>
-
-
-		@foreach($data['ferramenta'] as $fer)
-
-			@foreach($fer->Riscos as $ris)
-				<?php
-					$cr++;
-				?>
-			@endforeach
-
-			@foreach($ris->medidaspreventivas as $mp)
-				<?php
-					$cmp++;
-				?>
-			@endforeach
-			<?php
-				$comp=$cmp;
-			?>
-			<table class="table">
+		<table class="table">
 				<thead>
 					<tr>
 						<th> </th>
@@ -44,39 +22,39 @@
 						<th>Medida Preventiva </th>
 					</tr>
 				</thead>
+		
 				<tr>
-					<td>{{$fer->ferramenta}}</td>
-					@foreach($fer->Riscos as $ris)
-						<td>
-							{{$ris->risco}}
-						</td>
-						@foreach($ris->medidaspreventivas as $mp)
-						@if($cmp == $comp)
-							<td>
-								{{$mp->medidapreventiva}}
-							</td>
+					@foreach($data['ferramenta'] as $fer)
+						<td>{{$fer->ferramenta}}</td>
 							<?php
-								$cmp--;
+								$bf = true;
 							?>
-						@else
-							@if($cmp>0)
-							<tr>
-								<td> </td>
-								<td> </td>
-								<td>
-									{{$mp->medidapreventiva}}
-								</td>
-							</tr>
-							@endif
+						@foreach($fer->Riscos as $ris)
+								@if(!$bf)
+									<td></td>
+								@endif
+								<td>{{$ris->risco}}</td>
 							<?php
-								$cmp--;
+								$br = true;
 							?>
-						@endif
+							<?php
+								$bf = false;
+							?>
+							@foreach($ris->medidaspreventivas as $mp)
+								@if(!$br)
+									<td></td>
+									<td></td>
+								@endif
+								<td>{{$mp->medidapreventiva}}</td>
+
+								</tr>
+								<?php
+									$br = false;
+								?>
+							@endforeach
 						@endforeach
 					@endforeach
-				</tr>
 			</table>
-		@endforeach
 		</p></h3><br> 
 	    <div class="float-right">
 		    <a href="/atividades/{{$data['atividade']->id}}/edit" class="btn btn-success mt-2">Editar</a>
@@ -98,28 +76,7 @@
 		EMPRESA: {{$data['empresa']->empresa}} <br><br>
 		DISCIPLINA: {{$data['disciplina']->disciplina}} <br><br>
 		FERRAMENTAS: <br><br>
-		<?php
-			$cr = 0;
-			$cmp = 0;
-		?>
 
-
-		@foreach($data['ferramenta'] as $fer)
-
-			@foreach($fer->Riscos as $ris)
-				<?php
-					$cr++;
-				?>
-			@endforeach
-
-			@foreach($ris->medidaspreventivas as $mp)
-				<?php
-					$cmp++;
-				?>
-			@endforeach
-			<?php
-				$comp=$cmp;
-			?>
 			<div class="table-responsive-sm">
 			<table class="table">
 				<thead>
@@ -129,40 +86,40 @@
 						<th>Medida Preventiva </th>
 					</tr>
 				</thead>
+		
 				<tr>
-					<td>{{$fer->ferramenta}}</td>
-					@foreach($fer->Riscos as $ris)
-						<td>
-							{{$ris->risco}}
-						</td>
-						@foreach($ris->medidaspreventivas as $mp)
-						@if($cmp == $comp)
-							<td>
-								{{$mp->medidapreventiva}}
-							</td>
+					@foreach($data['ferramenta'] as $fer)
+						<td>{{$fer->ferramenta}}</td>
 							<?php
-								$cmp--;
+								$bf = true;
 							?>
-						@else
-							@if($cmp>0)
-							<tr>
-								<td> </td>
-								<td> </td>
-								<td>
-									{{$mp->medidapreventiva}}
-								</td>
-							</tr>
-							@endif
+						@foreach($fer->Riscos as $ris)
+								@if(!$bf)
+									<td></td>
+								@endif
+								<td>{{$ris->risco}}</td>
 							<?php
-								$cmp--;
+								$br = true;
 							?>
-						@endif
+							<?php
+								$bf = false;
+							?>
+							@foreach($ris->medidaspreventivas as $mp)
+								@if(!$br)
+									<td></td>
+									<td></td>
+								@endif
+								<td>{{$mp->medidapreventiva}}</td>
+
+								</tr>
+								<?php
+									$br = false;
+								?>
+							@endforeach
 						@endforeach
 					@endforeach
-				</tr>
 			</table>
 		</div>
-		@endforeach
 		</p></h3><br> 
 	    <div class="float-right">
 		    <a href="/atividades/{{$data['atividade']->id}}/edit" class="btn btn-success mt-2">Editar</a>
