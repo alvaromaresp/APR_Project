@@ -41,10 +41,14 @@ class FerramentaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($modal = "false")
     {
         $disciplina = Disciplina::all();
-        return view('ferramenta.create')->with('disciplina', $disciplina);
+        $data = array(
+            'disciplina' => $disciplina,
+            'modal' => $modal
+        );
+        return view('ferramenta.create')->with('data', $data);
     }
 
     /**
@@ -61,12 +65,14 @@ class FerramentaController extends Controller
         $ferramenta->disciplina_id = $request->input('disciplina');
         $ferramenta->save();
         
+        $modal = $request->input('modal');
         
         $riscos = Riscos::all();
 
         $data = array(
             'ferramenta' => $ferramenta,
-            'riscos' => $riscos
+            'riscos' => $riscos,
+            'modal' => $modal
         );
 
         return view('ferramenta.associate')->with('data', $data);
@@ -124,12 +130,14 @@ class FerramentaController extends Controller
         $ferramenta = Ferramenta::find($id);
         $ferramenta->ferramenta = $request->input('ferramenta');
         $ferramenta->save();
+        $modal = $request->input('modal');
 
         $riscos = Riscos::all();
 
         $data = array(
             'ferramenta' => $ferramenta,
-            'riscos' => $riscos
+            'riscos' => $riscos,
+            'modal' => $modal
         );
 
         return view('ferramenta.associate')->with('data', $data);   
@@ -164,9 +172,12 @@ class FerramentaController extends Controller
 
         $riscos = Riscos::all();
 
+        $modal = $request->input('modal');
+
         $data = array(
             'ferramenta' => $ferramenta,
-            'riscos' => $riscos
+            'riscos' => $riscos,
+            'modal' => $modal
         );
 
         return view('ferramenta.associate')->with('data', $data);
@@ -186,9 +197,12 @@ class FerramentaController extends Controller
 
         $riscos = Riscos::all();
 
+        $modal = $request->input('modal');
+
         $data = array(
             'ferramenta' => $ferramenta,
-            'riscos' => $riscos
+            'riscos' => $riscos,
+            'modal' => $modal
         );
 
         return view('ferramenta.associate')->with('data', $data);

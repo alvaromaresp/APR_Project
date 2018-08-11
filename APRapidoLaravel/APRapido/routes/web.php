@@ -35,6 +35,7 @@ Route::resource('ferramenta', 'FerramentaController');
 Route::post('/ferramenta/search','FerramentaController@search');
 Route::post('ferramenta/associate/{id}', 'FerramentaController@associate');
 Route::post('ferramenta/desassociate/{id}', 'FerramentaController@desassociate');
+Route::get('ferramenta/create/{modal}', 'FerramentaController@create');
 
 Route::resource('disciplina', 'DisciplinaController');
 Route::post('/disciplina/search','DisciplinaController@search');

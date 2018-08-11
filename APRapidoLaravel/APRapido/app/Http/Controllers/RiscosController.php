@@ -102,10 +102,15 @@ class RiscosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $modal = "false")
     {
         $risco = Riscos::find($id);
-        return view('riscos.edit')->with('risco',$risco);
+
+        $data = array(
+            'risco' => $risco,
+            'modal' => $modal
+        );
+        return view('riscos.edit')->with('data',$data);
     }
 
     /**
@@ -123,11 +128,14 @@ class RiscosController extends Controller
         $risco->risco = $request->input('risco');
         $risco->save();
 
+        $modal = $request->input('modal');
+
         $mp = Medidaspreventivas::all();
 
         $data = array(
             'risco' => $risco,
-            'mp' => $mp
+            'mp' => $mp,
+            'modal' => $modal
         );
 
         return view('Riscos.associate')->with('data', $data);   

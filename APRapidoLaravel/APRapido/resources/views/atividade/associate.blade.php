@@ -32,6 +32,31 @@
             @if($data['modal'] == "false")
                 <a href="/atividades" class="btn mt-3 btn-secondary">Finalizar</a>
             @endif
+
+            <button type="button" class="btn btn-dark float-left" data-toggle="modal" data-target="#novaferramenta">
+                Nova Ferramenta 
+            </button>
+
+            <div class="modal fade" id="novaferramenta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body" id="resposta-modal">
+                        <iframe src="/ferramenta/create/true" width="325" height="500"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="close btn-secondary" data-dismiss="modal" aria-label="Close">
+                            Finalizar
+                        </button>
+                    </div>
+                </div>
+                </div>
+            </div>
             
             {!! Form::close() !!}
 

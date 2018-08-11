@@ -13,6 +13,7 @@
     <div class="form-group mt-5 ml-5 mr-5 mb-5">
         <h2> {{Form::label('nome', 'Nova APR')}} </h2>
         {{Form::text('nome', $data['apr']->nome, ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Nome'])}}
+        {{Form::hidden('modal', $data['modal'])}}
 
         {{Form::hidden('_method', 'PUT')}}
         {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
@@ -27,6 +28,7 @@
     <div class="form-group ml-5 mr-4 mb-5">
         <h2> {{Form::label('nome', 'Nova APR')}} </h2>
         {{Form::text('nome', $data['apr']->nome, ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Nome'])}}
+        {{Form::hidden('modal', $data['modal'])}}
 
         {{Form::hidden('_method', 'PUT')}}
         {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 mb-5 float-right'])}}

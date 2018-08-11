@@ -116,7 +116,7 @@ class AtividadeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $modal = "false")
     {
         $atividade = Atividade::find($id);
         $empresa = Empresa::all();
@@ -126,6 +126,7 @@ class AtividadeController extends Controller
             'atividade' => $atividade,
             'empresa' => $empresa,
             'disciplina' => $disciplina,
+            'modal' => $modal
         );
 
         return view('atividade.edit')->with('data', $data);
@@ -153,11 +154,14 @@ class AtividadeController extends Controller
 
         $atividade->save();
 
+        $modal = $request->input('modal');
+
         $ferramenta = Ferramenta::all();
 
         $data = array(
             'atividade' => $atividade,
-            'ferramentas' => $ferramentas
+            'ferramentas' => $ferramentas,
+            'modal' => $modal
         );
 
         return view('atividade.associate')->with('data', $data);

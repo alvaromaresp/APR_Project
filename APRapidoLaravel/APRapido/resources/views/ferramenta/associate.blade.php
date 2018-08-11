@@ -26,12 +26,16 @@
             {{Form::select('risco', $riscos, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Risco'])}}
                 
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
+
+            @if($data['modal'] == 'false')
             <button type="button" class="btn btn-dark mt-3" data-toggle="modal" data-target="#novorisco">
                     Novo Risco 
             </button><br>
             
             <a href="/ferramenta" class="btn mt-3 btn-secondary">Finalizar</a>
+            @endif
             </div>
+            @if($data['modal'] == 'false')
             <div class="modal fade" id="novorisco" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -52,9 +56,8 @@
                 </div>
                 </div>
             </div>
-
-            
-
+            @endif
+            {{Form::hidden('modal', $data['modal'])}}
         {!! Form::close() !!}
     <div class="form-group ml-5 mr-5 mb-5">
         @foreach($data['ferramenta']->riscos as $ris)
@@ -62,6 +65,7 @@
                     {!!Form::open(['action' => ['FerramentaController@desassociate', $data['ferramenta']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$ris->risco}}</p>
                         {{Form::hidden('ris', $ris->id)}}
+                        {{Form::hidden('modal', $data['modal'])}}
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}
 
@@ -96,14 +100,10 @@
 
             {{Form::select('risco', $riscos, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Risco'])}}
                 
+            @if($data['modal'] == 'false')
             <button type="button" class="btn btn-dark float-left" data-toggle="modal" data-target="#novorisco">
                     Novo Risco 
             </button>
-            <br><br><br>
-            {{Form::submit('Selecionar', ['class' => 'btn btn-success  float-left'])}}
-            <br><br>
-            <a href="/ferramenta" class="btn btn-secondary float-left">Finalizar</a>
-            </div>
             <div class="modal fade" id="novorisco" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -124,9 +124,17 @@
                 </div>
                 </div>
             </div>
+            @endif
+            <br><br><br>
+            {{Form::submit('Selecionar', ['class' => 'btn btn-success  float-left'])}}
+            <br><br>
 
-            
-
+            @if($data['modal'] == 'false')
+                <a href="/ferramenta" class="btn btn-secondary float-left">Finalizar</a>
+            @endif
+            </div>
+        
+            {{Form::hidden('modal', $data['modal'])}}
         {!! Form::close() !!}
         <div class="form-group ml-5 mr-3 mb-5"> 
         @foreach($data['ferramenta']->riscos as $ris)
@@ -134,6 +142,7 @@
                     {!!Form::open(['action' => ['FerramentaController@desassociate', $data['ferramenta']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$ris->risco}}</p>
                         {{Form::hidden('ris', $ris->id)}}
+                        {{Form::hidden('modal', $data['modal'])}}
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}
 
