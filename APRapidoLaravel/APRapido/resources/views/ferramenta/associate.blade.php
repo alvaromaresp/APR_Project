@@ -10,7 +10,7 @@
 @section('content')
 
     <div class="form-group mt-5 ml-5 mr-5">    
-        {!! Form::open(['action' => ['FerramentaController@associate', $data['ferramenta']->id], 'method' => 'post']) !!}
+        {!! Form::open(['action' => ['FerramentaController@associateStore', $data['ferramenta']->id], 'method' => 'post']) !!}
             <?php
                 $riscos = array();
             ?>

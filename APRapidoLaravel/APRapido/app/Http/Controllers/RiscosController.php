@@ -72,7 +72,7 @@ class RiscosController extends Controller
             'modal' => $modal
         );
 
-        return view('Riscos.associate')->with('data', $data);
+        return redirect("/riscos/associate/$risco->id")->with('data', $data);
     }
 
     /**
@@ -164,7 +164,23 @@ class RiscosController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function associate(Request $request, $id){
+    public function associate($id){
+        $risco = Riscos::find($id);
+
+        $mp = Medidaspreventivas::all();
+
+        $data = session()->get( 'data' );;
+        $modal = $data['modal'];
+
+        $data = array(
+            'risco' => $risco,
+            'mp' => $mp,
+            'modal' => $modal
+        );
+
+        return view('Riscos.associate')->with('data', $data);
+    }
+    public function associateStore(Request $request, $id){
         $risco = Riscos::find($id);
         $risco->medidaspreventivas()->attach($request->input('medidaPreventiva'));
 
@@ -178,7 +194,7 @@ class RiscosController extends Controller
             'modal' => $modal
         );
 
-        return view('Riscos.associate')->with('data', $data);
+        return redirect("/riscos/associate/$risco->id")->with('data', $data);
     }
 
     /**
@@ -203,6 +219,6 @@ class RiscosController extends Controller
             'modal' => $modal
         );
 
-        return view('Riscos.associate')->with('data', $data);
+        return redirect("/riscos/associate/$risco->id")->with('data', $data);
     }
 }

@@ -84,7 +84,7 @@ class AtividadeController extends Controller
             'teste' => "false"
         );
 
-        return view("atividade.associate")->with('data', $data);
+        return redirect("/atividades/associate/$atividade->id")->with('data', $data);
     }
 
     /**
@@ -184,7 +184,24 @@ class AtividadeController extends Controller
          * @param Request $request
          * @param $id
          */
-    public function associate(Request $request, $id){
+    public function associate($id){
+
+        $atividade = Atividade::find($id);
+        $ferramentas = Ferramenta::all();
+
+        $data = session()->get( 'data' );
+        $modal = $data['modal'];
+
+        $data = array(
+            'atividade' => $atividade,
+            'ferramentas' => $ferramentas,
+            'modal' => $modal
+        );
+
+        return view('atividade.associate')->with('data', $data);
+
+    }
+    public function associateStore(Request $request, $id){
 
         $atividade = Atividade::find($id);
         $atividade->ferramentas()->attach($request->input('ferramenta'));
@@ -200,7 +217,7 @@ class AtividadeController extends Controller
             'modal' => $modal
         );
 
-        return view('atividade.associate')->with('data', $data);
+        return redirect("/atividades/associate/$atividade->id")->with('data', $data);
 
     }
 
@@ -226,7 +243,7 @@ class AtividadeController extends Controller
             'modal' => $modal
         );
 
-        return view('atividade.associate')->with('data', $data);
+        return redirect("/atividades/associate/$atividade->id")->with('data', $data);
     }
 
 

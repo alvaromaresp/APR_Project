@@ -90,8 +90,8 @@ class AprController extends Controller
             'empresa' => $empresa
         );
 
-
-        return view('apr.associateAtividade')->with('data', $data);
+        return redirect("/apr/associateAtividade/$apr->id");
+        //return view('apr.associateAtividade')->with('data', $data);
     }
 
     /**
@@ -182,20 +182,24 @@ class AprController extends Controller
      * @param Request $request
      * @param $id
      */
-    public function associateAtividade(Request $request, $id)
+    public function associateAtividade($id)
     {
         $apr = Apr::find($id);
-        $apr->atividades()->attach($request->input('atividade'));
-
         $atividade = Atividade::all();
 
         $data = array(
-
             'apr' => $apr,
             'atividade' => $atividade
         );
 
         return view('apr.associateAtividade')->with('data', $data);
+    }
+
+    public function associateAtividadeStore(Request $request, $id)
+    {
+        $apr = Apr::find($id);
+        $apr->atividades()->attach($request->input('atividade'));
+        return redirect("/apr/associateAtividade/$id");
     }
 
     /**
@@ -209,15 +213,7 @@ class AprController extends Controller
         $apr = Apr::find($id);
         $apr->atividades()->detach($request->input('atividade'));
 
-        $atividade = Atividade::all();
-
-        $data = array(
-
-            'apr' => $apr,
-            'atividade' => $atividade
-        );
-
-        return view('apr.associateAtividade')->with('data', $data);
+        return redirect("/apr/associateAtividade/$id");
     }
 
     /**
@@ -248,15 +244,7 @@ class AprController extends Controller
     {
         $apr = Apr::find($id);
         $apr->naturezasriscos()->attach($request->input('naturezariscos'));
-
-        $naturezariscos = Naturezariscos::all();
-
-        $data = array(
-            'apr' => $apr,
-            'naturezariscos' => $naturezariscos
-        );
-
-        return view('apr.associateNaturezariscos')->with('data', $data);
+        return redirect("/apr/associateNaturezariscosCall/$id");
     }
 
     /**
@@ -270,14 +258,7 @@ class AprController extends Controller
         $apr = Apr::find($id);
         $apr->naturezasriscos()->detach($request->input('naturezariscos'));
 
-        $naturezariscos = Naturezariscos::all();
-
-        $data = array(
-            'apr' => $apr,
-            'naturezariscos' => $naturezariscos
-        );
-
-        return view('apr.associateNaturezariscos')->with('data', $data);
+        return redirect("/apr/associateNaturezariscosCall/$id");
     }
 
     /**
@@ -326,14 +307,7 @@ class AprController extends Controller
         //array_push($checks,$check);
         //$apr->checklists = $checks;
 
-        $checklist = Checklist::all();
-
-        $data = array(
-            'apr' => $apr,
-            'checklist' => $checklist
-        );
-
-        return view('apr.associateChecklist')->with('data', $data);
+        return redirect("/apr/associateChecklistCall/$id");
     }
 
     /**
@@ -348,14 +322,7 @@ class AprController extends Controller
         $check = Checklist::find($request->input('checklist'));
         $apr->checklists()->detach($check);
 
-        $checklist = Checklist::all();
-
-        $data = array(
-            'apr' => $apr,
-            'checklist' => $checklist
-        );
-
-        return view('apr.associateChecklist')->with('data', $data);
+        return redirect("/apr/associateChecklistCall/$id");
     }
 
     public function showAPRbyLog ($id){

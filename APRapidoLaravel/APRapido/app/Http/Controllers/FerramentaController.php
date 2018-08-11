@@ -75,7 +75,7 @@ class FerramentaController extends Controller
             'modal' => $modal
         );
 
-        return view('ferramenta.associate')->with('data', $data);
+        return redirect("ferramenta/associate/$ferramenta->id")->with('data', $data);
     }
 
     /**
@@ -166,13 +166,28 @@ class FerramentaController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function associate(Request $request, $id){
+    public function associateStore(Request $request, $id){
         $ferramenta = Ferramenta::find($id);
         $ferramenta->riscos()->attach($request->input('risco'));
 
         $riscos = Riscos::all();
 
         $modal = $request->input('modal');
+
+        $data = array(
+            'ferramenta' => $ferramenta,
+            'riscos' => $riscos,
+            'modal' => $modal
+        );
+
+        return redirect("/ferramenta/associate/$ferramenta->id")->with('data', $data);
+    }
+    public function associate($id){
+        $ferramenta = Ferramenta::find($id);
+        $riscos = Riscos::all();
+
+        $data = session()->get( 'data' );
+        $modal = $data['modal'];
 
         $data = array(
             'ferramenta' => $ferramenta,

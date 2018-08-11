@@ -71,8 +71,8 @@ class ImpressaoController extends Controller
         $impressao->telResponsavel = $request->input('telResponsavel');
         $impressao->celula = $request->input('celula');
         $impressao->apr = $request->input('apr');
-        //$impressao->user = Auth::user()->id;
-        $impressao->user =1;
+        $impressao->user = Auth::user()->id;
+        //$impressao->user =1;
         $impressao->area = $request->input('area');
         $impressao->sesmt = $request->input('sesmt');
         $impressao->coordena = $request->input('coordena');

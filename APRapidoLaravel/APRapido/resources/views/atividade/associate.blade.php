@@ -9,7 +9,7 @@
 @desktop
 @section('content')
 
-{!! Form::open(['action' => ['AtividadeController@associate', $data['atividade']->id], 'method' => 'post']) !!}
+{!! Form::open(['action' => ['AtividadeController@associateStore', $data['atividade']->id], 'method' => 'post']) !!}
         <div class="form-group mt-5 ml-5 mr-5 mb-5">
 
             <?php

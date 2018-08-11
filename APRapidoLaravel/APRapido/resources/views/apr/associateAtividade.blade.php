@@ -9,7 +9,7 @@
 @desktop
 @section('content')
 
-{!! Form::open(['action' => ['AprController@associateAtividade', $data['apr']->id], 'method' => 'post']) !!}
+{!! Form::open(['action' => ['AprController@associateAtividadeStore', $data['apr']->id], 'method' => 'post']) !!}
         <div class="form-group mt-5 ml-5 mr-5 mb-5">
 
             <?php
@@ -27,11 +27,13 @@
 
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
             {!! Form::close() !!}
+            <a href="/apr/associateNaturezariscosCall/{{$data['apr']->id}}">
+                <button type="button" class="btn btn-danger">
+                    Ir para natureza dos riscos
+                </button>
+            </a>
 
 
-            {!! Form::open(['action' => ['AprController@associateNaturezariscosCall', $data['apr']->id], 'method' => 'post']) !!}
-                {{Form::submit('Ir para Natureza Risco',['class' => 'mt-3 btn btn-secondary'])}}
-            {!! Form::close() !!}
             <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#novaatividade">
                Nova Atividade
             </button>

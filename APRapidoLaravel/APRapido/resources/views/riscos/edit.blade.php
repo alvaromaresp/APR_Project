@@ -3,7 +3,7 @@
 @section('caminho')
     <b> > <a href="\"> Menu </a><br>
     > <a href="/riscos"> Cadastrar Riscos </a><br>
-    > Editar Risco: {{$risco->risco}} </b>
+    > Editar Risco: {{$data['risco']}} </b>
 @endsection
 
 @desktop
