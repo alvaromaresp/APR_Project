@@ -128,6 +128,7 @@ class AprController extends Controller
         $apr = Apr::find($id);
         $data = array(
             'apr' => $apr,
+            'modal' =>false,
         );
 
         return view('apr.edit')->with('data', $data);
