@@ -5,7 +5,7 @@
     > <a href="/apr"> Cadastrar APR </a><br>
     > Criar nova APR</b>
 @endsection
-
+ 
 @desktop
 @section('content')
 
@@ -28,13 +28,13 @@
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
             {!! Form::close() !!}
             <a href="/apr/associateNaturezariscosCall/{{$data['apr']->id}}">
-                <button type="button" class="btn btn-danger">
+                <button type="button" class="btn btn-danger mt-3">
                     Ir para natureza dos riscos
                 </button>
             </a>
 
 
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#novaatividade">
+            <button type="button" class="btn btn-dark mt-3" data-toggle="modal" data-target="#novaatividade">
                Nova Atividade
             </button>
 
@@ -83,9 +83,10 @@
 @elsedesktop
 @section('content')
 
-{!! Form::open(['action' => ['AprController@associateAtividade', $data['apr']->id], 'method' => 'post']) !!}
+{!! Form::open(['action' => ['AprController@associateAtividadeStore', $data['apr']->id], 'method' => 'post']) !!}
         <div class="form-group ml-5 mr-4 mb-5">
 
+            
             <?php
                 $atividades = array();
             ?>
@@ -99,17 +100,19 @@
 
             {{Form::select('atividade', $atividades, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Atividades'])}}
 
-            {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-left'])}}
+            {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3'])}}
             {!! Form::close() !!}
+            <a href="/apr/associateNaturezariscosCall/{{$data['apr']->id}}">
+                <button type="button" class="btn btn-danger mt-3">
+                    Ir para natureza dos riscos
+                </button>
+            </a>
 
 
-            {!! Form::open(['action' => ['AprController@associateNaturezariscosCall', $data['apr']->id], 'method' => 'post']) !!}
-                {{Form::submit('Ir para Natureza Risco',['class' => 'mt-3 btn btn-secondary'])}}
-            {!! Form::close() !!}
-
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#novaatividade">
+            <button type="button" class="btn btn-dark mt-3" data-toggle="modal" data-target="#novaatividade">
                Nova Atividade
             </button>
+
             @foreach($data['apr']->atividades as $at)
                 
                 {!!Form::open(['action' => ['AprController@desassociateAtividade', $data['apr']->id], 'method', 'post', 'class' => 'mt-2'])!!}
@@ -120,7 +123,7 @@
 
             @endforeach
         
-        
+           
         </div>
         <div class="modal fade" id="novaatividade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -135,7 +138,7 @@
                     <iframe src="/atividades/create/true" width="325" height="500"></iframe>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="close btn-secondary" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         Finalizar
                     </button>
                 </div>

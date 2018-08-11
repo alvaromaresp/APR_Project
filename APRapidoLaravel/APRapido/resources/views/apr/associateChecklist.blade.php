@@ -5,7 +5,7 @@
     > <a href="/apr"> Cadastrar APR </a><br>
     > Criar nova APR: Check List</b>
 @endsection
-
+ 
 @desktop
 @section('content')
 
@@ -59,7 +59,7 @@
                             <div class="col-5"><p class="float-left mt-4">{{$cl->item}}</p></div>
                             <div class="col">
                                 {!! Form::hidden('checklist', $cl->id) !!}
-                                {!! Form::submit('check', ['class' => 'btn btn-success mt-3 float-right']) !!}
+                                {!! Form::submit('check', ['class' => 'btn btn-success mt-2 float-right']) !!}
                             </div>
                         </div>
                     {!! Form::close() !!}
@@ -69,7 +69,7 @@
                             <div class="col-5"><p class="float-left mt-4">{{$cl->item}}</p></div>
                             <div class="col">
                                 {!! Form::hidden('checklist', $cl->id) !!}
-                                {!! Form::submit('unchek', ['class' => 'btn btn-danger mt-3 float-right']) !!}
+                                {!! Form::submit('unchek', ['class' => 'btn btn-danger mt-2']) !!}
                             </div>
                         </div>
                     {!! Form::close() !!}
