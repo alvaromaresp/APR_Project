@@ -42,6 +42,7 @@ class MedidaPreventivaController extends Controller
      */
     public function create($modal = "false")
     {
+
         $data = array(
             'modal' => $modal
         );
@@ -62,12 +63,14 @@ class MedidaPreventivaController extends Controller
         $medidaPreventiva->save();
 
         $modal = $request->input('modal');
-        
+        $data = array(
+            'modal' => $modal
+        );
+        //session()->put(['data'=>$data]);
+        //session()->save();
         if($modal == "true"){
-            $data = array(
-                'modal' => $modal
-            );
-            return view('medidasPreventivas.create')->with('data', $data);
+            return redirect('/medidaPreventiva/create/true');//->with('success','Sucesso!');
+            //return view('medidasPreventivas.create')->with('data', $data);
         }
 
         return redirect('/medidaPreventiva')->with('success','Sucesso!');
