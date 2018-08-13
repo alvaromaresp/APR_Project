@@ -71,8 +71,10 @@ class RiscosController extends Controller
             'mp' => $mp,
             'modal' => $modal
         );
+        session()->put(['data'=>$data]);
+        session()->save();
 
-        return redirect("/riscos/associate/$risco->id")->with('data', $data);
+        return redirect("/riscos/associate/$risco->id");//->with('data', $data);
     }
 
     /**
@@ -169,7 +171,8 @@ class RiscosController extends Controller
 
         $mp = Medidaspreventivas::all();
 
-        $data = session()->get( 'data' );;
+        $data = session()->get('data');
+
         $modal = $data['modal'];
 
         $data = array(
