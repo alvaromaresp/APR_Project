@@ -47,7 +47,7 @@
                     </button>
                     </div>
                     <div class="modal-body" id="resposta-modal">
-                        <iframe src="/ferramenta/create/true" width="765" height="500"></iframe>
+                        <iframe id="iframe" src="/ferramenta/create/true" width="765" height="500"></iframe>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close btn-secondary" data-dismiss="modal" aria-label="Close">
@@ -70,7 +70,18 @@
                 {!!Form::close()!!}
 
             @endforeach
-   		</div>
+           </div>
+           
+        <script>
+            $(document).ready(function(){
+                $('#novaferramenta').on('hidden.bs.modal', function () {
+                    location.reload();
+                });
+                $('#novaferramenta').on('shown.bs.modal', function () {
+                    document.getElementById('iframe').contentDocument.location.reload(true);
+                });
+            });
+        </script>
 
 @endsection
 @elsedesktop
@@ -114,7 +125,7 @@
                     </button>
                     </div>
                     <div class="modal-body" id="resposta-modal">
-                        <iframe src="/ferramenta/create/true" width="325" height="500"></iframe>
+                        <iframe id="iframe" src="/ferramenta/create/true" width="325" height="500"></iframe>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close btn-secondary" data-dismiss="modal" aria-label="Close">
@@ -138,6 +149,18 @@
 
             @endforeach
         </div>
+
+        <script>
+            $(document).ready(function(){
+                $('#novaferramenta').on('hidden.bs.modal', function () {
+                    location.reload();
+                });
+                $('#novaferramenta').on('shown.bs.modal', function () {
+                    document.getElementById('iframe').contentDocument.location.reload(true);
+                });
+            });
+        </script>
+
 @endsection
 @enddesktop
 

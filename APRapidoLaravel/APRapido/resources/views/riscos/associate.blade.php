@@ -44,7 +44,7 @@
                     </button>
                     </div>
                     <div class="modal-body" id="resposta-modal">
-                        <iframe src="/medidaPreventiva/create/true" width="765" height="500"></iframe>
+                        <iframe id="iframe" src="/medidaPreventiva/create/true" width="765" height="500"></iframe>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close btn btn-secondary" data-dismiss="modal" aria-label="Close">
@@ -77,6 +77,10 @@
         $(document).ready(function(){
             $('#novamp').on('hidden.bs.modal', function () {
                 location.reload();
+            });
+            
+            $('#novamp').on('shown.bs.modal', function () {
+                document.getElementById('iframe').contentDocument.location.reload(true);
             });
         });
     </script>
@@ -121,7 +125,7 @@
                     </button>
                     </div>
                     <div class="modal-body" id="resposta-modal">
-                        <iframe src="/medidaPreventiva/create/true" width="325" height="500"></iframe>
+                        <iframe id="iframe" src="/medidaPreventiva/create/true" width="325" height="500"></iframe>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close btn btn-secondary" data-dismiss="modal" aria-label="Close">
@@ -154,6 +158,9 @@
         $(document).ready(function(){
             $('#novamp').on('hidden.bs.modal', function () {
                 location.reload();
+            });
+            $('#novamp').on('shown.bs.modal', function () {
+                document.getElementById('iframe').contentDocument.location.reload(true);
             });
         });
     </script>
