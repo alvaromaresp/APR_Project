@@ -75,10 +75,10 @@
     </div>
     <script>
         $(document).ready(function(){
-            $('#novamp').on('hidden.bs.modal', function () {
+            $('#novorisco').on('hidden.bs.modal', function () {
                 location.reload();
             });
-            $('#novamp').on('shown.bs.modal', function () {
+            $('#novorisco').on('shown.bs.modal', function () {
                 document.getElementById('iframe').contentDocument.location.reload(true);
             });
         });
@@ -155,10 +155,10 @@
     </div>
     <script>
         $(document).ready(function(){
-            $('#novamp').on('hidden.bs.modal', function () {
+            $('#novorisco').on('hidden.bs.modal', function () {
                 location.reload();
             });
-            $('#novamp').on('shown.bs.modal', function () {
+            $('#novorisco').on('shown.bs.modal', function () {
                 document.getElementById('iframe').contentDocument.location.reload(true);
             });            
         });
