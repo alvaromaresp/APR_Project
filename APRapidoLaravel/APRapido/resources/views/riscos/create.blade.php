@@ -35,7 +35,7 @@
             <h2> {{Form::label('risco', 'Novo Risco')}} </h2>
             {{Form::text('risco', '', ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Risco'])}}
             
-            
+
 
 
             <div class="float-left">
