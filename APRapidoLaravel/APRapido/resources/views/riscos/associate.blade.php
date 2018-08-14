@@ -43,7 +43,7 @@
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
 
 
-            <a href="/riscos" class="btn mt-3 btn-secondary">Finalizar</a>
+            <a href="/riscos" class="btn mt-3 btn-secondary float-right mr-2">Finalizar</a>
             
             </div>
             <div class="modal fade" id="novamp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

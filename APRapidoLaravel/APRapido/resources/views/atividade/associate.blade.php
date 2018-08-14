@@ -42,7 +42,7 @@
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
             
 
-                <a href="/atividades" class="btn mt-3 btn-secondary">Finalizar</a>
+                <a href="/atividades" class="btn mt-3 btn-secondary float-right mr-2">Finalizar</a>
 
 
             <button type="button" class="btn btn-dark float-left mt-3 mr-2" data-toggle="modal" data-target="#novaferramenta">

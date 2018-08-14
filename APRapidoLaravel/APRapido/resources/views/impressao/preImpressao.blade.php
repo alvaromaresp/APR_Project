@@ -71,5 +71,5 @@
 
 @extends('layout.flutuante')
 @section('conteudo')
-    A função ao lado serve para cadastrar uma nova impressão, a fim de gerar um novo PDF para imprimir as informações referentes a um APR.
+    A função ao lado serve para cadastrar uma nova impressão, a fim de gerar um novo PDF para imprimir as informações referentes a um APR. Se desejar somente criar/editar a APR, basta clicar no botão "Menu" no final da página.
 @endsection

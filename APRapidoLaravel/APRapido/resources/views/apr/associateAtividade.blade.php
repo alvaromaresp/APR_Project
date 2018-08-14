@@ -39,7 +39,7 @@
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
             {!! Form::close() !!}
             <a href="/apr/associateNaturezariscosCall/{{$data['apr']->id}}">
-                <button type="button" class="btn btn-danger mt-3">
+                <button type="button" class="btn btn-secondary mt-3 float-right mr-2">
                     Ir para natureza dos riscos
                 </button>
             </a>
