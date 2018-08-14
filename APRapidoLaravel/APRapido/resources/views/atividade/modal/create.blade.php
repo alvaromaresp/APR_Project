@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.modal')
 @desktop
     @section('content')
     {!! Form::open(['action' => ['AtividadeController@store'], 'method' => 'post']) !!}
@@ -9,7 +9,7 @@
             <?php
                 $dis = array(); 
             ?>
-            {{Form::hidden('modal', "ME MODIFIQUE")}}
+            {{{Form::hidden('redirect', "ME MODIFIQUE")}}
 
             @foreach($data['disciplina'] as $d)
                 <?php
@@ -46,7 +46,7 @@
             <?php
                 $dis = array(); 
             ?>
-            {{Form::hidden('modal', "ME MODIFIQUE")}}
+            {{Form::hidden('redirect', "ME MODIFIQUE")}}
 
             @foreach($data['disciplina'] as $d)
                 <?php

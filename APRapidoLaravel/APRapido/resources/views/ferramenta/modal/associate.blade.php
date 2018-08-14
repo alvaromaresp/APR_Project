@@ -1,5 +1,4 @@
-@extends('layout.app')
-@desktop
+@extends('layout.modal')
 @section('content')
 
     <div class="form-group mt-5 ml-5 mr-5">    
@@ -23,7 +22,7 @@
             <a href="/ferramenta" class="btn mt-3 btn-secondary">Finalizar</a><br>
             </div>
             
-            {{Form::hidden('modal', "ME MODIFIQUE")}}
+            {{Form::hidden('redirect', "ME MODIFIQUE")}}
         {!! Form::close() !!}
     <div class="form-group ml-5 mr-5 mb-5">
         @foreach($data['ferramenta']->riscos as $ris)
@@ -31,7 +30,7 @@
                     {!!Form::open(['action' => ['FerramentaController@desassociate', $data['ferramenta']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$ris->risco}}</p>
                         {{Form::hidden('ris', $ris->id)}}
-                        {{Form::hidden('modal', "ME MODIFIQUE")}}
+                        {{Form::hidden('redirect', "ME MODIFIQUE")}}
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}
 
@@ -61,7 +60,7 @@
             <a href="/ferramenta" class="btn mt-3 btn-secondary">Finalizar</a><br>
             </div>
             
-            {{{Form::hidden('modal', "ME MODIFIQUE")}}
+           {{Form::hidden('redirect', "ME MODIFIQUE")}}
         {!! Form::close() !!}
     <div class="form-group ml-5 mr-5 mb-5">
         @foreach($data['ferramenta']->riscos as $ris)
@@ -69,7 +68,7 @@
                     {!!Form::open(['action' => ['FerramentaController@desassociate', $data['ferramenta']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$ris->risco}}</p>
                         {{Form::hidden('ris', $ris->id)}}
-                        {{Form::hidden('modal', "ME MODIFIQUE")}}
+                        {{Form::hidden('redirect', "ME MODIFIQUE")}}
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}
 

@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.modal')
 
 @desktop
 @section('content')
@@ -29,7 +29,7 @@
                     
                     {!!Form::open(['action' => ['RiscosController@desassociate', $data['risco']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$mp->medidapreventiva}}</p>
-                        {{Form::hidden('modal', "ME MODIFIQUE")}}
+                        {{Form::hidden('redirect', "ME MODIFIQUE")}}
                         {{Form::hidden('mp', $mp->id)}}
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}
@@ -67,7 +67,7 @@
                     
                     {!!Form::open(['action' => ['RiscosController@desassociate', $data['risco']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$mp->medidapreventiva}}</p>
-                        {{Form::hidden('modal', "ME MODIFIQUE")}}
+                        {{Form::hidden('redirect', "ME MODIFIQUE")}}
                         {{Form::hidden('mp', $mp->id)}}
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}

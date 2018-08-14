@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.modal')
 @desktop
 @section('content')
 
@@ -18,7 +18,7 @@
 
             {{Form::select('ferramenta', $ferramentas, null, ['class' => 'custom-select mt-3 mb-3', 'placeholder' => 'Ferramenta'])}}
 
-            {{Form::hidden('modal', "ME MODIFIQUE")}}
+            {{Form::hidden('redirect', "ME MODIFIQUE")}}
     
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
             
@@ -29,7 +29,7 @@
                 
                 {!!Form::open(['action' => ['AtividadeController@desassociate', $data['atividade']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                     <p>{{$fer->ferramenta}}</p>
-                    {{Form::hidden('modal', "ME MODIFIQUE")}}
+                    {{Form::hidden('redirect', "ME MODIFIQUE")}}
                     {{Form::hidden('ferramenta', $fer->id)}}
                     {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                 {!!Form::close()!!}
@@ -57,7 +57,7 @@
 
             {{Form::select('ferramenta', $ferramentas, null, ['class' => 'custom-select mt-3 mb-3', 'placeholder' => 'Ferramenta'])}}
 
-            {{Form::hidden('modal', "ME MODIFIQUE")}}
+            {{Form::hidden('redirect', "ME MODIFIQUE")}}
     
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
             
@@ -68,7 +68,7 @@
                 
                 {!!Form::open(['action' => ['AtividadeController@desassociate', $data['atividade']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                     <p>{{$fer->ferramenta}}</p>
-                    {{Form::hidden('modal', "ME MODIFIQUE")}}
+                    {{Form::hidden('redirect', "ME MODIFIQUE")}}
                     {{Form::hidden('ferramenta', $fer->id)}}
                     {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                 {!!Form::close()!!}
@@ -78,7 +78,3 @@
 @endsection
 @enddesktop
 
-@extends('layout.flutuante')
-@section('conteudo')
-    Para cadastrar uma nova atividade, ela deve ser associada a uma ferramenta. A associação significa que as ferramentas, previamente cadastrada, selecionadas serão utilizadas ao executar a atividade em questão, para isso basta procurá-la no campo "Ferramenta" e clicar em "Selecionar". Se selecionada uma ferramenta que não é desejada, basta clicar em "Deletar". Quando terminar de selecionar todas as ferramentas, basta clicar em "Finalizar".
-@endsection

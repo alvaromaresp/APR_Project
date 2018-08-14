@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.modal')
 @desktop
 @section('content')
 
@@ -18,7 +18,7 @@
                 ?>
             @endforeach
 
-            {{Form::hidden('modal', "ME MODIFIQUE")}}
+            {{Form::hidden('redirect', "ME MODIFIQUE")}}
 
             {{Form::select('disciplina', $dis, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}} <br>
    			{{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
@@ -45,7 +45,7 @@
                 ?>
             @endforeach
 
-            {{Form::hidden('modal', "ME MODIFIQUE")}}
+            {{Form::hidden('redirect', "ME MODIFIQUE")}}
 
             {{Form::select('disciplina', $dis, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}} <br>
             {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
