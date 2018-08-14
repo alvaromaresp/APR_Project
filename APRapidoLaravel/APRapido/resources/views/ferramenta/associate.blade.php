@@ -23,7 +23,7 @@
                 ?>
                 @foreach($data['ferramenta']->riscos as $risass)
                     <?php
-                        if($ris->id == $risass)
+                        if($ris->id == $risass->id)
                             $find = true;
                     ?>
                 @endforeach
@@ -104,12 +104,23 @@
         {!! Form::open(['action' => ['FerramentaController@associateStore', $data['ferramenta']->id], 'method' => 'post']) !!}
             <?php
                 $riscos = array();
+                $find = false;
             ?>
 
             <h2> {{Form::label('risco', 'Associar Riscos')}} </h2>
             @foreach($data['riscos'] as $ris)
                 <?php
-                    $riscos[$ris->id] = $ris->risco;
+                    $find = false;
+                ?>
+                @foreach($data['ferramenta']->riscos as $risass)
+                    <?php
+                        if($ris->id == $risass->id)
+                            $find = true;
+                    ?>
+                @endforeach
+                <?php
+                    if(!$find)
+                        $riscos[$ris->id] = $ris->risco;
                 ?>
             @endforeach 
 

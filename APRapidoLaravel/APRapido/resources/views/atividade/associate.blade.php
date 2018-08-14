@@ -14,14 +14,26 @@
 
             <?php
                 $ferramentas = array();
+                $find = false;
             ?>
 
             <h2> {{Form::label('ferramenta', 'Associar Ferramentas')}} </h2>
             @foreach($data['ferramentas'] as $fer)
                 <?php
+                    $find = false;
+                ?>
+                @foreach($data['atividade']->ferramentas as $ferass)
+                    <?php
+                        if($fer->id == $ferass->id)
+                            $find = true;
+                    ?>
+                @endforeach
+                <?php
+                    if(!$find)
                     $ferramentas[$fer->id] = $fer->ferramenta;
                 ?>
             @endforeach
+    
 
             {{Form::select('ferramenta', $ferramentas, null, ['class' => 'custom-select mt-3 mb-3', 'placeholder' => 'Ferramenta'])}}
 
@@ -92,11 +104,22 @@
 
              <?php
                 $ferramentas = array();
+                $find = false;
             ?>
 
             <h2> {{Form::label('ferramenta', 'Associar Ferramentas')}} </h2>
             @foreach($data['ferramentas'] as $fer)
                 <?php
+                    $find = false;
+                ?>
+                @foreach($data['atividade']->ferramentas as $ferass)
+                    <?php
+                        if($fer->id == $ferass->id)
+                            $find = true;
+                    ?>
+                @endforeach
+                <?php
+                    if(!$find)
                     $ferramentas[$fer->id] = $fer->ferramenta;
                 ?>
             @endforeach

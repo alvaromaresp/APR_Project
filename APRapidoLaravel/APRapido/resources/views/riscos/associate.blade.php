@@ -13,14 +13,26 @@
         {!! Form::open(['action' => ['RiscosController@associateStore', $data['risco']->id], 'method' => 'post']) !!}
             <?php
                 $mps = array();
+                $find = false;
             ?>
 
             <h2> {{Form::label('medidaPreventiva', 'Associar Medida Preventiva')}} </h2>
             @foreach($data['mp'] as $mp)
                 <?php
-                    $mps[$mp->id] = $mp->medidapreventiva;
+                    $find = false;
+                ?>
+                @foreach($data['risco']->medidaspreventivas as $mpass)
+                    <?php
+                        if($mp->id == $mpass->id)
+                            $find = true;
+                    ?>
+                @endforeach
+                <?php
+                    if(!$find)
+                        $mps[$mp->id] = $mp->medidapreventiva;
                 ?>
             @endforeach
+
 
 
             {{Form::select('medidaPreventiva', $mps, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Medida Preventiva'])}}
@@ -93,12 +105,23 @@
         {!! Form::open(['action' => ['RiscosController@associateStore', $data['risco']->id], 'method' => 'post']) !!}
             <?php
                 $mps = array();
+                $find = false;
             ?>
 
             <h2> {{Form::label('medidaPreventiva', 'Associar Medida Preventiva')}} </h2>
             @foreach($data['mp'] as $mp)
                 <?php
-                    $mps[$mp->id] = $mp->medidapreventiva;
+                    $find = false;
+                ?>
+                @foreach($data['risco']->medidaspreventivas as $mpass)
+                    <?php
+                        if($mp->id == $mpass->id)
+                            $find = true;
+                    ?>
+                @endforeach
+                <?php
+                    if(!$find)
+                        $mps[$mp->id] = $mp->medidapreventiva;
                 ?>
             @endforeach
 

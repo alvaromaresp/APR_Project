@@ -14,12 +14,23 @@
 
             <?php
                 $atividades = array();
+                $find = false;
             ?>
 
             <h2> {{Form::label('atividade', 'Atividades associadas a APR')}} </h2>
             @foreach($data['atividade'] as $at)
                 <?php
-                    $atividades[$at->id] = $at->atividade;
+                    $find = false;
+                ?>
+                @foreach($data['apr']->atividades as $atass)
+                    <?php
+                        if($at->id == $atass->id)
+                            $find = true;
+                    ?>
+                @endforeach
+                <?php
+                    if(!$find)
+                        $atividades[$at->id] = $at->atividade;
                 ?>
             @endforeach
 
@@ -92,12 +103,23 @@
             
             <?php
                 $atividades = array();
+                $find = false;
             ?>
 
             <h2> {{Form::label('atividade', 'Atividades associadas a APR')}} </h2>
             @foreach($data['atividade'] as $at)
                 <?php
-                    $atividades[$at->id] = $at->atividade;
+                    $find = false;
+                ?>
+                @foreach($data['apr']->atividades as $atass)
+                    <?php
+                        if($at->id == $atass->id)
+                            $find = true;
+                    ?>
+                @endforeach
+                <?php
+                    if(!$find)
+                        $atividades[$at->id] = $at->atividade;
                 ?>
             @endforeach
 
