@@ -27,7 +27,7 @@
 
             {{Form::select('disciplina', $dis, null,  ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}}
             {{Form::hidden('_method', 'PUT')}}
-            {{Form::hidden('modal', $data['modal'])}}
+
 		    {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
             <div class="float-left">
                 <a href="/ferramenta" class="btn mt-3 btn-secondary">Voltar</a>

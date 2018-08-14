@@ -19,7 +19,7 @@
 
             {{Form::select('medidaPreventiva', $mps, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Medida Preventiva'])}}
                 
-            <a href="/riscos" class="btn mt-3 btn-secondary">Finalizar</a>
+
             {{Form::hidden('redirect', "/riscos/associate/modal/")}}
             
     </div>
@@ -58,7 +58,7 @@
 
             {{Form::select('medidaPreventiva', $mps, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Medida Preventiva'])}}
                 
-            <a href="/riscos" class="btn mt-3 btn-secondary">Finalizar</a>
+            
             {{Form::hidden('redirect', "/riscos/associate/modal/")}}
     </div>
 
