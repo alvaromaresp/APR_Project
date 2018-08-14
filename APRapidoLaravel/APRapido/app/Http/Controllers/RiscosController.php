@@ -41,12 +41,18 @@ class RiscosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($modal = "false")
+    public function create()
     {
-        $data = array(
-            'modal' => $modal
-        );
-        return view('riscos.create')->with('data', $data);
+        return view('riscos.create');
+    }
+    /**
+     * Show the form for creating a new resource. (modal)
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createModal()
+    {
+        return view('riscos.modal.create');
     }
 
     /**
@@ -64,16 +70,15 @@ class RiscosController extends Controller
         
         
         $mp = Medidaspreventivas::all();
-        $modal = $request->input('modal');
+        $redirect = $request->input('redirect') ?? "/riscos/associate/";
 
         $data = array(
             'risco' => $risco,
             'mp' => $mp,
-            'modal' => $modal
         );
 
 
-        return redirect("/riscos/associate/$risco->id");//->with('data', $data);
+        return redirect($redirect.$risco->id);//->with('data', $data);
     }
 
     /**
@@ -170,17 +175,32 @@ class RiscosController extends Controller
 
         $mp = Medidaspreventivas::all();
 
-        $data = session()->get('data');
+        $data = array(
+            'risco' => $risco,
+            'mp' => $mp,
+        );
 
-        $modal = $data['modal'];
+        return view('Riscos.associate')->with('data', $data);
+    }
+
+    /**
+     * Associate Riscos to NaturezaRiscos (modal)
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function associateModal($id){
+        $risco = Riscos::find($id);
+
+        $mp = Medidaspreventivas::all();
 
         $data = array(
             'risco' => $risco,
             'mp' => $mp,
-            'modal' => $modal
         );
 
-        return view('Riscos.associate')->with('data', $data);
+        return view('Riscos.modal.associate')->with('data', $data);
     }
     public function associateStore(Request $request, $id){
         $risco = Riscos::find($id);
@@ -188,15 +208,14 @@ class RiscosController extends Controller
 
         $mp = Medidaspreventivas::all();
 
-        $modal = $request->input('modal');
+        $redirect = $request->input('redirect') ?? "/riscos/associate/";
 
         $data = array(
             'risco' => $risco,
             'mp' => $mp,
-            'modal' => $modal
         );
 
-        return redirect("/riscos/associate/$risco->id")->with('data', $data);
+        return redirect($redirect.$risco->id)->with('data', $data);
     }
 
     /**
@@ -213,14 +232,13 @@ class RiscosController extends Controller
 
         $mp = Medidaspreventivas::all();
 
-        $modal = $request->input('modal');
+        $redirect = $request->input('redirect') ?? "/riscos/associate/";
 
         $data = array(
             'risco' => $risco,
             'mp' => $mp,
-            'modal' => $modal
         );
 
-        return redirect("/riscos/associate/$risco->id")->with('data', $data);
+        return redirect($redirect.$risco->id)->with('data', $data);
     }
 }

@@ -20,8 +20,9 @@
             {{Form::select('medidaPreventiva', $mps, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Medida Preventiva'])}}
                 
             <a href="/riscos" class="btn mt-3 btn-secondary">Finalizar</a>
+            {{Form::hidden('redirect', "/riscos/associate/modal/")}}
             
-    </div> 
+    </div>
 
         {!! Form::close() !!}
         <div class="ml-5 mr-5 mb-5">
@@ -29,7 +30,7 @@
                     
                     {!!Form::open(['action' => ['RiscosController@desassociate', $data['risco']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$mp->medidapreventiva}}</p>
-                        {{Form::hidden('redirect', "ME MODIFIQUE")}}
+                        {{Form::hidden('redirect', "/riscos/associate/modal/")}}
                         {{Form::hidden('mp', $mp->id)}}
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}
@@ -58,7 +59,7 @@
             {{Form::select('medidaPreventiva', $mps, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Medida Preventiva'])}}
                 
             <a href="/riscos" class="btn mt-3 btn-secondary">Finalizar</a>
-            
+            {{Form::hidden('redirect', "/riscos/associate/modal/")}}
     </div>
 
         {!! Form::close() !!}
@@ -67,7 +68,7 @@
                     
                     {!!Form::open(['action' => ['RiscosController@desassociate', $data['risco']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$mp->medidapreventiva}}</p>
-                        {{Form::hidden('redirect', "ME MODIFIQUE")}}
+                        {{Form::hidden('redirect', "/riscos/associate/modal/")}}
                         {{Form::hidden('mp', $mp->id)}}
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}

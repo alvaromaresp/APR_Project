@@ -67,18 +67,9 @@ class MedidaPreventivaController extends Controller
         $medidaPreventiva->medidapreventiva = $request->input('medidapreventiva');
         $medidaPreventiva->save();
 
-        $modal = $request->input('modal');
-        $data = array(
-            'modal' => $modal
-        );
-        //session()->put(['data'=>$data]);
-        //session()->save();
-        if($modal == "true"){
-            return redirect('/medidaPreventiva/create/true');//->with('success','Sucesso!');
-            //return view('medidasPreventivas.create')->with('data', $data);
-        }
+        $redirect = $request->input('redirect') ?? "/medidaPreventiva";
 
-        return redirect('/medidaPreventiva')->with('success','Sucesso!');
+        return redirect($redirect);
     }
 
     /**

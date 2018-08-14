@@ -16,9 +16,10 @@ Route::get('/responsavel', 'pagesController@menuResponsavel');
 
 Route::resource('atividades','AtividadeController');
 Route::get('atividades/associate/{id}', 'AtividadeController@associate');
+    Route::get('atividades/associate/modal/{id}', 'AtividadeController@associateModal');
 Route::post('atividades/associateStore/{id}', 'AtividadeController@associateStore');
 Route::post('atividades/desassociate/{id}', 'AtividadeController@desassociate');
-Route::get('atividades/create/{modal}', 'AtividadeController@create');
+Route::get('atividades/create/modal', 'AtividadeController@createModal');
 
 Route::resource('medidaPreventiva','MedidaPreventivaController');
 Route::post('/medidaPreventiva/search','MedidaPreventivaController@search');
@@ -28,17 +29,19 @@ Route::get('/medidaPreventiva/create/modal', 'MedidaPreventivaController@createM
 Route::resource('riscos', 'RiscosController');
 Route::post('/riscos/search','RiscosController@search');
 Route::get('riscos/associate/{id}', 'RiscosController@associate');
+Route::get('riscos/associate/modal/{id}', 'RiscosController@associateModal');
 Route::post('riscos/associateStore/{id}', 'RiscosController@associateStore');
 Route::post('riscos/desassociate/{id}', 'RiscosController@desassociate');
-Route::get('/riscos/create/{modal}', 'RiscosController@create');
+Route::get('riscos/create/modal', 'RiscosController@createModal');
 
 
 Route::resource('ferramenta', 'FerramentaController');
 Route::post('/ferramenta/search','FerramentaController@search');
 Route::get('ferramenta/associate/{id}', 'FerramentaController@associate');
+Route::get('ferramenta/associate/modal/{id}', 'FerramentaController@associateModal');
 Route::post('ferramenta/associateStore/{id}', 'FerramentaController@associateStore');
 Route::post('ferramenta/desassociate/{id}', 'FerramentaController@desassociate');
-Route::get('ferramenta/create/{modal}', 'FerramentaController@create');
+Route::get('ferramenta/create/modal', 'FerramentaController@createModal');
 
 Route::resource('disciplina', 'DisciplinaController');
 Route::post('/disciplina/search','DisciplinaController@search');

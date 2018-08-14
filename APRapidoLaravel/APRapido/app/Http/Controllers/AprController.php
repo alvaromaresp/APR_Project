@@ -213,8 +213,10 @@ class AprController extends Controller
     {
         $apr = Apr::find($id);
         $apr->atividades()->detach($request->input('atividade'));
+        $redirect = $request->input('redirect') ?? "/apr/associateAtividade/";
 
-        return redirect("/apr/associateAtividade/$id");
+
+        return redirect($redirect.$id);
     }
 
     /**

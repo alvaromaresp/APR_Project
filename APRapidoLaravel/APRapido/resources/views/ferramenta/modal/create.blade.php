@@ -18,7 +18,7 @@
                 ?>
             @endforeach
 
-            {{Form::hidden('redirect', "ME MODIFIQUE")}}
+            {{Form::hidden('redirect', "ferramenta/associate/modal/")}}
 
             {{Form::select('disciplina', $dis, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}} <br>
    			{{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
@@ -45,7 +45,7 @@
                 ?>
             @endforeach
 
-            {{Form::hidden('redirect', "ME MODIFIQUE")}}
+            {{Form::hidden('redirect', "ferramenta/associate/modal/")}}
 
             {{Form::select('disciplina', $dis, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}} <br>
             {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}

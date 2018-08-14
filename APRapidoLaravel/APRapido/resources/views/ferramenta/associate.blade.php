@@ -29,15 +29,15 @@
 
             <a href="/ferramenta" class="btn mt-3 btn-secondary">Finalizar</a>
 
-            @if($data['modal'] == 'false')
+
             <button type="button" class="btn btn-dark mt-3" data-toggle="modal" data-target="#novorisco">
                     Novo Risco 
             </button><br>
             
             
-            @endif
+
             </div>
-            @if($data['modal'] == 'false')
+
             <div class="modal fade" id="novorisco" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -48,7 +48,7 @@
                     </button>
                     </div>
                     <div class="modal-body" id="resposta-modal">
-                        <iframe id="iframe" src="/riscos/create/true" width="765" height="500"></iframe>
+                        <iframe id="iframe" src="/riscos/create/modal" width="765" height="500"></iframe>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close btn-secondary" data-dismiss="modal" aria-label="Close">
@@ -58,7 +58,7 @@
                 </div>
                 </div>
             </div>
-            @endif
+
             {{Form::hidden('modal', $data['modal'])}}
         {!! Form::close() !!}
     <div class="form-group ml-5 mr-5 mb-5">
@@ -109,15 +109,15 @@
 
             <a href="/ferramenta" class="btn mt-3 btn-secondary">Finalizar</a><br>
 
-            @if($data['modal'] == 'false')
+
             <button type="button" class="btn btn-dark mt-3" data-toggle="modal" data-target="#novorisco">
                     Novo Risco 
             </button><br>
             
             
-            @endif
+
             </div>
-            @if($data['modal'] == 'false')
+
             <div class="modal fade" id="novorisco" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -128,7 +128,7 @@
                     </button>
                     </div>
                     <div class="modal-body" id="resposta-modal">
-                        <iframe id="iframe" src="/riscos/create/true" width="325" height="500"></iframe>
+                        <iframe id="iframe" src="/riscos/create/modal" width="325" height="500"></iframe>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close btn-secondary" data-dismiss="modal" aria-label="Close">
@@ -138,8 +138,8 @@
                 </div>
                 </div>
             </div>
-            @endif
-            {{Form::hidden('modal', $data['modal'])}}
+
+
         {!! Form::close() !!}
     <div class="form-group ml-5 mr-5 mb-5">
         @foreach($data['ferramenta']->riscos as $ris)
@@ -147,7 +147,6 @@
                     {!!Form::open(['action' => ['FerramentaController@desassociate', $data['ferramenta']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$ris->risco}}</p>
                         {{Form::hidden('ris', $ris->id)}}
-                        {{Form::hidden('modal', $data['modal'])}}
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}
 

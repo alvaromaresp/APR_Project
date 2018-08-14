@@ -41,7 +41,7 @@ class AtividadeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($modal = "false")
+    public function create()
     {
 
         $emp = Empresa::all();
@@ -50,9 +50,25 @@ class AtividadeController extends Controller
         $data = array(
             'empresa' => $emp,
             'disciplina' => $dis,
-            'modal' => $modal
         );
         return view("atividade.create")->with('data', $data);
+    }
+    /**
+     * Show the form for creating a new resource. (modal)
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createModal()
+    {
+
+        $emp = Empresa::all();
+        $dis = Disciplina::all();
+
+        $data = array(
+            'empresa' => $emp,
+            'disciplina' => $dis,
+        );
+        return view("atividade.modal.create")->with('data', $data);
     }
 
     /**
@@ -74,17 +90,15 @@ class AtividadeController extends Controller
         $disciplina = Disciplina::find($request->input('disciplina'));
         $ferramentas = $disciplina->ferramentas;
 
-        $modal = $request->input('modal');
+        $redirect = $request->input('redirect') ?? "/atividades/associate/";
 
 
         $data = array(
             'atividade' => $atividade,
             'ferramentas' => $ferramentas,
-            'modal' => $modal,
-            'teste' => "false"
         );
 
-        return redirect("/atividades/associate/$atividade->id")->with('data', $data);
+        return redirect($redirect.$atividade->id)->with('data', $data);
     }
 
     /**
@@ -189,16 +203,35 @@ class AtividadeController extends Controller
         $atividade = Atividade::find($id);
         $ferramentas = Ferramenta::all();
 
-        $data = session()->get( 'data' );
-        $modal = $data['modal'];
+
 
         $data = array(
             'atividade' => $atividade,
             'ferramentas' => $ferramentas,
-            'modal' => $modal
         );
 
         return view('atividade.associate')->with('data', $data);
+
+    }
+    /**
+     * Associate Atividades to Request
+     * @param Request $request
+     * @param $id
+     */
+    public function associateModal($id){
+
+        $atividade = Atividade::find($id);
+        $ferramentas = Ferramenta::all();
+
+
+
+        $data = array(
+            'atividade' => $atividade,
+            'ferramentas' => $ferramentas,
+
+        );
+
+        return view('atividade.modal.associate')->with('data', $data);
 
     }
     public function associateStore(Request $request, $id){
@@ -209,15 +242,14 @@ class AtividadeController extends Controller
         $disciplina = Disciplina::find($atividade->disciplina_id);
         $ferramentas = $disciplina->ferramentas;
 
-        $modal = $request->input('modal');
+        $redirect = $request->input('redirect') ?? "/atividades/associate/";
 
         $data = array(
             'atividade' => $atividade,
             'ferramentas' => $ferramentas,
-            'modal' => $modal
         );
 
-        return redirect("/atividades/associate/$atividade->id")->with('data', $data);
+        return redirect($redirect.$atividade->id)->with('data', $data);
 
     }
 
@@ -234,16 +266,15 @@ class AtividadeController extends Controller
         $disciplina = Disciplina::find($atividade->disciplina_id);
         $ferramentas = $disciplina->ferramentas;
 
-        $modal = $request->input('modal');
+        $redirect = $request->input('redirect') ?? "/atividades/associate/";
 
         $data = array(
 
             'atividade' => $atividade,
             'ferramentas' => $ferramentas,
-            'modal' => $modal
         );
 
-        return redirect("/atividades/associate/$atividade->id")->with('data', $data);
+        return redirect($redirect.$atividade->id)->with('data', $data);
     }
 
 

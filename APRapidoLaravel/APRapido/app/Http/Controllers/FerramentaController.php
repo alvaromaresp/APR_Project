@@ -35,18 +35,30 @@ class FerramentaController extends Controller
         return view('ferramenta.index')->with('ferramenta',$ferramentas);
 
     }
+    /**
+     * Show the form for creating a new resource.(modal)
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createModal()
+    {
+        $disciplina = Disciplina::all();
+        $data = array(
+            'disciplina' => $disciplina,
+        );
+        return view('ferramenta.modal.create')->with('data', $data);
+    }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($modal = "false")
+    public function create()
     {
         $disciplina = Disciplina::all();
         $data = array(
             'disciplina' => $disciplina,
-            'modal' => $modal
         );
         return view('ferramenta.create')->with('data', $data);
     }
@@ -65,19 +77,15 @@ class FerramentaController extends Controller
         $ferramenta->disciplina_id = $request->input('disciplina');
         $ferramenta->save();
         
-        $modal = $request->input('modal');
+        $redirect = $request->input('redirect') ?? "ferramenta/associate/";
         
         $riscos = Riscos::all();
 
         $data = array(
             'ferramenta' => $ferramenta,
             'riscos' => $riscos,
-            'modal' => $modal
         );
-        session()->put(['data'=>$data]);
-        session()->save();
-
-        return redirect("ferramenta/associate/$ferramenta->id")->with('data', $data);
+        return redirect($redirect.$ferramenta->id)->with('data', $data);
     }
 
     /**
@@ -174,30 +182,37 @@ class FerramentaController extends Controller
 
         $riscos = Riscos::all();
 
-        $modal = $request->input('modal');
+        $redirect = $request->input('redirect') ?? "/ferramenta/associate/";
 
         $data = array(
             'ferramenta' => $ferramenta,
-            'riscos' => $riscos,
-            'modal' => $modal
+            'riscos' => $riscos
         );
 
-        return redirect("/ferramenta/associate/$ferramenta->id")->with('data', $data);
+        return redirect($redirect.$ferramenta->id)->with('data', $data);
     }
     public function associate($id){
         $ferramenta = Ferramenta::find($id);
         $riscos = Riscos::all();
 
-        $data = session()->get('data');
-        $modal = $data['modal'];
+
 
         $data = array(
             'ferramenta' => $ferramenta,
             'riscos' => $riscos,
-            'modal' => $modal
         );
 
         return view('ferramenta.associate')->with('data', $data);
+    }
+    public function associateModal($id){
+        $ferramenta = Ferramenta::find($id);
+        $riscos = Riscos::all();
+        $data = array(
+            'ferramenta' => $ferramenta,
+            'riscos' => $riscos,
+        );
+
+        return view('ferramenta.modal.associate')->with('data', $data);
     }
 
     /**
@@ -214,14 +229,13 @@ class FerramentaController extends Controller
 
         $riscos = Riscos::all();
 
-        $modal = $request->input('modal');
+        $redirect = $request->input('redirect') ?? "/ferramenta/associate/";
 
         $data = array(
             'ferramenta' => $ferramenta,
             'riscos' => $riscos,
-            'modal' => $modal
         );
-
-        return view('ferramenta.associate')->with('data', $data);
+        return redirect($redirect.$ferramenta->id)->with('data', $data);
+        //return view('ferramenta.associate')->with('data', $data);
     }
 }

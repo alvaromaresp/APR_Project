@@ -60,7 +60,7 @@
                   </button>
                 </div>
                 <div class="modal-body" id="resposta-modal">
-                    <iframe id="iframe" src="/atividades/create/true" width="765" height="500"></iframe>
+                    <iframe id="iframe" src="/atividades/create/modal" width="765" height="500"></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="close " data-dismiss="modal" aria-label="Close">
@@ -121,6 +121,7 @@
                 {!!Form::open(['action' => ['AprController@desassociateAtividade', $data['apr']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                     <p>{{$at->atividade}}</p>
                     {{Form::hidden('atividade', $at->id)}}
+
                     {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                 {!!Form::close()!!}
 
@@ -138,7 +139,7 @@
                   </button>
                 </div>
                 <div class="modal-body" id="resposta-modal">
-                    <iframe id="iframe" src="/atividades/create/true" width="325" height="500"></iframe>
+                    <iframe id="iframe" src="/atividades/create/modal" width="325" height="500"></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">

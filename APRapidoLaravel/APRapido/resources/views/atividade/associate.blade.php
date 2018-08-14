@@ -29,9 +29,9 @@
     
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
             
-            @if($data['modal'] == "false")
+
                 <a href="/atividades" class="btn mt-3 btn-secondary">Finalizar</a>
-            @endif
+
 
             <button type="button" class="btn btn-dark float-left mt-3 mr-2" data-toggle="modal" data-target="#novaferramenta">
                 Nova Ferramenta 
@@ -47,7 +47,7 @@
                     </button>
                     </div>
                     <div class="modal-body" id="resposta-modal">
-                        <iframe id="iframe" src="/ferramenta/create/true" width="765" height="500"></iframe>
+                        <iframe id="iframe" src="/ferramenta/create/modal" width="765" height="500"></iframe>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close btn-secondary" data-dismiss="modal" aria-label="Close">
@@ -107,9 +107,9 @@
     
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3'])}} <br>
             
-            @if($data['modal'] == "false")
+
                 <a href="/atividades" class="btn btn-secondary mt-3">Finalizar</a>
-            @endif
+
             <br>
             <button type="button" class="btn btn-dark float-left mt-3" data-toggle="modal" data-target="#novaferramenta">
                 Nova Ferramenta 
@@ -125,7 +125,7 @@
                     </button>
                     </div>
                     <div class="modal-body" id="resposta-modal">
-                        <iframe id="iframe" src="/ferramenta/create/true" width="325" height="500"></iframe>
+                        <iframe id="iframe" src="/ferramenta/create/modal" width="325" height="500"></iframe>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close btn-secondary" data-dismiss="modal" aria-label="Close">

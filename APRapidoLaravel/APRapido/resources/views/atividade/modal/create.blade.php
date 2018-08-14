@@ -9,7 +9,7 @@
             <?php
                 $dis = array(); 
             ?>
-            {{{Form::hidden('redirect', "ME MODIFIQUE")}}
+            {{Form::hidden('redirect', "/atividades/associate/modal/")}}
 
             @foreach($data['disciplina'] as $d)
                 <?php
@@ -46,7 +46,7 @@
             <?php
                 $dis = array(); 
             ?>
-            {{Form::hidden('redirect', "ME MODIFIQUE")}}
+            {{Form::hidden('redirect', "/atividades/associate/modal/")}}
 
             @foreach($data['disciplina'] as $d)
                 <?php
