@@ -18,7 +18,12 @@
 
 
             {{Form::select('medidaPreventiva', $mps, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Medida Preventiva'])}}
+<<<<<<< HEAD
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
+=======
+                
+
+>>>>>>> 934bddfbeb5f9dd7e116456718505c90e5ecd175
             {{Form::hidden('redirect', "/riscos/associate/modal/")}}
             
     </div>
@@ -56,7 +61,12 @@
 
 
             {{Form::select('medidaPreventiva', $mps, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Medida Preventiva'])}}
+<<<<<<< HEAD
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
+=======
+                
+            
+>>>>>>> 934bddfbeb5f9dd7e116456718505c90e5ecd175
             {{Form::hidden('redirect', "/riscos/associate/modal/")}}
     </div>
 
