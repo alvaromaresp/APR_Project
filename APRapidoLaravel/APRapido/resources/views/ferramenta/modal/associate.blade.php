@@ -18,9 +18,8 @@
 
             {{Form::select('risco', $riscos, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Risco'])}}
                 
-            {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3'])}} <br>
+            {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}} <br>
 
-            <a href="/ferramenta" class="btn mt-3 btn-secondary">Finalizar</a><br>
             </div>
             
             {{Form::hidden('redirect', "/ferramenta/associate/modal/")}}
@@ -56,9 +55,7 @@
 
             {{Form::select('risco', $riscos, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Risco'])}}
                 
-            {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3'])}} <br>
-
-            <a href="/ferramenta" class="btn mt-3 btn-secondary">Finalizar</a><br>
+            {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}} <br>
             </div>
 
             {{Form::hidden('redirect', "/ferramenta/associate/modal/")}}
