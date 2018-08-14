@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.modal')
 
 @desktop
 @section('content')

@@ -71,8 +71,7 @@ class RiscosController extends Controller
             'mp' => $mp,
             'modal' => $modal
         );
-        session()->put(['data'=>$data]);
-        session()->save();
+
 
         return redirect("/riscos/associate/$risco->id");//->with('data', $data);
     }

@@ -36,17 +36,22 @@ class MedidaPreventivaController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource. (modal)
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createModal()
+    {
+        return view('medidasPreventivas.modal.create');//->with('data', $data);
+    }
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($modal = "false")
+    public function create()
     {
-
-        $data = array(
-            'modal' => $modal
-        );
-        return view('medidasPreventivas.create')->with('data', $data);
+        return view('medidasPreventivas.create');
     }
 
     /**

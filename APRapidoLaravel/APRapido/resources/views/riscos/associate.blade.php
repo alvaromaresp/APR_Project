@@ -30,7 +30,7 @@
             </button>
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
 
-            @if($data['modal'] == "false")<br>
+
             <a href="/riscos" class="btn mt-3 btn-secondary">Finalizar</a>
             
             </div>
@@ -44,7 +44,7 @@
                     </button>
                     </div>
                     <div class="modal-body" id="resposta-modal">
-                        <iframe id="iframe" src="/medidaPreventiva/create/true" width="765" height="500"></iframe>
+                        <iframe id="iframe" src="/medidaPreventiva/create/modal" width="765" height="500"></iframe>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close btn btn-secondary" data-dismiss="modal" aria-label="Close">
@@ -54,7 +54,7 @@
                 </div>
                 </div>
             </div>
-            @endif
+
             {{Form::hidden('modal', $data['modal'])}}
             
 

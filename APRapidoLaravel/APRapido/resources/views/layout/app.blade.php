@@ -1,10 +1,4 @@
-<?php 
-    if(@!$data['modal']){
-        $data['modal']="false";
-    }
-    // var_dump($data['modal']);
-?>  
-<DOCTYPE html>
+<!DOCTYPE html>
     <html lang="{{app()->getLocale() }}">
         <head>
             <title>{{config('app.name','APRápido')}}</title>
@@ -133,7 +127,6 @@
             </style>
 
         </head>
-        @if($data['modal']=="false")
             <body>
                 <div class="container mb-5 mt-5" id="corpo" style="border: 1vh solid #00004c">
                     <div class="row mt-4 mb-4">
@@ -169,8 +162,5 @@
                     </div>
                 </div>
             </body>
-        @else
-            @yield("content")
-        @endif
 
     </html>

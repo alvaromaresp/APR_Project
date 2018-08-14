@@ -74,6 +74,8 @@ class FerramentaController extends Controller
             'riscos' => $riscos,
             'modal' => $modal
         );
+        session()->put(['data'=>$data]);
+        session()->save();
 
         return redirect("ferramenta/associate/$ferramenta->id")->with('data', $data);
     }
@@ -186,7 +188,7 @@ class FerramentaController extends Controller
         $ferramenta = Ferramenta::find($id);
         $riscos = Riscos::all();
 
-        $data = session()->get( 'data' );
+        $data = session()->get('data');
         $modal = $data['modal'];
 
         $data = array(
