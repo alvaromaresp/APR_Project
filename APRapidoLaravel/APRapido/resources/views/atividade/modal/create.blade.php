@@ -9,7 +9,7 @@
             <?php
                 $dis = array(); 
             ?>
-            {{Form::hidden('modal', $data['modal'])}}
+            {{Form::hidden('modal', "ME MODIFIQUE")}}
 
             @foreach($data['disciplina'] as $d)
                 <?php
@@ -46,7 +46,7 @@
             <?php
                 $dis = array(); 
             ?>
-            {{Form::hidden('modal', $data['modal'])}}
+            {{Form::hidden('modal', "ME MODIFIQUE")}}
 
             @foreach($data['disciplina'] as $d)
                 <?php

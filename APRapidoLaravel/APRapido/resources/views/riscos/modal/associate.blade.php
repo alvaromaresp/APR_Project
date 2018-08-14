@@ -21,7 +21,7 @@
                 
             <a href="/riscos" class="btn mt-3 btn-secondary">Finalizar</a>
             
-    </div>
+    </div> 
 
         {!! Form::close() !!}
         <div class="ml-5 mr-5 mb-5">
@@ -29,7 +29,7 @@
                     
                     {!!Form::open(['action' => ['RiscosController@desassociate', $data['risco']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$mp->medidapreventiva}}</p>
-                        {{Form::hidden('modal', $data['modal'])}}
+                        {{Form::hidden('modal', "ME MODIFIQUE")}}
                         {{Form::hidden('mp', $mp->id)}}
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}
@@ -67,7 +67,7 @@
                     
                     {!!Form::open(['action' => ['RiscosController@desassociate', $data['risco']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$mp->medidapreventiva}}</p>
-                        {{Form::hidden('modal', $data['modal'])}}
+                        {{Form::hidden('modal', "ME MODIFIQUE")}}
                         {{Form::hidden('mp', $mp->id)}}
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}

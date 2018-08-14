@@ -11,14 +11,14 @@
             <?php
                 $dis = array();
             ?>
-
+ 
             @foreach($data['disciplina'] as $d)
                 <?php
                     $dis[$d->id] = $d->disciplina;
                 ?>
             @endforeach
 
-            {{Form::hidden('modal', $data['modal'])}}
+            {{Form::hidden('modal', "ME MODIFIQUE")}}
 
             {{Form::select('disciplina', $dis, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}} <br>
    			{{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
@@ -45,7 +45,7 @@
                 ?>
             @endforeach
 
-            {{Form::hidden('modal', $data['modal'])}}
+            {{Form::hidden('modal', "ME MODIFIQUE")}}
 
             {{Form::select('disciplina', $dis, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}} <br>
             {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}

@@ -13,7 +13,7 @@
                 <?php
                     $riscos[$ris->id] = $ris->risco;
                 ?>
-            @endforeach 
+            @endforeach  
 
 
             {{Form::select('risco', $riscos, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Risco'])}}
@@ -23,7 +23,7 @@
             <a href="/ferramenta" class="btn mt-3 btn-secondary">Finalizar</a><br>
             </div>
             
-            {{Form::hidden('modal', $data['modal'])}}
+            {{Form::hidden('modal', "ME MODIFIQUE")}}
         {!! Form::close() !!}
     <div class="form-group ml-5 mr-5 mb-5">
         @foreach($data['ferramenta']->riscos as $ris)
@@ -31,7 +31,7 @@
                     {!!Form::open(['action' => ['FerramentaController@desassociate', $data['ferramenta']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$ris->risco}}</p>
                         {{Form::hidden('ris', $ris->id)}}
-                        {{Form::hidden('modal', $data['modal'])}}
+                        {{Form::hidden('modal', "ME MODIFIQUE")}}
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}
 
@@ -61,7 +61,7 @@
             <a href="/ferramenta" class="btn mt-3 btn-secondary">Finalizar</a><br>
             </div>
             
-            {{Form::hidden('modal', $data['modal'])}}
+            {{{Form::hidden('modal', "ME MODIFIQUE")}}
         {!! Form::close() !!}
     <div class="form-group ml-5 mr-5 mb-5">
         @foreach($data['ferramenta']->riscos as $ris)
@@ -69,7 +69,7 @@
                     {!!Form::open(['action' => ['FerramentaController@desassociate', $data['ferramenta']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$ris->risco}}</p>
                         {{Form::hidden('ris', $ris->id)}}
-                        {{Form::hidden('modal', $data['modal'])}}
+                        {{Form::hidden('modal', "ME MODIFIQUE")}}
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}
 
