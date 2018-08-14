@@ -59,7 +59,7 @@
                 </div>
             </div>
 
-            {{Form::hidden('modal', $data['modal'])}}
+
         {!! Form::close() !!}
     <div class="form-group ml-5 mr-5 mb-5">
         @foreach($data['ferramenta']->riscos as $ris)
@@ -67,7 +67,7 @@
                     {!!Form::open(['action' => ['FerramentaController@desassociate', $data['ferramenta']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$ris->risco}}</p>
                         {{Form::hidden('ris', $ris->id)}}
-                        {{Form::hidden('modal', $data['modal'])}}
+
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}
 

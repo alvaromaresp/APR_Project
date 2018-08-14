@@ -25,16 +25,15 @@
                 ?>
             @endforeach
 
-            {{Form::hidden('modal', $data['modal'])}}
 
             {{Form::select('disciplina', $dis, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}} <br>
    			{{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
             
-            @if($data['modal'] == 'false')
+
             <div class="float-left">
                 <a href="/ferramenta" class="btn mt-3 btn-secondary">Voltar</a>
             </div>
-            @endif
+
    		</div>
     {!! Form::close() !!}
 
@@ -58,16 +57,16 @@
                 ?>
             @endforeach
 
-            {{Form::hidden('modal', $data['modal'])}}
+
 
             {{Form::select('disciplina', $dis, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Disciplina'])}} <br>
             {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
             
-            @if($data['modal'] == 'false')
+
             <div class="float-left">
                 <a href="/ferramenta" class="btn mt-3  mb-5 btn-secondary">Voltar</a>
             </div>
-            @endif
+
         </div>
     {!! Form::close() !!}
 
