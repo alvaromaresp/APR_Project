@@ -39,7 +39,7 @@
             {{Form::select('empresa', $emp, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Empresa'])}}
             
             {{Form::hidden('_method', 'PUT')}}
-            
+
 		    {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
 		</div>
     {!! Form::close() !!}
