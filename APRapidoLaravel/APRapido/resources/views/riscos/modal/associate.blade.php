@@ -58,7 +58,7 @@
 
             {{Form::select('medidaPreventiva', $mps, null, ['class' => 'custom-select mb-3', 'placeholder' => 'Medida Preventiva'])}}
                 
-            
+
             {{Form::hidden('redirect', "/riscos/associate/modal/")}}
     </div>
 
