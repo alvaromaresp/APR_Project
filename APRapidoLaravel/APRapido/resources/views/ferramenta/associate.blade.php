@@ -77,7 +77,7 @@
                     
                     {!!Form::open(['action' => ['FerramentaController@desassociate', $data['ferramenta']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$ris->risco}}</p>
-                        {{Form::hidden('ris', $ris->id)}}
+                        {{Form::hidden('risco', $ris->id)}}
 
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}
@@ -135,8 +135,6 @@
             <button type="button" class="btn btn-dark mt-3" data-toggle="modal" data-target="#novorisco">
                     Novo Risco 
             </button><br>
-            
-            
 
             </div>
 
@@ -168,7 +166,7 @@
                     
                     {!!Form::open(['action' => ['FerramentaController@desassociate', $data['ferramenta']->id], 'method', 'post', 'class' => 'mt-2'])!!}
                         <p>{{$ris->risco}}</p>
-                        {{Form::hidden('ris', $ris->id)}}
+                        {{Form::hidden('risco', $ris->id)}}
                         {{Form::submit('Deletar', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}
 

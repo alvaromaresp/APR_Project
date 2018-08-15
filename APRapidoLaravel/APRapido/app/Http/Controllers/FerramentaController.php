@@ -195,8 +195,6 @@ class FerramentaController extends Controller
         $ferramenta = Ferramenta::find($id);
         $riscos = Riscos::all();
 
-
-
         $data = array(
             'ferramenta' => $ferramenta,
             'riscos' => $riscos,
@@ -233,7 +231,7 @@ class FerramentaController extends Controller
 
         $data = array(
             'ferramenta' => $ferramenta,
-            'riscos' => $riscos,
+            'riscos' => $riscos
         );
         return redirect($redirect.$ferramenta->id)->with('data', $data);
         //return view('ferramenta.associate')->with('data', $data);
