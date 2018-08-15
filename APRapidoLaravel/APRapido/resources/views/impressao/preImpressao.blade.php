@@ -16,7 +16,7 @@
 
 
         {{Form::text('responsavel', '', ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Responsável'])}}
-        {{Form::text('telResponsavel', '', ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Telefone Responsável'])}}
+        {{Form::text('telResponsavel', '', ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Telefone Responsável - (XX) XXXX-XXXX'])}}
         {{Form::text('celula', '', ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Célula'])}}
 
         {{Form::label('area', 'Selecione a Área:')}}
