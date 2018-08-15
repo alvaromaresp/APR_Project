@@ -164,9 +164,7 @@ class FerramentaController extends Controller
         $ferramenta = Ferramenta::find($id);
         $ferramenta->delete();
 
-        $ferramenta = Ferramenta::orderBy('ferramenta','asc')->paginate(5);
-
-        return view('ferramenta.index')->with('ferramenta', $ferramenta);
+        return redirect('/ferramenta')->with('success','Removido com sucesso!');
     }
 
     /**

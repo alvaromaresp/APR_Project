@@ -172,9 +172,7 @@ class AprController extends Controller
         $apr = Apr::find($id);
         $apr->delete();
 
-        $apr = Apr::orderBy('nome', 'desc')->paginate(5);
-
-        return view('apr.index')->with('apr', $apr);
+        return redirect('/apr')->with('success','Removido com sucesso!');
     }
 
     /**
