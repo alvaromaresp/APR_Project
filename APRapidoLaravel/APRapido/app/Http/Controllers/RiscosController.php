@@ -158,9 +158,7 @@ class RiscosController extends Controller
         $risco = Riscos::find($id);
         $risco->delete();
 
-        $riscos = Riscos::orderBy('risco','asc')->paginate(5);
-
-        return view('riscos.index')->with('riscos', $riscos);
+        return redirect('/riscos')->with('success','Removido com sucesso!');
     }
 
     /**

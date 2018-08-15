@@ -188,9 +188,7 @@ class AtividadeController extends Controller
         $atividade = Atividade::find($id);
         $atividade->delete();
 
-        $atividades = Atividade::orderBy('atividade', 'desc')->paginate(5);
-
-        return view('atividade.index')->with('atividades', $atividades);
+        return redirect('/atividade')->with('success','Removido com sucesso!');
     }
 
         /**

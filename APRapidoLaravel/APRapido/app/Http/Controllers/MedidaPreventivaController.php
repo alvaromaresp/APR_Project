@@ -126,6 +126,6 @@ class MedidaPreventivaController extends Controller
         $medidaPreventiva = Medidaspreventivas::find($id);
         $medidaPreventiva->delete();
 
-        return redirect('/medidaPreventiva')->with('danger','Removido com sucesso!');
+        return redirect('/medidaPreventiva')->with('success','Removido com sucesso!');
     }
 }
