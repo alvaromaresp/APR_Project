@@ -305,7 +305,6 @@ class AprController extends Controller
         $apr = Apr::find($id);
         $check = Checklist::find($request->input('checklist'));
 
-
         $apr->checklists()->attach($check);
         //array_push($checks,$check);
         //$apr->checklists = $checks;
