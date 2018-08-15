@@ -36,9 +36,6 @@
 						Data de Impressão
 					</th>
 					<th>
-						Hora de Impressão
-					</th>
-					<th>
 						Usuário
 					</th>
 				</tr>
@@ -53,9 +50,6 @@
 						</td>
 						<td>
 							{{date_format($registro-> created_at, 'd/m/Y')}}
-						</td>
-						<td>
-							{{date_format($registro-> created_at, 'H:i:s')}}
 						</td>
 						<td>
 							{{$registro-> users-> nome}}

@@ -15,7 +15,7 @@
         <div class="form-group mt-5 ml-5 mr-5 mb-5">
             <h2> {{Form::label('nome', 'Editar SESMT')}} </h2>	
             {{Form::text('nome', $sesmt->nome, ['class' => 'mt-2 form-control', 'placeholder' => 'Nome'])}}
-            {{Form::text('telefone', $sesmt->telefone, ['class' => 'form-control mt-3', 'placeholder' => 'Telefone'])}}
+            {{Form::text('telefone', $sesmt->telefone, ['class' => 'form-control mt-3', 'placeholder' => 'Telefone - (XX) XXXX-XXXX'])}}
 
 		        {{Form::hidden('_method', 'PUT')}}
 
@@ -35,7 +35,7 @@
         <div class="form-group ml-5 mr-3 mb-5">
             <h2> {{Form::label('nome', 'Editar SESMT')}} </h2>  
             {{Form::text('nome', $sesmt->nome, ['class' => 'mt-2 form-control', 'placeholder' => 'Nome'])}}
-            {{Form::text('telefone', $sesmt->telefone, ['class' => 'form-control mt-3', 'placeholder' => 'Telefone'])}}
+            {{Form::text('telefone', $sesmt->telefone, ['class' => 'form-control mt-3', 'placeholder' => 'Telefone - (XX) XXXX-XXXX'])}}
 
                 {{Form::hidden('_method', 'PUT')}}
 

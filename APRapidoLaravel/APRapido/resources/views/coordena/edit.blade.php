@@ -15,7 +15,7 @@
         <div class="form-group mt-5 ml-5 mr-5 mb-5">
             <h2> {{Form::label('nome', 'Editar Coordenador')}} </h2>	
             {{Form::text('nome', $coordena->nome, ['class' => 'form-control', 'placeholder' => 'Coordenador'])}}
-            {{Form::text('telefone', $coordena->telefone, ['class' => 'form-control mt-3', 'placeholder' => 'Telefone'])}}
+            {{Form::text('telefone', $coordena->telefone, ['class' => 'form-control mt-3', 'placeholder' => 'Telefone - (XX) XXXX-XXXX'])}}
 		        {{Form::hidden('_method', 'PUT')}}
 
 		    {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
@@ -34,7 +34,7 @@
         <div class="form-group ml-5 mr-3 mb-5">
             <h2> {{Form::label('nome', 'Editar Coordenador')}} </h2>    
             {{Form::text('nome', $coordena->nome, ['class' => 'form-control', 'placeholder' => 'Coordenador'])}}
-            {{Form::text('telefone', $coordena->telefone, ['class' => 'form-control mt-3', 'placeholder' => 'Telefone'])}}
+            {{Form::text('telefone', $coordena->telefone, ['class' => 'form-control mt-3', 'placeholder' => 'Telefone - (XX) XXXX-XXXX'])}}
                 {{Form::hidden('_method', 'PUT')}}
 
             {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}

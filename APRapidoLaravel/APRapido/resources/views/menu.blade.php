@@ -38,7 +38,7 @@
         </div>
         <div class="col-lg-6 mb-5" align="center">
             <a href="/medidaPreventiva" class="btn btn-primary">
-                Cadastrar MP
+                Cadastrar Medida Preventiva
             </a>
         </div>
     </div>
@@ -92,7 +92,7 @@
         </div>
         <div class="col-lg-6 mb-5" align="center">
             <a href="/medidaPreventiva" class="btn btn-primary">
-                Cadastrar MP
+                Cadastrar Medida Preventiva
             </a>
         </div>
     </div>

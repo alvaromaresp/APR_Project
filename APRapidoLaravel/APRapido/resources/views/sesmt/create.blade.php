@@ -14,7 +14,7 @@
         <div class="form-group mt-5 ml-5 mr-5 mb-5">
             <h2> {{Form::label('nome', 'Novo SESMT')}} </h2>
             {{Form::text('nome', '', ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Nome'])}}
-            {{Form::text('telefone', '', ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Telefone'])}}
+            {{Form::text('telefone', '', ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Telefone - (XX) XXXX-XXXX'])}}
    			{{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
    			<div class="float-left">
 	            <a href="/sesmt" class="btn mt-3 btn-secondary">Voltar</a>
@@ -30,7 +30,7 @@
         <div class="form-group ml-5 mr-3 mb-5">
             <h2> {{Form::label('nome', 'Novo SESMT')}} </h2>
             {{Form::text('nome', '', ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Nome'])}}
-            {{Form::text('telefone', '', ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Telefone'])}}
+            {{Form::text('telefone', '', ['class' => 'form-control mt-3 mb-3', 'placeholder' => 'Telefone - (XX) XXXX-XXXX'])}}
         {{Form::submit('Enviar', ['class' => 'btn btn-success mt-3 float-right'])}}
         <div class="float-left">
               <a href="/sesmt" class="btn mt-3 btn-secondary">Voltar</a>

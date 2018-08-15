@@ -27,12 +27,13 @@
         {{Form::select('coordena',$data['coordenas'],null,['class' => 'form-control mt-2 mb-3'])}}
         {{Form::label('empresa', 'Selecione a Empresa:')}}
         {{Form::select('empresa',$data['empresas'],null,['class' => 'form-control mt-2 mb-3'])}}
-
+        
         {{Form::submit('Imprimir', ['class' => 'btn btn-success mt-3 float-right'])}}
         <div class="float-left">
             <a href="/apr" class="btn mt-3 btn-secondary">Menu</a>
         </div>
     </div>
+
     {!! Form::close() !!}
 
 @endsection
