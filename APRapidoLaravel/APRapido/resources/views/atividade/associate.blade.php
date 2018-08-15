@@ -25,7 +25,7 @@
 
             {{Form::select('ferramenta', $ferramentas, null, ['class' => 'custom-select mt-3 mb-3', 'placeholder' => 'Ferramenta'])}}
 
-            
+
     
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
             

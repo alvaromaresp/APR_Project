@@ -124,6 +124,7 @@ class ImpressaoController extends Controller
         //$pdf->setOption('no-stop-slow-scripts', true);
         $pdf->setOption('header-right','Página [page]');
         $pdf->setPaper('a4')->setOrientation('landscape')->setOption('margin-bottom', 0)->setOption('viewport-size','1280x1024')->setOption('encoding','utf-8');
+        //return view('impressao.tabelaHtml')->with('data',$data);
         return $pdf->inline();
         
 
