@@ -12,7 +12,7 @@ use App\Apr;
 use App\Area;
 use App\Coordena;
 use App\Empresa;
-use PDF;
+use PDF; 
 
 class ImpressaoController extends Controller
 {

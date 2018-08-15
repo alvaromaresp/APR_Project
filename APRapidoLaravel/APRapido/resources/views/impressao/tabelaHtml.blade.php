@@ -163,28 +163,28 @@
         <div class="row bordaAlto">
         @php $prim = true; @endphp
         <div class="col-4 bordaLado">{{$atv->atividade}}</div>
+        @php $jaFoi = array(); @endphp
         @foreach($atv->ferramentas as $fer)
             @foreach($fer->riscos as $risco)
-                @if(!$prim)
-                    <div class="row">
-                        <div class="col-4  bordaLado"></div>
-                    @php $prim = true; @endphp
-                @endif
-                <div class="col-4  bordaLado  bordaAlto">{{$risco->risco}}</div>
-                @php $jaFoi = array(); @endphp
-                @foreach($risco->medidaspreventivas as $mp)
-                    @if(array_search($mp->id,$jaFoi) === false)
-                        @php array_push($jaFoi,$mp->id); @endphp
-                        @if(!$prim)
-                            <div class="row">
-                                <div class="col-4 bordaLado"></div>
-                                <div class="col-4 bordaLado"></div>
-                        @endif
-                            <div class="col-4 bordaAlto">{{$mp->medidapreventiva}}</div>
-                        </div>
-                        @php $prim=false; @endphp
+                @if(array_search($risco->id,$jaFoi) === false)
+                @php array_push($jaFoi,$risco->id);@endphp
+                    @if(!$prim)
+                        <div class="row">
+                            <div class="col-4  bordaLado"></div>
+                        @php $prim = true; @endphp
                     @endif
-                @endforeach
+                    <div class="col-4  bordaLado  bordaAlto">{{$risco->risco}}</div>
+                    @foreach($risco->medidaspreventivas as $mp)
+                            @if(!$prim)
+                                <div class="row">
+                                    <div class="col-4 bordaLado"></div>
+                                    <div class="col-4 bordaLado"></div>
+                            @endif
+                                <div class="col-4 bordaAlto">{{$mp->medidapreventiva}}</div>
+                            </div>
+                            @php $prim=false; @endphp
+                    @endforeach
+                @endif
             @endforeach
         @endforeach
     @endforeach
