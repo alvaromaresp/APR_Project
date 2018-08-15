@@ -114,6 +114,7 @@ class ImpressaoController extends Controller
 
         );
 
+        $header="<p>header bb</p>";
         //return view('impressao.tabelaHtml')->with(['data'=>$data]);
 
         $pdf = PDF::loadView('impressao.tabelaHtml', ['data'=>$data]);
@@ -121,7 +122,9 @@ class ImpressaoController extends Controller
         //$pdf->setOption('javascript-delay', 13500);
         //$pdf->setOption('enable-smart-shrinking', true);
         //$pdf->setOption('no-stop-slow-scripts', true);
+
         $pdf->setOption('header-right','Página [page]');
+        $pdf->setOption('header-html', $header);
         $pdf->setPaper('a4')->setOrientation('landscape')->setOption('margin-bottom', 0)->setOption('viewport-size','1280x1024')->setOption('encoding','utf-8');
         //return view('impressao.tabelaHtml')->with('data',$data);
         return $pdf->inline();

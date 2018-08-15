@@ -8,40 +8,13 @@
 <body>
 <div class="container-fluid borda">
     <!-- CABEÇALHO --><br>
-    <div class="row bordaBaixa">
-        <div class="col-4">
-            <div class="row">
-                <div class="col">
-                    <img  class="imgm mt-2 float-right" src="{{public_path('img/farmax.png')}}"/>
-                </div>
-                <div class="col">
-                    <img  class="imgm mt-2 float-left" src="{{public_path('img/icot.png')}}"/>
-                </div>
-            </div>
-        </div>
-        <div class="col txt-centro h4 mt-2">
-            <b>ANÁLISE PRELIMINAR DE RISCOS</b>
-        </div>
-        <div class="col-4">
-            <div class="row txt-dir">
-                <div class="col">
-                    APR N°: {{sprintf('%04d', $data['impressao']->id)}}
-                </div>
-                <div class="col">
-                    Data: {{$data['impressao']->created_at->format('d/m/Y')}}
-                </div>
-
-
-            </div>
-        </div>
-        <br><br><br>
-    </div>
+    
 
     <!-- NATUREZA DOS RISCOS -->
     <div class="row">
-        <div class="col-4 bordaBaixa bordaLado">
-            <div class="mt-4 txt-centro">NATUREZA DOS RISCOS<br/>
-            Caso marcar um item 'S' deve abrir uma PT.</div>
+        <div class="col-4 txt-centro bordaBaixa bordaLado">
+                NATUREZA DOS RISCOS<br/>
+            Caso marcar um item 'S' deve abrir uma PT.     
         </div>
         <div class="col bordaBaixa">
             <div class="row">

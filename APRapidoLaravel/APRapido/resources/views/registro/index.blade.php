@@ -62,7 +62,8 @@
 			@endif
 		</table>
 		</div>
-	</div>
+	<div class="float-right">{{$registros->links()}}</div>
+</div>
 @endsection
 @elsedesktop
 @section('content')
@@ -127,8 +128,9 @@
 			@endif
 		</table>
 	</div>
-		</div>
-	</div>
+	<div class="float-right">{{$registros->links()}}</div>
+</div>
+
 @endsection
 @enddesktop
 @extends('layout.flutuante')
