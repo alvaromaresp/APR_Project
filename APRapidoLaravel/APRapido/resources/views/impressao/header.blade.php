@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<div class="row superBorda">
+<div class="row">
         <div class="col-4">
             <div class="row">
                 <div class="col">
@@ -20,7 +20,7 @@
         <div class="col txt-centro h4 mt-2">
             <b>ANÁLISE PRELIMINAR DE RISCOS</b>
         </div>
-        <div class="col-4">
+        <div class="col-4 bordaLado">
             <div class="row txt-dir">
                 <div class="col">
                     APR N°: {{sprintf('%04d', $data['impressao']->id)}}

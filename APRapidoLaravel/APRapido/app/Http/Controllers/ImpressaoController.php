@@ -125,8 +125,7 @@ class ImpressaoController extends Controller
         $headerHtml = view()->make('impressao.header')
             ->with('data', $data)
             ->render();
-
-        $pdf->setOption('header-right','Página [page]');
+            
         $pdf->setOption('header-html', $headerHtml);
         $pdf->setOption('margin-top', 20);
         $pdf->setPaper('a4')->setOrientation('landscape')->setOption('margin-bottom', 0)->setOption('viewport-size','1280x1024')->setOption('encoding','utf-8');
