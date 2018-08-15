@@ -17,19 +17,24 @@
 		@endforeach
 		<br>
 		<p class="font-weight-bold"> CHECKLIST: </p>
-		@foreach($data['checklist'] as $cl)
-			@if($cl->pivot->checado == 1)
-				<?php
-					$checado = 'sim';
-				?>
-			@else
-				<?php
-					$checado = 'não';
-				?>
-			@endif
-			<li>{{$cl->item}}: {{$checado}}</li>
-		@endforeach
+		@foreach($data['checklistall'] as $cl)
+			<?php
+				$find = false;
+			?>
+			@foreach($data['checklist'] as $clas)
+				@if($cl->id == $clas->id)
+					<?php
+						$find = true;
+					?>
+				@endif
+			@endforeach
 
+			@if($find)
+				<li>{{$cl->item}}: sim</li>
+			@else
+				<li>{{$cl->item}}: nao</li>
+			@endif
+		@endforeach
 		<br>
 		<p class="font-weight-bold"> ATIVIDADES:</p>
 
@@ -131,17 +136,23 @@
 		@endforeach
 		<br>
 		<p class="font-weight-bold"> CHECKLIST: </p>
-		@foreach($data['checklist'] as $cl)
-			@if($cl->pivot->checado == 1)
-				<?php
-					$checado = 'sim';
-				?>
+		@foreach($data['checklistall'] as $cl)
+			<?php
+				$find = false;
+			?>
+			@foreach($data['checklist'] as $clas)
+				@if($cl->id == $clas->id)
+					<?php
+						$find = true;
+					?>
+				@endif
+			@endforeach
+
+			@if($find)
+				<li>{{$cl->item}}: sim</li>
 			@else
-				<?php
-					$checado = 'não';
-				?>
+				<li>{{$cl->item}}: nao</li>
 			@endif
-			<li>{{$cl->item}}: {{$checado}}</li>
 		@endforeach
 
 		<br>

@@ -106,12 +106,14 @@ class AprController extends Controller
         $naturezariscos = $apr->naturezasriscos;
         $checklist = $apr->checklists;
         $atividade = $apr->atividades;
+        $checklistall = Checklist::all();
 
         $data = array(
             'apr' => $apr,
             'naturezariscos' => $naturezariscos,
             'checklist' => $checklist,
-            'atividade' => $atividade
+            'atividade' => $atividade,
+            'checklistall' => $checklistall
         );
 
         return view('apr.show')->with('data', $data);
