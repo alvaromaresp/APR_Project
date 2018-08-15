@@ -39,9 +39,9 @@
 
     <!-- NATUREZA DOS RISCOS -->
     <div class="row">
-        <div class="col-4 txt-centro bordaBaixa bordaLado">
-            NATUREZA DOS RISCOS<br/>
-            Caso marcar um item 'S' deve abrir uma PT.
+        <div class="col-4 bordaBaixa bordaLado">
+            <div class="mt-4 txt-centro">NATUREZA DOS RISCOS<br/>
+            Caso marcar um item 'S' deve abrir uma PT.</div>
         </div>
         <div class="col bordaBaixa">
             <div class="row">
@@ -62,7 +62,7 @@
                             $completa2 = "";
                         }
                     @endphp
-                    <div class="col">
+                    <div class="col-4">
                         <div class="row">
                             <div class="col quadradin {{$completa1}}">S</div>
                             <div class="col quadradin {{$completa2}}">NA</div>
@@ -193,7 +193,7 @@
 
 <!-- CHECK LIST -->
 <div style="page-break-before: always;"></div>
-<div class="container-fluid bordaCheck">
+<div class="container-fluid superBorda">
     <!-- CABEÇALHO --><br>
     <div class="row bordaBaixa">
         <div class="col-4">
@@ -224,7 +224,7 @@
     </div>
 
     <div class="row">
-        <div class="col txt-centro bordaBaixa tons">
+        <div class="col txt-centro bordaBaixa tons bordaLado">
             <b>CHECK LIST</b>
         </div>
     </div>
@@ -249,7 +249,7 @@
     @foreach($data['checklistsGeral'] as $check)
         <div class="row bordaBaixa">
             <div class="col-8 bordaLado">
-                <b>{{$check->item}}</b>
+                {{$check->item}}
             </div>
             @php
                 $completa1 = "";
