@@ -171,15 +171,19 @@
                     @php $prim = true; @endphp
                 @endif
                 <div class="col-4  bordaLado  bordaAlto">{{$risco->risco}}</div>
+                @php $jaFoi = array(); @endphp
                 @foreach($risco->medidaspreventivas as $mp)
-                    @if(!$prim)
-                        <div class="row">
-                            <div class="col-4 bordaLado"></div>
-                            <div class="col-4 bordaLado"></div>
+                    @if(array_search($mp->id,$jaFoi) === false)
+                        @php array_push($jaFoi,$mp->id); @endphp
+                        @if(!$prim)
+                            <div class="row">
+                                <div class="col-4 bordaLado"></div>
+                                <div class="col-4 bordaLado"></div>
+                        @endif
+                            <div class="col-4 bordaAlto">{{$mp->medidapreventiva}}</div>
+                        </div>
+                        @php $prim=false; @endphp
                     @endif
-                        <div class="col-4 bordaAlto">{{$mp->medidapreventiva}}</div>
-                    </div>
-                    @php $prim=false; @endphp
                 @endforeach
             @endforeach
         @endforeach
