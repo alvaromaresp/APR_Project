@@ -10412,7 +10412,7 @@ a.text-dark:focus {
 }
 
 .imgm {
-  height: 50px;
+  height: 40px;
 }
 
 .txt-dir {
@@ -10450,6 +10450,18 @@ a.text-dark:focus {
   border-right-width: 2px;
   border-right-style: solid;
   border-right-color: black;
+}
+
+.superBorda {
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-right-color: black;
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: black;
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: black;
 }
 
 .quadradin {
