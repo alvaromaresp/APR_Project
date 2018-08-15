@@ -7,11 +7,22 @@
 
             <?php
                 $ferramentas = array();
+                $find = false;
             ?>
 
             <h2> {{Form::label('ferramenta', 'Associar Ferramentas')}} </h2>
             @foreach($data['ferramentas'] as $fer)
                 <?php
+                    $find = false;
+                ?>
+                @foreach($data['atividade']->ferramentas as $ferass)
+                    <?php
+                        if($fer->id == $ferass->id)
+                            $find = true;
+                    ?>
+                @endforeach
+                <?php
+                    if(!$find)
                     $ferramentas[$fer->id] = $fer->ferramenta;
                 ?>
             @endforeach
@@ -44,13 +55,24 @@
 {!! Form::open(['action' => ['AtividadeController@associateStore', $data['atividade']->id], 'method' => 'post']) !!}
         <div class="form-group ml-5 mr-3 mb-5">
 
-              <?php
+            <?php
                 $ferramentas = array();
+                $find = false;
             ?>
 
             <h2> {{Form::label('ferramenta', 'Associar Ferramentas')}} </h2>
             @foreach($data['ferramentas'] as $fer)
                 <?php
+                    $find = false;
+                ?>
+                @foreach($data['atividade']->ferramentas as $ferass)
+                    <?php
+                        if($fer->id == $ferass->id)
+                            $find = true;
+                    ?>
+                @endforeach
+                <?php
+                    if(!$find)
                     $ferramentas[$fer->id] = $fer->ferramenta;
                 ?>
             @endforeach

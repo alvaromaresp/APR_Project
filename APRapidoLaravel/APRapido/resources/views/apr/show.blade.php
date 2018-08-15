@@ -35,6 +35,14 @@
 
 		<br>
 		<table class="table">
+			<thead>
+				<tr>
+					<th> </th>
+					<th>Ferramenta</th>
+					<th>Riscos</th>
+					<th>Medidas Preventivas</th>
+				</tr>
+			</thead>
 			@foreach($data['atividade'] as $atv)
 				<tr>
 					<td>{{$atv->atividade}}</td>
@@ -60,7 +68,7 @@
 								<td></td>
 							@endif
 							<td>{{$ris->risco}}</td>
-
+								
 							<?php
 								$bmp = true;
 							?>
@@ -77,17 +85,23 @@
 									$bmp = false;
 								?>
 							@endforeach
-
+							@if($bmp)
+								</tr>
+							@endif
 							<?php
 								$br = false;
 							?>
 						@endforeach
-
+						@if($br)
+							</tr>
+						@endif
 						<?php
 							$bf = false;
 						?>
 					@endforeach
-
+					@if($bf)
+						</tr>
+					@endif
 			@endforeach
 		</table>
 

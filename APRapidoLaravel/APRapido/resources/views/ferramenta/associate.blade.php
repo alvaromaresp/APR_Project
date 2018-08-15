@@ -13,12 +13,23 @@
         {!! Form::open(['action' => ['FerramentaController@associateStore', $data['ferramenta']->id], 'method' => 'post']) !!}
             <?php
                 $riscos = array();
+                $find = false;
             ?>
 
             <h2> {{Form::label('risco', 'Associar Riscos')}} </h2>
             @foreach($data['riscos'] as $ris)
                 <?php
-                    $riscos[$ris->id] = $ris->risco;
+                    $find = false;
+                ?>
+                @foreach($data['ferramenta']->riscos as $risass)
+                    <?php
+                        if($ris->id == $risass->id)
+                            $find = true;
+                    ?>
+                @endforeach
+                <?php
+                    if(!$find)
+                        $riscos[$ris->id] = $ris->risco;
                 ?>
             @endforeach 
 
@@ -27,7 +38,7 @@
                 
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
 
-            <a href="/ferramenta" class="btn mt-3 btn-secondary">Finalizar</a>
+            <a href="/ferramenta" class="btn mt-3 btn-secondary float-right mr-2">Finalizar</a>
 
 
             <button type="button" class="btn btn-dark mt-3" data-toggle="modal" data-target="#novorisco">
@@ -93,12 +104,23 @@
         {!! Form::open(['action' => ['FerramentaController@associateStore', $data['ferramenta']->id], 'method' => 'post']) !!}
             <?php
                 $riscos = array();
+                $find = false;
             ?>
 
             <h2> {{Form::label('risco', 'Associar Riscos')}} </h2>
             @foreach($data['riscos'] as $ris)
                 <?php
-                    $riscos[$ris->id] = $ris->risco;
+                    $find = false;
+                ?>
+                @foreach($data['ferramenta']->riscos as $risass)
+                    <?php
+                        if($ris->id == $risass->id)
+                            $find = true;
+                    ?>
+                @endforeach
+                <?php
+                    if(!$find)
+                        $riscos[$ris->id] = $ris->risco;
                 ?>
             @endforeach 
 

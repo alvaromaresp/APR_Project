@@ -81,9 +81,8 @@ class ImpressaoController extends Controller
         $impressao->save();
 
         return redirect('/pdf/'.$impressao->id);
-
-
     }
+    
     public function geraPdf($id){
         $impressao = Impressao::find($id);
 

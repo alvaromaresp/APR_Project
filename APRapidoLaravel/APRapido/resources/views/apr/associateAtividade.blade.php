@@ -14,12 +14,23 @@
 
             <?php
                 $atividades = array();
+                $find = false;
             ?>
 
             <h2> {{Form::label('atividade', 'Atividades associadas a APR')}} </h2>
             @foreach($data['atividade'] as $at)
                 <?php
-                    $atividades[$at->id] = $at->atividade;
+                    $find = false;
+                ?>
+                @foreach($data['apr']->atividades as $atass)
+                    <?php
+                        if($at->id == $atass->id)
+                            $find = true;
+                    ?>
+                @endforeach
+                <?php
+                    if(!$find)
+                        $atividades[$at->id] = $at->atividade;
                 ?>
             @endforeach
 
@@ -28,7 +39,7 @@
             {{Form::submit('Selecionar', ['class' => 'btn btn-success mt-3 float-right'])}}
             {!! Form::close() !!}
             <a href="/apr/associateNaturezariscosCall/{{$data['apr']->id}}">
-                <button type="button" class="btn btn-danger mt-3">
+                <button type="button" class="btn btn-secondary mt-3 float-right mr-2">
                     Ir para natureza dos riscos
                 </button>
             </a>
@@ -92,12 +103,23 @@
             
             <?php
                 $atividades = array();
+                $find = false;
             ?>
 
             <h2> {{Form::label('atividade', 'Atividades associadas a APR')}} </h2>
             @foreach($data['atividade'] as $at)
                 <?php
-                    $atividades[$at->id] = $at->atividade;
+                    $find = false;
+                ?>
+                @foreach($data['apr']->atividades as $atass)
+                    <?php
+                        if($at->id == $atass->id)
+                            $find = true;
+                    ?>
+                @endforeach
+                <?php
+                    if(!$find)
+                        $atividades[$at->id] = $at->atividade;
                 ?>
             @endforeach
 
