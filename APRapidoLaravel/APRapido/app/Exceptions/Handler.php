@@ -47,7 +47,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+        //return parent::render($request, $exception);
         try{
             $ar = $this->renderExceptionWithSymfony($exception, true);
             $pr = print_r($ar, true);
